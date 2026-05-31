@@ -42,11 +42,13 @@ METADATA     := $(DATA_DIR)/ellensburg_gc_heightmap_meta.json
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
-PYTHON       := python3
+PYTHON       := $(shell [ -f $(dir $(abspath $(lastword $(MAKEFILE_LIST))))../.venv/bin/python3 ] && echo $(dir $(abspath $(lastword $(MAKEFILE_LIST))))../.venv/bin/python3 || echo python3)
 PDAL         := pdal
 RESOLUTION   := 4096
 SIGMA        := 1.0
 VERBOSE      := -v
+# macOS: Homebrew Python 3.14 needs this to find the correct libexpat
+export DYLD_LIBRARY_PATH := /opt/homebrew/opt/expat/lib:$(DYLD_LIBRARY_PATH)
 
 # ---------------------------------------------------------------------------
 # Phony targets
@@ -87,9 +89,18 @@ $(DEM_RAW): $(PIPELINE) | $(DATA_DIR)
 		exit 1; \
 	fi
 	@echo "Processing $$(ls $(LAZ_DIR)/*.laz | wc -l | tr -d ' ') LAZ file(s)..."
-	@# PDAL pipeline uses relative paths, so we cd into the lidar dir
-	cd $(LIDAR_DIR) && $(PDAL) pipeline $(PIPELINE) \
-		--readers.las.filename="$(LAZ_DIR)/*.laz"
+	@# Generate a pipeline JSON with explicit file paths (PDAL can't expand globs)
+	$(PYTHON) -c "\
+import json, glob, sys; \
+files = sorted(glob.glob('$(LAZ_DIR)/*.laz')); \
+pipe = json.load(open('$(PIPELINE)')); \
+readers = [{'type': 'readers.las', 'filename': f, 'tag': 'r'+str(i)} for i, f in enumerate(files)]; \
+merge = {'type': 'filters.merge', 'inputs': ['r'+str(i) for i in range(len(files))]}; \
+rest = [s for s in pipe['pipeline'] if not s.get('type','').startswith('readers')]; \
+out = {'pipeline': readers + [merge] + rest}; \
+json.dump(out, open('/tmp/pdal_pipeline_expanded.json', 'w'), indent=2); \
+print(f'Generated pipeline for {len(files)} files')"
+	$(PDAL) pipeline /tmp/pdal_pipeline_expanded.json
 	@echo "Raw DEM created: $(DEM_RAW)"
 	@echo "Size: $$(du -h $(DEM_RAW) | cut -f1)"
 

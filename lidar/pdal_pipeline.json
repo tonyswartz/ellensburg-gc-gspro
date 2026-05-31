@@ -2,8 +2,7 @@
     "pipeline": [
         {
             "type": "readers.las",
-            "filename": "data/laz/*.laz",
-            "override_srs": "EPSG:2856"
+            "filename": "data/laz/*.laz"
         },
         {
             "type": "filters.range",
@@ -12,7 +11,6 @@
         },
         {
             "type": "filters.reprojection",
-            "in_srs": "EPSG:2856",
             "out_srs": "EPSG:32610"
         },
         {

@@ -1,15 +1,23 @@
 #!/usr/bin/env python3
 """
-Download LIDAR LAZ tiles from WA DNR's LIDAR portal for Ellensburg Golf Club.
+Download LIDAR LAZ tiles from USGS National Map for Ellensburg Golf Club.
 
-Uses the WA DNR ArcGIS REST API to query the tile index for the
-Kittitas County 2011 FEMA LIDAR project, then downloads the LAZ files.
+Uses the USGS TNM (The National Map) Access API to query and download
+LiDAR Point Cloud (LAZ) tiles covering the Ellensburg GC area.
+
+Two USGS datasets cover this area:
+  - WA_EasternCascades_2019_B19  (2019, ~1 pt/m², preferred)
+  - WA_KITTITASCOUNTY_2011       (2011 FEMA, legacy)
+
+The script defaults to the 2019 dataset. Use --dataset 2011 for legacy data
+or --dataset all to download both.
+
+USGS TNM API docs: https://tnmaccess.nationalmap.gov/api/v1/docs
 """
 
 import argparse
 import json
 import logging
-import os
 import sys
 import time
 from pathlib import Path
@@ -24,23 +32,18 @@ except ImportError:
 LOG = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
-# WA DNR LIDAR Portal constants
+# Constants
 # ---------------------------------------------------------------------------
-# The WA DNR LIDAR portal exposes an ArcGIS MapServer.  The tile-index
-# layer lists every LAZ tile with its bounding geometry and a download URL.
-# Layer IDs can shift when DNR republishes; the script tries the well-known
-# ones and falls back to a discovery step.
 
-BASE_URL = "https://lidarportal.dnr.wa.gov/arcgis/rest/services"
-# Primary service path — DNR has reorganized this a few times.
-SERVICE_PATHS = [
-    "Lidar/LidarTileIndex/MapServer",
-    "Lidar/Tiles/MapServer",
-    "Lidar_Downloads/MapServer",
-]
+TNM_API_URL = "https://tnmaccess.nationalmap.gov/api/v1/products"
 
-# Default bounding box for Ellensburg Golf Club with ~500 m buffer
-# Coordinates in WGS 84 (lon, lat)
+# Dataset identifiers as they appear in tile titles
+DATASET_KEYS = {
+    "2019": "WA_EasternCascades_2019_B19",
+    "2011": "WA_KITTITASCOUNTY_2011",
+}
+
+# Default bounding box for Ellensburg GC with ~500 m buffer (WGS 84, lon/lat)
 DEFAULT_BBOX = {
     "xmin": -120.6400,
     "ymin":  47.0130,
@@ -48,175 +51,56 @@ DEFAULT_BBOX = {
     "ymax":  47.0260,
 }
 
-# Project name substring used to filter tiles to the correct collection
-PROJECT_FILTER = "Kittitas"
-
-# How many features to request per page (ArcGIS default max is usually 1000)
-PAGE_SIZE = 100
-
-# Download retry / throttle
+# Download settings
 MAX_RETRIES = 3
-RETRY_DELAY = 5        # seconds
+RETRY_DELAY = 5         # seconds
 CHUNK_SIZE  = 1 << 20  # 1 MiB
 
 
 # ---------------------------------------------------------------------------
-# Helpers
+# USGS TNM query
 # ---------------------------------------------------------------------------
 
-def _build_query_url(service_url: str, layer_id: int) -> str:
-    return f"{service_url}/{layer_id}/query"
+def query_tnm(bbox: dict, session: requests.Session) -> list[dict]:
+    """Query USGS TNM API for LiDAR Point Cloud tiles intersecting bbox.
 
+    Returns a list of item dicts as returned by the API.
+    """
+    params = {
+        "datasets": "Lidar Point Cloud (LPC)",
+        "bbox": f"{bbox['xmin']},{bbox['ymin']},{bbox['xmax']},{bbox['ymax']}",
+        "outputFormat": "JSON",
+        "max": 100,
+    }
+    url = f"{TNM_API_URL}?{urlencode(params)}"
+    LOG.debug("TNM query: %s", url)
 
-def _discover_layers(service_url: str) -> list[dict]:
-    """Return the list of layer dicts from the MapServer."""
-    url = f"{service_url}?f=json"
-    LOG.debug("Discovering layers at %s", url)
-    resp = requests.get(url, timeout=30)
+    resp = session.get(url, timeout=60)
     resp.raise_for_status()
     data = resp.json()
-    return data.get("layers", [])
+
+    items = data.get("items", [])
+    LOG.info("TNM returned %d tile(s)", len(items))
+    return items
 
 
-def _find_tile_layer(service_url: str) -> int | None:
-    """Heuristic: pick the first layer whose name looks like a tile index."""
-    layers = _discover_layers(service_url)
-    keywords = ["tile", "index", "laz", "lidar", "download"]
-    for layer in layers:
-        name_lower = layer.get("name", "").lower()
-        if any(k in name_lower for k in keywords):
-            LOG.info("Using layer %s – '%s'", layer["id"], layer["name"])
-            return layer["id"]
-    # Fallback: just use layer 0
-    if layers:
-        LOG.warning("No obvious tile layer found; falling back to layer 0 ('%s')", layers[0].get("name"))
-        return layers[0]["id"]
-    return None
+def filter_by_dataset(items: list[dict], dataset: str) -> list[dict]:
+    """Filter tile items to only those matching the requested dataset."""
+    if dataset == "all":
+        return items
+    key = DATASET_KEYS.get(dataset)
+    if key is None:
+        LOG.warning("Unknown dataset key '%s'; returning all tiles", dataset)
+        return items
+    return [it for it in items if key in it.get("title", "")]
 
 
-def _resolve_service(session: requests.Session) -> tuple[str, int] | None:
-    """Try known service paths and return (service_url, layer_id) or None."""
-    for path in SERVICE_PATHS:
-        service_url = f"{BASE_URL}/{path}"
-        try:
-            layer_id = _find_tile_layer(service_url)
-            if layer_id is not None:
-                return service_url, layer_id
-        except Exception as exc:
-            LOG.debug("Service path %s failed: %s", path, exc)
-    return None
+# ---------------------------------------------------------------------------
+# Download helpers
+# ---------------------------------------------------------------------------
 
-
-def query_tiles(
-    service_url: str,
-    layer_id: int,
-    bbox: dict,
-    project_filter: str | None = None,
-    session: requests.Session | None = None,
-) -> list[dict]:
-    """
-    Query the ArcGIS tile-index layer and return a list of feature dicts.
-
-    Each feature is expected to have attributes including a download URL
-    and a geometry envelope.
-    """
-    session = session or requests.Session()
-    query_url = _build_query_url(service_url, layer_id)
-
-    # Build a spatial query using an envelope in WGS 84
-    geometry = json.dumps({
-        "xmin": bbox["xmin"],
-        "ymin": bbox["ymin"],
-        "xmax": bbox["xmax"],
-        "ymax": bbox["ymax"],
-        "spatialReference": {"wkid": 4326},
-    })
-
-    where_clause = "1=1"
-    if project_filter:
-        # Try common field names for project name
-        where_clause = (
-            f"Project LIKE '%{project_filter}%' OR "
-            f"ProjectName LIKE '%{project_filter}%' OR "
-            f"Name LIKE '%{project_filter}%' OR "
-            f"project_name LIKE '%{project_filter}%' OR "
-            f"PROJECT LIKE '%{project_filter}%'"
-        )
-
-    all_features: list[dict] = []
-    offset = 0
-
-    while True:
-        params = {
-            "where": where_clause,
-            "geometry": geometry,
-            "geometryType": "esriGeometryEnvelope",
-            "spatialRel": "esriSpatialRelIntersects",
-            "inSR": 4326,
-            "outFields": "*",
-            "returnGeometry": "true",
-            "f": "json",
-            "resultOffset": offset,
-            "resultRecordCount": PAGE_SIZE,
-        }
-
-        LOG.debug("Querying %s  offset=%d", query_url, offset)
-        resp = session.get(query_url, params=params, timeout=60)
-        resp.raise_for_status()
-        data = resp.json()
-
-        if "error" in data:
-            err = data["error"]
-            code = err.get("code", "?")
-            msg  = err.get("message", str(err))
-            # If the WHERE clause failed (unknown field), retry without it
-            if code == 400 and where_clause != "1=1":
-                LOG.warning("Project filter failed (%s); retrying without filter", msg)
-                where_clause = "1=1"
-                offset = 0
-                all_features.clear()
-                continue
-            raise RuntimeError(f"ArcGIS query error {code}: {msg}")
-
-        features = data.get("features", [])
-        all_features.extend(features)
-        LOG.info("Fetched %d features (total so far: %d)", len(features), len(all_features))
-
-        if len(features) < PAGE_SIZE:
-            break
-        offset += PAGE_SIZE
-
-    return all_features
-
-
-def _extract_download_url(feature: dict) -> str | None:
-    """Pull the LAZ download URL from a feature's attributes."""
-    attrs = feature.get("attributes", {})
-    # DNR uses various field names for the download link
-    for key in ("DownloadURL", "Download_URL", "download_url", "URL", "url",
-                "LAS_URL", "LAZ_URL", "laz_url", "FileURL", "file_url",
-                "DOWNLOAD", "download", "Link", "link"):
-        val = attrs.get(key)
-        if val and isinstance(val, str) and ("http" in val or val.startswith("//")):
-            return val
-    return None
-
-
-def _extract_tile_name(feature: dict) -> str:
-    """Derive a human-readable tile name from a feature."""
-    attrs = feature.get("attributes", {})
-    for key in ("TileName", "Tile_Name", "tile_name", "Name", "name",
-                "FileName", "FILENAME", "filename", "OBJECTID", "FID"):
-        val = attrs.get(key)
-        if val is not None:
-            return str(val)
-    return "unknown_tile"
-
-
-def download_file(url: str, dest: Path, session: requests.Session | None = None) -> bool:
-    """Download *url* to *dest* with retries.  Returns True on success."""
-    session = session or requests.Session()
-
+def download_file(url: str, dest: Path, session: requests.Session) -> bool:
+    """Download url to dest with retries. Returns True on success."""
     for attempt in range(1, MAX_RETRIES + 1):
         try:
             LOG.info("Downloading %s  (attempt %d/%d)", url, attempt, MAX_RETRIES)
@@ -232,10 +116,16 @@ def download_file(url: str, dest: Path, session: requests.Session | None = None)
                     downloaded += len(chunk)
                     if total:
                         pct = downloaded / total * 100
-                        print(f"\r  {downloaded / 1e6:.1f} / {total / 1e6:.1f} MB  ({pct:.0f}%)", end="", flush=True)
+                        print(
+                            f"\r  {downloaded / 1e6:.1f} / {total / 1e6:.1f} MB"
+                            f"  ({pct:.0f}%)",
+                            end="",
+                            flush=True,
+                        )
                     else:
                         print(f"\r  {downloaded / 1e6:.1f} MB", end="", flush=True)
-            print()  # newline after progress
+
+            print()
             LOG.info("Saved %s (%d bytes)", dest, downloaded)
             return True
 
@@ -256,7 +146,23 @@ def download_file(url: str, dest: Path, session: requests.Session | None = None)
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Download LIDAR LAZ tiles from WA DNR for Ellensburg Golf Club."
+        description=(
+            "Download LIDAR LAZ tiles from USGS National Map for Ellensburg Golf Club."
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Datasets available for the Ellensburg GC area:
+  2019  WA_EasternCascades_2019_B19  (~6 tiles, preferred — newer/denser)
+  2011  WA_KITTITASCOUNTY_2011       (~4 tiles, legacy 2011 FEMA survey)
+  all   Download both datasets
+
+Examples:
+  %(prog)s                         # download 2019 tiles (default)
+  %(prog)s --dataset 2011          # download 2011 FEMA tiles
+  %(prog)s --dataset all           # download everything
+  %(prog)s --list-only -v          # list tiles without downloading
+  %(prog)s --bbox -120.65 47.01 -120.61 47.03
+""",
     )
     parser.add_argument(
         "-o", "--output-dir",
@@ -265,34 +171,21 @@ def main() -> int:
         help="Directory to save LAZ files (default: ./data/laz)",
     )
     parser.add_argument(
+        "--dataset",
+        choices=["2019", "2011", "all"],
+        default="2019",
+        help="Which USGS dataset to download (default: 2019)",
+    )
+    parser.add_argument(
         "--bbox",
         type=float,
         nargs=4,
         metavar=("XMIN", "YMIN", "XMAX", "YMAX"),
         default=None,
-        help="Bounding box in WGS 84 (lon_min lat_min lon_max lat_max). "
-             "Default: Ellensburg GC area with buffer.",
-    )
-    parser.add_argument(
-        "--project-filter",
-        default=PROJECT_FILTER,
-        help="Substring to filter tiles by project name (default: %(default)s)",
-    )
-    parser.add_argument(
-        "--no-project-filter",
-        action="store_true",
-        help="Disable project-name filtering (use spatial query only)",
-    )
-    parser.add_argument(
-        "--service-url",
-        default=None,
-        help="Override the ArcGIS MapServer service URL",
-    )
-    parser.add_argument(
-        "--layer-id",
-        type=int,
-        default=None,
-        help="Override the layer ID within the MapServer",
+        help=(
+            "Bounding box in WGS 84 (lon_min lat_min lon_max lat_max). "
+            "Default: Ellensburg GC area with ~500 m buffer."
+        ),
     )
     parser.add_argument(
         "--list-only",
@@ -313,7 +206,7 @@ def main() -> int:
 
     args = parser.parse_args()
 
-    # Logging setup
+    # Logging
     level = logging.WARNING
     if args.verbose >= 2:
         level = logging.DEBUG
@@ -328,108 +221,77 @@ def main() -> int:
 
     bbox = dict(DEFAULT_BBOX)
     if args.bbox:
-        bbox = {
-            "xmin": args.bbox[0],
-            "ymin": args.bbox[1],
-            "xmax": args.bbox[2],
-            "ymax": args.bbox[3],
-        }
-
-    project_filter = None if args.no_project_filter else args.project_filter
+        xmin, ymin, xmax, ymax = args.bbox
+        bbox = {"xmin": xmin, "ymin": ymin, "xmax": xmax, "ymax": ymax}
 
     session = requests.Session()
-    session.headers.update({"User-Agent": "ellensburg-gc-lidar-downloader/1.0"})
+    session.headers.update({"User-Agent": "ellensburg-gc-lidar-downloader/2.0"})
 
-    # Resolve service endpoint
-    if args.service_url and args.layer_id is not None:
-        service_url = args.service_url
-        layer_id = args.layer_id
-    else:
-        print("Discovering WA DNR LIDAR tile-index service...")
-        result = _resolve_service(session)
-        if result is None:
-            LOG.error(
-                "Could not locate a tile-index service at %s. "
-                "You may need to specify --service-url and --layer-id manually. "
-                "Visit https://lidarportal.dnr.wa.gov to find the current endpoint.",
-                BASE_URL,
-            )
-            return 1
-        service_url, layer_id = result
-        # Allow CLI overrides
-        if args.service_url:
-            service_url = args.service_url
-        if args.layer_id is not None:
-            layer_id = args.layer_id
-
-    print(f"Service : {service_url}")
-    print(f"Layer   : {layer_id}")
-    print(f"Bbox    : {bbox}")
-    print(f"Project : {project_filter or '(none)'}")
+    print("Querying USGS National Map for LiDAR tiles...")
+    print(f"  Bbox    : {bbox['xmin']}, {bbox['ymin']}, {bbox['xmax']}, {bbox['ymax']}")
+    print(f"  Dataset : {args.dataset}")
     print()
 
-    # Query tile index
-    print("Querying tile index...")
-    features = query_tiles(service_url, layer_id, bbox, project_filter, session)
+    all_items = query_tnm(bbox, session)
+    items = filter_by_dataset(all_items, args.dataset)
 
-    if not features:
-        print("No tiles found for the given area / project. Try:")
-        print("  - Expanding the bounding box")
-        print("  - Using --no-project-filter")
-        print("  - Checking https://lidarportal.dnr.wa.gov manually")
+    if not items:
+        print(f"No tiles found for dataset='{args.dataset}' in the given area.")
+        print("All items returned by TNM:")
+        for it in all_items:
+            print(f"  {it.get('title', '?')}")
+        print("\nTry --dataset all or expand the bounding box.")
         return 1
 
-    print(f"Found {len(features)} tile(s).\n")
+    total_mb = sum(it.get("sizeInBytes", 0) for it in items) / 1e6
+    print(f"Found {len(items)} tile(s)  ({total_mb:.0f} MB total)\n")
 
-    # Build download list
-    tiles: list[dict] = []
-    for feat in features:
-        url = _extract_download_url(feat)
-        name = _extract_tile_name(feat)
-        tiles.append({"name": name, "url": url, "attributes": feat.get("attributes", {})})
-
-    # Display tile info
-    for i, tile in enumerate(tiles, 1):
-        url_display = tile["url"] or "(no URL found)"
-        print(f"  [{i}] {tile['name']}  —  {url_display}")
+    for i, item in enumerate(items, 1):
+        title = item.get("title", "?")
+        url   = item.get("downloadURL", "")
+        size  = item.get("sizeInBytes", 0)
+        pub   = item.get("publicationDate", "?")
+        print(f"  [{i}] {title}")
+        print(f"       {size / 1e6:.1f} MB  published {pub}")
+        print(f"       {url}")
 
     if list_only:
         print("\n(list-only mode; not downloading)")
-        # Dump attributes of first tile for debugging
-        if args.verbose and tiles:
-            print("\nSample tile attributes:")
-            for k, v in tiles[0]["attributes"].items():
-                print(f"  {k}: {v}")
         return 0
 
     # Download
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    print(f"\nDownloading to {args.output_dir} ...\n")
+    print(f"\nDownloading to: {args.output_dir}\n")
 
-    successes = 0
-    failures  = 0
-    skipped   = 0
+    successes = failures = skipped = 0
 
-    for i, tile in enumerate(tiles, 1):
-        url = tile["url"]
+    for i, item in enumerate(items, 1):
+        url = item.get("downloadURL", "")
         if not url:
-            LOG.warning("Tile '%s' has no download URL — skipping", tile["name"])
+            LOG.warning("Item '%s' has no downloadURL — skipping", item.get("title"))
             skipped += 1
             continue
 
-        # Derive filename from URL or tile name
         filename = url.rsplit("/", 1)[-1]
-        if not filename.lower().endswith((".laz", ".las", ".zip")):
-            filename = f"{tile['name']}.laz"
+        if not filename.lower().endswith((".laz", ".las")):
+            filename = item.get("title", f"tile_{i}").replace(" ", "_") + ".laz"
         dest = args.output_dir / filename
 
         if dest.exists():
-            LOG.info("Already exists: %s — skipping", dest)
-            print(f"  [{i}/{len(tiles)}] {filename}  — already exists, skipping")
-            skipped += 1
-            continue
+            existing_size = dest.stat().st_size
+            expected_size = item.get("sizeInBytes", 0)
+            if expected_size and abs(existing_size - expected_size) < 1024:
+                print(f"  [{i}/{len(items)}] {filename}  — already complete, skipping")
+                skipped += 1
+                continue
+            else:
+                LOG.warning(
+                    "Existing file size mismatch (%d vs %d bytes) — re-downloading",
+                    existing_size,
+                    expected_size,
+                )
 
-        print(f"  [{i}/{len(tiles)}] {filename}")
+        print(f"  [{i}/{len(items)}] {filename}  ({item.get('sizeInBytes', 0) / 1e6:.1f} MB)")
         ok = download_file(url, dest, session)
         if ok:
             successes += 1

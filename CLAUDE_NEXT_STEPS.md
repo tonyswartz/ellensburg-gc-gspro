@@ -1,7 +1,7 @@
 # CLAUDE_NEXT_STEPS.md
 
 > **Audience:** Claude (Code or Cowork) resuming work on this project with Tony.
-> **Last updated:** 2026-05-31
+> **Last updated:** 2026-05-31 (updated after first Claude Code session)
 > **Created by:** Claude (Cowork session, Opus)
 
 ---
@@ -27,7 +27,7 @@ GPS field data → GPX → SVG  →  Inkscape → Blender/OPCD → Unity → Gre
 
 ## 2. Current State
 
-**35 files, ~9,000 lines committed.** The repo has NOT been pushed to GitHub yet.
+**Repo is live at https://github.com/tonyswartz/ellensburg-gc-gspro**
 
 ### What's built:
 
@@ -42,58 +42,72 @@ GPS field data → GPX → SVG  →  Inkscape → Blender/OPCD → Unity → Gre
 | Build checklist | `checklist/` | `build_checklist.md` | 7 phases, 200+ checkboxes, 48-85 hour estimate |
 | Project root | `.` | `README.md`, `setup.sh`, `requirements.txt`, `.gitignore`, `LICENSE` | Setup script for macOS/Homebrew |
 
-### What has NOT been done:
+### Status after first Claude Code session (2026-05-31):
 
-- GitHub push (no `gh` CLI in sandbox — Tony needs to run it)
-- No real LIDAR data downloaded yet
-- No DEM or heightmap generated
-- No on-course GPS data collected
-- No Polycam green scans
-- No Blender/OPCD modeling started
-- No Unity scene
-- No GreenKeeper testing
-- The GreenKeeper JSON and vegetation positions are estimated, not ground-truthed
+- [x] GitHub pushed — https://github.com/tonyswartz/ellensburg-gc-gspro
+- [x] Virtual environment created at `.venv/`; scipy, shapely, pyproj, tqdm installed
+- [x] GPS converter tested — all three test runs passed
+- [x] `download_lidar.py` rewritten to use USGS TNM API (WA DNR ArcGIS endpoint is dead)
+- [x] 2019 LiDAR tiles queried — 6 tiles, 486 MB total from `WA_EasternCascades_2019_B19`
+- [ ] PDAL + GDAL — install in progress via `brew install pdal gdal`
+- [ ] LiDAR tiles — download triggered, completing in background (~486 MB)
+- [ ] rasterio, fiona — need to install after brew completes (depend on GDAL)
+- [ ] DEM and heightmap — not yet generated
+- [ ] On-course GPS data — not collected
+- [ ] Polycam green scans — not done
+- [ ] Blender/OPCD modeling — not started
+- [ ] Unity scene — not started
+- [ ] GreenKeeper testing — not started
+- [ ] GreenKeeper JSON and vegetation positions — estimated, not ground-truthed
 
 ---
 
 ## 3. Immediate Next Steps (Priority Order)
 
-### Step 1: Push to GitHub
-```bash
-cd ~/Projects/ellensburg-gc-gspro
-gh repo create ellensburg-gc-gspro --public --source=. --remote=origin --push
-```
-If `gh` is not installed: `brew install gh && gh auth login` first.
+### Step 1: Push to GitHub — DONE
+Repo is live at https://github.com/tonyswartz/ellensburg-gc-gspro
 
 ### Step 2: Install prerequisites
+PDAL + GDAL are being installed via `brew install pdal gdal` (this can take 20-30 min).
+After brew finishes, install the remaining Python packages:
 ```bash
 cd ~/Projects/ellensburg-gc-gspro
-chmod +x setup.sh
-./setup.sh
-```
-This installs PDAL, GDAL, and Python dependencies via Homebrew. Or manually:
-```bash
-brew install pdal gdal
-pip install -r requirements.txt
+.venv/bin/pip install rasterio fiona GDAL
 ```
 
 ### Step 3: Run the LIDAR pipeline
+
+**Download tiles** — 2019 Eastern Cascades data is already downloading (~486 MB).
+To run it manually if needed:
 ```bash
 cd lidar
-make download    # Fetches LAZ tiles from WA DNR for the course area
-make dem         # Runs PDAL pipeline: LAZ → ground-classified DEM (GeoTIFF)
-make heightmap   # Clips to course boundary, generates 4096x4096 heightmap PNG
+python3 download_lidar.py                 # 2019 data (preferred, ~486 MB)
+python3 download_lidar.py --dataset 2011  # legacy 2011 FEMA data (~238 MB)
+python3 download_lidar.py --list-only     # just list tiles without downloading
 ```
-Or just `make all` for the full pipeline. The `download_lidar.py` script queries WA DNR's ArcGIS REST API for the Kittitas County 2011 FEMA LIDAR project. If the API endpoint has changed, check https://lidarportal.dnr.wa.gov/ and update the service URL in the script.
 
-**Expected output:** `lidar/output/heightmap.png` (16-bit grayscale) + `lidar/output/dem_metadata.json` with elevation range and scale factors.
+**NOTE:** The WA DNR ArcGIS API is no longer functional. `download_lidar.py` has been
+rewritten to use the USGS National Map (TNM) API. Two datasets cover the course area:
+- `WA_EasternCascades_2019_B19` — 6 tiles, 486 MB, 2019 survey (recommended)
+- `WA_KITTITASCOUNTY_2011` — 4 tiles, 238 MB, original FEMA survey
+
+**Build DEM + heightmap** — after tiles download and brew finishes:
+```bash
+cd lidar
+make dem         # PDAL: LAZ → ground-classified DEM (GeoTIFF)
+make heightmap   # clips to course boundary, generates 4096×4096 PNG
+```
+Or `make all` once tiles exist.
+
+**Expected output:** `lidar/data/ellensburg_gc_heightmap_4096.png` (16-bit grayscale)
+and `lidar/data/ellensburg_gc_heightmap_meta.json` with elevation range + scale factors.
 
 ### Step 4: Test the GPS converter
 ```bash
 cd gps
-python gpx_to_svg.py --input samples/sample_fairway.gpx --output test_fairway.svg
-python gpx_to_svg.py --input samples/sample_green.gpx --output test_green.svg
-python gpx_to_svg.py --input samples/ --output test_batch.svg
+python gpx_to_svg.py samples/sample_fairway.gpx -o test_fairway.svg
+python gpx_to_svg.py samples/sample_green.gpx -o test_green.svg
+python gpx_to_svg.py samples/ -o test_batch.svg
 ```
 Open the output SVGs in Inkscape to verify the layers are structured correctly for OPCD.
 
@@ -192,7 +206,7 @@ When resuming work, start here:
 
 ## 8. Known Issues and Gotchas
 
-- **WA DNR API:** The LIDAR download script queries WA DNR's ArcGIS REST API. These endpoints change occasionally. If `download_lidar.py` fails, visit https://lidarportal.dnr.wa.gov/ manually and check the current service URLs. The Kittitas County 2011 FEMA project data is definitely there — the API path may just differ.
+- **WA DNR API is dead:** The original `download_lidar.py` used WA DNR's ArcGIS REST tile-index service, which no longer exposes a queryable tile index. The script has been rewritten to use the USGS National Map (TNM) API at `tnmaccess.nationalmap.gov`. The USGS has both the 2011 Kittitas FEMA data and a newer 2019 Eastern Cascades survey — use the 2019 data.
 - **PDAL pipeline JSON:** The `pdal_pipeline.json` uses hardcoded input/output paths. The Makefile handles this, but if running PDAL manually, update the paths.
 - **Blender version:** `import_dem.py` and `materials.py` are compatible with Blender 3.x and 4.x (they handle the renamed Principled BSDF inputs). If something breaks on a newer Blender version, check the shader input names first.
 - **GPS accuracy:** Consumer phone GPS is ±3-5 meters. The `gpx_to_svg.py` converter applies Ramer-Douglas-Peucker simplification and Catmull-Rom smoothing to handle noise, but green edges and bunker edges will still need manual refinement in Inkscape.
