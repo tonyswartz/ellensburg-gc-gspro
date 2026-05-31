@@ -22,7 +22,6 @@ lidar/output/
 !svg/**/*.svg
 
 # Blender
-*.blend
 *.blend1
 *.blend2
 
