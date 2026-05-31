@@ -49,10 +49,14 @@ GPS field data → GPX → SVG  →  Inkscape → Blender/OPCD → Unity → Gre
 - [x] GPS converter tested — all three test runs passed
 - [x] `download_lidar.py` rewritten to use USGS TNM API (WA DNR ArcGIS endpoint is dead)
 - [x] 2019 LiDAR tiles queried — 6 tiles, 486 MB total from `WA_EasternCascades_2019_B19`
-- [ ] PDAL + GDAL — install in progress via `brew install pdal gdal`
-- [ ] LiDAR tiles — download triggered, completing in background (~486 MB)
-- [ ] rasterio, fiona — need to install after brew completes (depend on GDAL)
-- [ ] DEM and heightmap — not yet generated
+- [x] PDAL 2.10.1 + GDAL 3.13.0 installed via Homebrew
+- [x] LiDAR tiles downloaded — 6 tiles (486 MB) in `lidar/data/laz/`
+- [x] rasterio 1.5.0 + fiona 1.10.1 + Pillow installed in `.venv/`
+- [x] DEM built — `lidar/data/dem_raw.tif` (68 MB)
+- [x] **Heightmap generated** — `lidar/data/ellensburg_gc_heightmap_4096.png`
+      Elevation: 475–509 m (34 m / ~112 ft of relief)
+      World size: 2056 × 1663 m  |  Pixel size: 0.50 m/px
+      Metadata: `lidar/data/ellensburg_gc_heightmap_meta.json`
 - [ ] On-course GPS data — not collected
 - [ ] Polycam green scans — not done
 - [ ] Blender/OPCD modeling — not started
@@ -67,15 +71,12 @@ GPS field data → GPX → SVG  →  Inkscape → Blender/OPCD → Unity → Gre
 ### Step 1: Push to GitHub — DONE
 Repo is live at https://github.com/tonyswartz/ellensburg-gc-gspro
 
-### Step 2: Install prerequisites
-PDAL + GDAL are being installed via `brew install pdal gdal` (this can take 20-30 min).
-After brew finishes, install the remaining Python packages:
-```bash
-cd ~/Projects/ellensburg-gc-gspro
-.venv/bin/pip install rasterio fiona GDAL
-```
+### Step 2: Prerequisites — DONE
+PDAL 2.10.1, GDAL 3.13.0, rasterio, fiona, Pillow all installed.
+macOS note: run Python scripts with `DYLD_LIBRARY_PATH=/opt/homebrew/opt/expat/lib` prefix,
+or use the Makefile which sets this automatically.
 
-### Step 3: Run the LIDAR pipeline
+### Step 3: LIDAR pipeline — DONE
 
 **Download tiles** — 2019 Eastern Cascades data is already downloading (~486 MB).
 To run it manually if needed:
@@ -102,20 +103,27 @@ Or `make all` once tiles exist.
 **Expected output:** `lidar/data/ellensburg_gc_heightmap_4096.png` (16-bit grayscale)
 and `lidar/data/ellensburg_gc_heightmap_meta.json` with elevation range + scale factors.
 
-### Step 4: Test the GPS converter
+### Step 4: GPS converter — DONE
+Tested and working. Correct syntax (positional arg, not --input):
 ```bash
 cd gps
 python gpx_to_svg.py samples/sample_fairway.gpx -o test_fairway.svg
-python gpx_to_svg.py samples/sample_green.gpx -o test_green.svg
-python gpx_to_svg.py samples/ -o test_batch.svg
 ```
-Open the output SVGs in Inkscape to verify the layers are structured correctly for OPCD.
 
-### Step 5: Test Blender import
-Open Blender, go to Scripting workspace, and run `blender/import_dem.py`. It will prompt for the heightmap PNG and metadata JSON from Step 3. Verify the terrain mesh looks correct.
+### Step 5: Import heightmap into Blender — NEXT
+Open Blender, go to Scripting workspace, and run `blender/import_dem.py`.
+Point it at these two files:
+- `lidar/data/ellensburg_gc_heightmap_4096.png`
+- `lidar/data/ellensburg_gc_heightmap_meta.json`
 
-### Step 6: Collect on-course data
-This is the bottleneck. Everything after this step depends on real field data. See Section 4 below.
+Key Blender import values from the metadata:
+- Heightmap: 4096×4096 pixels, 16-bit grayscale
+- Elevation range: **34.09 m** (use this as displacement scale)
+- World size: **2056 × 1663 m** (use for mesh XY scale)
+- Gray 0 = 475.14 m, Gray 65535 = 509.23 m
+
+### Step 6: Collect on-course data — THE REAL BOTTLENECK
+Everything after this step depends on real field data. See Section 4 below.
 
 ---
 
