@@ -217,8 +217,8 @@ def generate_heightmap(
     # 3. Resample to target resolution
     LOG.info("Resampling to %d x %d", resolution, resolution)
     # Use bilinear resampling
-    from skimage.transform import resize as sk_resize
     try:
+        from skimage.transform import resize as sk_resize
         data_resized = sk_resize(
             data,
             (resolution, resolution),
@@ -238,7 +238,7 @@ def generate_heightmap(
 
     # 5. Save heightmap PNG (16-bit grayscale)
     LOG.info("Saving heightmap PNG: %s", out_png)
-    img = Image.fromarray(heightmap, mode="I;16")
+    img = Image.fromarray(heightmap)  # uint16 -> 16-bit grayscale PNG
     img.save(str(out_png))
 
     # 6. Save processed DEM as GeoTIFF (float32, properly georeferenced)
