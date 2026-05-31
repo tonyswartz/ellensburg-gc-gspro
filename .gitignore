@@ -22,6 +22,7 @@ lidar/output/
 !svg/**/*.svg
 
 # Blender
+*.blend
 *.blend1
 *.blend2
 
@@ -32,6 +33,7 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+.claude/
 *.swp
 *.swo
 *~

@@ -420,8 +420,14 @@ def create_material(name, mat_def):
     # Alpha (for transparency)
     if mat_def.get("alpha", 1.0) < 1.0:
         bsdf.inputs['Alpha'].default_value = mat_def["alpha"]
-        mat.blend_method = 'BLEND' if hasattr(mat, 'blend_method') else None
-        mat.shadow_method = 'HASHED' if hasattr(mat, 'shadow_method') else None
+        # blend_method / shadow_method were removed from Material in
+        # Blender 4.2+ (EEVEE Next). Guard the ATTRIBUTE itself — the
+        # assignment `mat.shadow_method = ...` is attempted even when the
+        # right-hand value is None, which raises AttributeError on 4.2+.
+        if hasattr(mat, 'blend_method'):
+            mat.blend_method = 'BLEND'
+        if hasattr(mat, 'shadow_method'):
+            mat.shadow_method = 'HASHED'
 
     # Emission color (Blender 4.x)
     if 'Emission Color' in bsdf.inputs:

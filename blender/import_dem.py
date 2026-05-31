@@ -34,6 +34,7 @@ import os
 import json
 import math
 import re
+import struct
 import sys
 from pathlib import Path
 
@@ -124,6 +125,32 @@ def load_metadata(heightmap_path):
 
     print("[import_dem] No metadata JSON found, using defaults for Ellensburg GC")
     return DEFAULTS.copy()
+
+
+def read_image_dimensions(filepath, fallback=(0, 0)):
+    """
+    Read true pixel dimensions directly from the image file header.
+
+    Blender's `image.size` can return a partial or zero value immediately
+    after bpy.data.images.load() because pixel data is loaded lazily. That
+    made the subdivision level nondeterministic (a 4096px heightmap could be
+    read as 0, 2048, or 4096 depending on timing). Reading the header avoids
+    Blender's lazy loading entirely so the level is reproducible.
+
+    Supports PNG (IHDR chunk). Returns `fallback` for other formats or on error.
+    """
+    try:
+        with open(filepath, 'rb') as f:
+            sig = f.read(8)
+            if sig == b'\x89PNG\r\n\x1a\n':
+                f.read(4)  # IHDR chunk length
+                if f.read(4) == b'IHDR':
+                    w, h = struct.unpack('>II', f.read(8))
+                    if w > 0 and h > 0:
+                        return w, h
+    except Exception as exc:
+        print(f"[import_dem] Could not read header dimensions: {exc}")
+    return fallback
 
 
 def calculate_subdivisions(image_width, image_height):
@@ -625,6 +652,15 @@ class IMPORT_OT_heightmap(bpy.types.Operator):
         # Step 3: Load the heightmap image
         heightmap_img = load_heightmap_image(self.filepath)
         img_w, img_h = heightmap_img.size
+
+        # Blender reports size lazily and may return 0 or a partial value
+        # right after load. Prefer the true dimensions from the file header
+        # so the subdivision level is deterministic across runs.
+        true_w, true_h = read_image_dimensions(self.filepath, fallback=(img_w, img_h))
+        if (true_w, true_h) != (img_w, img_h) and true_w > 0 and true_h > 0:
+            print(f"[import_dem] Header dimensions {true_w}x{true_h} "
+                  f"(Blender reported {img_w}x{img_h}) — using header values")
+            img_w, img_h = true_w, true_h
 
         # Step 4: Calculate subdivision level
         subdiv_level = calculate_subdivisions(img_w, img_h)
