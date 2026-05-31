@@ -73,8 +73,8 @@
       },
       "teePositions": {
         "blue": {
-          "lat": 47.01940,
-          "lon": -120.62990,
+          "lat": 47.0194,
+          "lon": -120.6299,
           "elevation_ft": 1520,
           "heading_deg": 42
         },
@@ -94,13 +94,19 @@
         "width_yds": 38,
         "shape": "slight_dogleg_right",
         "landingZone": {
-          "center": { "lat": 47.02075, "lon": -120.62870 },
+          "center": {
+            "lat": 47.02075,
+            "lon": -120.6287
+          },
           "distFromTee_yds": 240,
           "width_yds": 42
         }
       },
       "green": {
-        "center": { "lat": 47.02210, "lon": -120.62740 },
+        "center": {
+          "lat": 47.0221,
+          "lon": -120.6274
+        },
         "elevation_ft": 1522,
         "width_yds": 27,
         "depth_yds": 30,
@@ -108,19 +114,22 @@
         "slopeDirection": "back_to_front",
         "slopePercent": 2.5,
         "stimp": 9.5,
-        "surface": "Bentgrass"
+        "surface": "Bentgrass",
+        "lat": 47.0171662,
+        "lon": -120.6251106,
+        "source": "osm_confirmed"
       },
       "pinPositions": [
         {
           "id": "front_left",
           "lat": 47.02203,
-          "lon": -120.62750,
+          "lon": -120.6275,
           "description": "Front-left, 4 paces from left edge, 5 paces from front"
         },
         {
           "id": "front_right",
           "lat": 47.02203,
-          "lon": -120.62730,
+          "lon": -120.6273,
           "description": "Front-right, 4 paces from right edge, 6 paces from front"
         },
         {
@@ -143,17 +152,38 @@
           "description": "OB fence left, runs full length of hole",
           "dataSource": "CONFIRMED",
           "boundaryPoints": [
-            { "lat": 47.01940, "lon": -120.63010 },
-            { "lat": 47.01980, "lon": -120.62995 },
-            { "lat": 47.02060, "lon": -120.62955 },
-            { "lat": 47.02140, "lon": -120.62880 },
-            { "lat": 47.02210, "lon": -120.62770 }
+            {
+              "lat": 47.0194,
+              "lon": -120.6301
+            },
+            {
+              "lat": 47.0198,
+              "lon": -120.62995
+            },
+            {
+              "lat": 47.0206,
+              "lon": -120.62955
+            },
+            {
+              "lat": 47.0214,
+              "lon": -120.6288
+            },
+            {
+              "lat": 47.0221,
+              "lon": -120.6277
+            }
           ]
         }
       ],
       "trees": [],
       "elevationChange_ft": 2,
-      "notes": "Wide opening hole with slight dogleg right. OB left is the main trouble. Generous fairway for a confident opening tee shot."
+      "notes": "Wide opening hole with slight dogleg right. OB left is the main trouble. Generous fairway for a confident opening tee shot.",
+      "length_yd_osm": 347,
+      "osm_way_ids": {
+        "hole": 1387385173,
+        "fairway": 1387385174,
+        "green": 1387385175
+      }
     },
     {
       "number": 2,
@@ -167,7 +197,7 @@
       "teePositions": {
         "blue": {
           "lat": 47.02245,
-          "lon": -120.62710,
+          "lon": -120.6271,
           "elevation_ft": 1522,
           "heading_deg": 55
         },
@@ -187,13 +217,19 @@
         "width_yds": 34,
         "shape": "straight",
         "landingZone": {
-          "center": { "lat": 47.02385, "lon": -120.62530 },
+          "center": {
+            "lat": 47.02385,
+            "lon": -120.6253
+          },
           "distFromTee_yds": 220,
           "width_yds": 36
         }
       },
       "green": {
-        "center": { "lat": 47.02480, "lon": -120.62400 },
+        "center": {
+          "lat": 47.0248,
+          "lon": -120.624
+        },
         "elevation_ft": 1524,
         "width_yds": 24,
         "depth_yds": 26,
@@ -201,25 +237,28 @@
         "slopeDirection": "right_to_left",
         "slopePercent": 2.0,
         "stimp": 9.5,
-        "surface": "Bentgrass"
+        "surface": "Bentgrass",
+        "lat": 47.0202224,
+        "lon": -120.6245972,
+        "source": "osm_confirmed"
       },
       "pinPositions": [
         {
           "id": "front_center",
           "lat": 47.02473,
-          "lon": -120.62400,
+          "lon": -120.624,
           "description": "Front-center, 5 paces from front edge"
         },
         {
           "id": "middle_right",
-          "lat": 47.02480,
-          "lon": -120.62390,
+          "lat": 47.0248,
+          "lon": -120.6239,
           "description": "Middle-right, guarded by bunker"
         },
         {
           "id": "back_left",
           "lat": 47.02488,
-          "lon": -120.62410,
+          "lon": -120.6241,
           "description": "Back-left, away from bunker, safe bail-out"
         },
         {
@@ -235,8 +274,14 @@
           "side": "right",
           "description": "Greenside bunker, right side, ~8 yards wide",
           "dataSource": "CONFIRMED",
-          "center": { "lat": 47.02478, "lon": -120.62382 },
-          "dimensions": { "width_yds": 8, "depth_yds": 6 }
+          "center": {
+            "lat": 47.02478,
+            "lon": -120.62382
+          },
+          "dimensions": {
+            "width_yds": 8,
+            "depth_yds": 6
+          }
         }
       ],
       "trees": [
@@ -248,11 +293,17 @@
         }
       ],
       "elevationChange_ft": 2,
-      "notes": "Straight, shorter par 4. Bunker right of green is the primary defense. Good birdie opportunity for accurate iron players."
+      "notes": "Straight, shorter par 4. Bunker right of green is the primary defense. Good birdie opportunity for accurate iron players.",
+      "length_yd_osm": 334,
+      "osm_way_ids": {
+        "hole": 1387385176,
+        "fairway": 1387385177,
+        "green": 1387385178
+      }
     },
     {
       "number": 3,
-      "par": 3,
+      "par": 4,
       "handicapIndex": 9,
       "dataSource": "ESTIMATED",
       "yardages": {
@@ -261,13 +312,13 @@
       },
       "teePositions": {
         "blue": {
-          "lat": 47.02510,
-          "lon": -120.62370,
+          "lat": 47.0251,
+          "lon": -120.6237,
           "elevation_ft": 1524,
           "heading_deg": 15
         },
         "white": {
-          "lat": 47.02520,
+          "lat": 47.0252,
           "lon": -120.62368,
           "elevation_ft": 1524,
           "heading_deg": 15
@@ -284,7 +335,10 @@
         "landingZone": null
       },
       "green": {
-        "center": { "lat": 47.02640, "lon": -120.62340 },
+        "center": {
+          "lat": 47.0264,
+          "lon": -120.6234
+        },
         "elevation_ft": 1530,
         "width_yds": 22,
         "depth_yds": 25,
@@ -292,7 +346,10 @@
         "slopeDirection": "back_to_front",
         "slopePercent": 3.0,
         "stimp": 9.5,
-        "surface": "Bentgrass"
+        "surface": "Bentgrass",
+        "lat": 47.0211928,
+        "lon": -120.619433,
+        "source": "osm_confirmed"
       },
       "pinPositions": [
         {
@@ -303,14 +360,14 @@
         },
         {
           "id": "middle_left",
-          "lat": 47.02640,
-          "lon": -120.62350,
+          "lat": 47.0264,
+          "lon": -120.6235,
           "description": "Middle-left, behind bunker, tucked"
         },
         {
           "id": "back_center",
           "lat": 47.02648,
-          "lon": -120.62340,
+          "lon": -120.6234,
           "description": "Back-center, uphill putt from front"
         },
         {
@@ -326,8 +383,14 @@
           "side": "front_left",
           "description": "Bunker front-left of green, catches short/left misses",
           "dataSource": "CONFIRMED",
-          "center": { "lat": 47.02630, "lon": -120.62355 },
-          "dimensions": { "width_yds": 7, "depth_yds": 5 }
+          "center": {
+            "lat": 47.0263,
+            "lon": -120.62355
+          },
+          "dimensions": {
+            "width_yds": 7,
+            "depth_yds": 5
+          }
         }
       ],
       "trees": [
@@ -339,11 +402,17 @@
         }
       ],
       "elevationChange_ft": 6,
-      "notes": "Slightly uphill par 3. Bunker front-left penalizes pulled or short shots. Club up for the uphill and typical headwind."
+      "notes": "Slightly uphill par 3. Bunker front-left penalizes pulled or short shots. Club up for the uphill and typical headwind.",
+      "length_yd_osm": 442,
+      "osm_way_ids": {
+        "hole": 1387385179,
+        "fairway": 1387385180,
+        "green": 1387385181
+      }
     },
     {
       "number": 4,
-      "par": 5,
+      "par": 4,
       "handicapIndex": 1,
       "dataSource": "ESTIMATED",
       "yardages": {
@@ -352,8 +421,8 @@
       },
       "teePositions": {
         "blue": {
-          "lat": 47.02660,
-          "lon": -120.62310,
+          "lat": 47.0266,
+          "lon": -120.6231,
           "elevation_ft": 1528,
           "heading_deg": 110
         },
@@ -375,13 +444,19 @@
         "doglegAngle_deg": 25,
         "doglegDistance_yds": 260,
         "landingZone": {
-          "center": { "lat": 47.02630, "lon": -120.62050 },
+          "center": {
+            "lat": 47.0263,
+            "lon": -120.6205
+          },
           "distFromTee_yds": 250,
           "width_yds": 35
         }
       },
       "green": {
-        "center": { "lat": 47.02550, "lon": -120.61780 },
+        "center": {
+          "lat": 47.0255,
+          "lon": -120.6178
+        },
         "elevation_ft": 1525,
         "width_yds": 28,
         "depth_yds": 32,
@@ -389,13 +464,16 @@
         "slopeDirection": "right_to_left",
         "slopePercent": 2.5,
         "stimp": 9.5,
-        "surface": "Bentgrass"
+        "surface": "Bentgrass",
+        "lat": 47.0236271,
+        "lon": -120.6214369,
+        "source": "osm_confirmed"
       },
       "pinPositions": [
         {
           "id": "front_center",
           "lat": 47.02543,
-          "lon": -120.61780,
+          "lon": -120.6178,
           "description": "Front-center, accessible with good layup"
         },
         {
@@ -413,7 +491,7 @@
         {
           "id": "back_right",
           "lat": 47.02557,
-          "lon": -120.61770,
+          "lon": -120.6177,
           "description": "Back-right, dangerous with river OB right"
         }
       ],
@@ -424,10 +502,22 @@
           "description": "Yakima River OB right, comes into play on approach and green",
           "dataSource": "CONFIRMED",
           "boundaryPoints": [
-            { "lat": 47.02600, "lon": -120.61900 },
-            { "lat": 47.02570, "lon": -120.61830 },
-            { "lat": 47.02540, "lon": -120.61760 },
-            { "lat": 47.02520, "lon": -120.61720 }
+            {
+              "lat": 47.026,
+              "lon": -120.619
+            },
+            {
+              "lat": 47.0257,
+              "lon": -120.6183
+            },
+            {
+              "lat": 47.0254,
+              "lon": -120.6176
+            },
+            {
+              "lat": 47.0252,
+              "lon": -120.6172
+            }
           ]
         },
         {
@@ -452,11 +542,17 @@
         }
       ],
       "elevationChange_ft": -3,
-      "notes": "Number 1 handicap hole. Dogleg left par 5 with Yakima River OB right on approach. Trees right off the tee force a draw or straight shot. Lay up short of the river on second shot unless going for it with a perfect line."
+      "notes": "Number 1 handicap hole. Dogleg left par 5 with Yakima River OB right on approach. Trees right off the tee force a draw or straight shot. Lay up short of the river on second shot unless going for it with a perfect line.",
+      "length_yd_osm": 292,
+      "osm_way_ids": {
+        "hole": 1387385182,
+        "fairway": 1387385183,
+        "green": 1387385184
+      }
     },
     {
       "number": 5,
-      "par": 4,
+      "par": 3,
       "handicapIndex": 5,
       "dataSource": "ESTIMATED",
       "yardages": {
@@ -465,13 +561,13 @@
       },
       "teePositions": {
         "blue": {
-          "lat": 47.02530,
-          "lon": -120.61750,
+          "lat": 47.0253,
+          "lon": -120.6175,
           "elevation_ft": 1524,
           "heading_deg": 195
         },
         "white": {
-          "lat": 47.02520,
+          "lat": 47.0252,
           "lon": -120.61755,
           "elevation_ft": 1524,
           "heading_deg": 195
@@ -486,13 +582,19 @@
         "width_yds": 26,
         "shape": "straight_to_slight_right",
         "landingZone": {
-          "center": { "lat": 47.02365, "lon": -120.61780 },
+          "center": {
+            "lat": 47.02365,
+            "lon": -120.6178
+          },
           "distFromTee_yds": 230,
           "width_yds": 28
         }
       },
       "green": {
-        "center": { "lat": 47.02245, "lon": -120.61810 },
+        "center": {
+          "lat": 47.02245,
+          "lon": -120.6181
+        },
         "elevation_ft": 1522,
         "width_yds": 24,
         "depth_yds": 24,
@@ -500,31 +602,34 @@
         "slopeDirection": "back_to_front",
         "slopePercent": 2.0,
         "stimp": 9.5,
-        "surface": "Bentgrass"
+        "surface": "Bentgrass",
+        "lat": 47.0247211,
+        "lon": -120.6233018,
+        "source": "osm_confirmed"
       },
       "pinPositions": [
         {
           "id": "front_left",
-          "lat": 47.02240,
-          "lon": -120.61820,
+          "lat": 47.0224,
+          "lon": -120.6182,
           "description": "Front-left, most accessible"
         },
         {
           "id": "front_right",
-          "lat": 47.02240,
-          "lon": -120.61800,
+          "lat": 47.0224,
+          "lon": -120.618,
           "description": "Front-right"
         },
         {
           "id": "back_center",
           "lat": 47.02252,
-          "lon": -120.61810,
+          "lon": -120.6181,
           "description": "Back-center"
         },
         {
           "id": "back_right",
           "lat": 47.02251,
-          "lon": -120.61800,
+          "lon": -120.618,
           "description": "Back-right, tightest pin on narrow green"
         }
       ],
@@ -545,11 +650,17 @@
         }
       ],
       "elevationChange_ft": -2,
-      "notes": "Narrow fairway with trees both sides. Accuracy over distance off the tee. Slight right tendency in the fairway. Keep it in the short grass and a wedge approach should yield a birdie look."
+      "notes": "Narrow fairway with trees both sides. Accuracy over distance off the tee. Slight right tendency in the fairway. Keep it in the short grass and a wedge approach should yield a birdie look.",
+      "length_yd_osm": 176,
+      "osm_way_ids": {
+        "hole": 1387385185,
+        "fairway": 1387385186,
+        "green": 1387385187
+      }
     },
     {
       "number": 6,
-      "par": 3,
+      "par": 4,
       "handicapIndex": 8,
       "dataSource": "ESTIMATED",
       "yardages": {
@@ -558,8 +669,8 @@
       },
       "teePositions": {
         "blue": {
-          "lat": 47.02220,
-          "lon": -120.61830,
+          "lat": 47.0222,
+          "lon": -120.6183,
           "elevation_ft": 1522,
           "heading_deg": 250
         },
@@ -581,7 +692,10 @@
         "landingZone": null
       },
       "green": {
-        "center": { "lat": 47.02195, "lon": -120.62020 },
+        "center": {
+          "lat": 47.02195,
+          "lon": -120.6202
+        },
         "elevation_ft": 1520,
         "width_yds": 25,
         "depth_yds": 22,
@@ -589,13 +703,16 @@
         "slopeDirection": "left_to_right",
         "slopePercent": 3.0,
         "stimp": 9.5,
-        "surface": "Bentgrass"
+        "surface": "Bentgrass",
+        "lat": 47.0216315,
+        "lon": -120.6214555,
+        "source": "osm_confirmed"
       },
       "pinPositions": [
         {
           "id": "front_right",
-          "lat": 47.02190,
-          "lon": -120.62010,
+          "lat": 47.0219,
+          "lon": -120.6201,
           "description": "Front-right, away from water, safe"
         },
         {
@@ -607,12 +724,12 @@
         {
           "id": "back_center",
           "lat": 47.02202,
-          "lon": -120.62020,
+          "lon": -120.6202,
           "description": "Back-center"
         },
         {
           "id": "back_left",
-          "lat": 47.02200,
+          "lat": 47.022,
           "lon": -120.62035,
           "description": "Back-left, sucker pin near pond"
         }
@@ -623,8 +740,14 @@
           "side": "left",
           "description": "Irrigation pond left of green",
           "dataSource": "CONFIRMED",
-          "center": { "lat": 47.02195, "lon": -120.62055 },
-          "dimensions": { "width_yds": 25, "depth_yds": 20 }
+          "center": {
+            "lat": 47.02195,
+            "lon": -120.62055
+          },
+          "dimensions": {
+            "width_yds": 25,
+            "depth_yds": 20
+          }
         }
       ],
       "trees": [
@@ -636,11 +759,17 @@
         }
       ],
       "elevationChange_ft": -2,
-      "notes": "Short par 3 with irrigation pond left. The green slopes toward the water, making left pins treacherous. Bail out right. Wind frequently helps (downwind) or cross-wind from the right."
+      "notes": "Short par 3 with irrigation pond left. The green slopes toward the water, making left pins treacherous. Bail out right. Wind frequently helps (downwind) or cross-wind from the right.",
+      "length_yd_osm": 431,
+      "osm_way_ids": {
+        "hole": 1387385188,
+        "fairway": 1387385189,
+        "green": 1387385190
+      }
     },
     {
       "number": 7,
-      "par": 4,
+      "par": 5,
       "handicapIndex": 2,
       "dataSource": "ESTIMATED",
       "yardages": {
@@ -650,12 +779,12 @@
       "teePositions": {
         "blue": {
           "lat": 47.02175,
-          "lon": -120.62050,
+          "lon": -120.6205,
           "elevation_ft": 1515,
           "heading_deg": 310
         },
         "white": {
-          "lat": 47.02170,
+          "lat": 47.0217,
           "lon": -120.62065,
           "elevation_ft": 1515,
           "heading_deg": 310
@@ -670,13 +799,19 @@
         "width_yds": 30,
         "shape": "straight",
         "landingZone": {
-          "center": { "lat": 47.02290, "lon": -120.62250 },
+          "center": {
+            "lat": 47.0229,
+            "lon": -120.6225
+          },
           "distFromTee_yds": 250,
           "width_yds": 32
         }
       },
       "green": {
-        "center": { "lat": 47.02390, "lon": -120.62410 },
+        "center": {
+          "lat": 47.0239,
+          "lon": -120.6241
+        },
         "elevation_ft": 1530,
         "width_yds": 26,
         "depth_yds": 28,
@@ -684,13 +819,16 @@
         "slopeDirection": "back_to_front",
         "slopePercent": 3.5,
         "stimp": 9.5,
-        "surface": "Bentgrass"
+        "surface": "Bentgrass",
+        "lat": 47.0210496,
+        "lon": -120.6258385,
+        "source": "osm_confirmed"
       },
       "pinPositions": [
         {
           "id": "front_center",
           "lat": 47.02383,
-          "lon": -120.62410,
+          "lon": -120.6241,
           "description": "Front-center, below the crest, tricky"
         },
         {
@@ -708,7 +846,7 @@
         {
           "id": "back_center",
           "lat": 47.02397,
-          "lon": -120.62410,
+          "lon": -120.6241,
           "description": "Back-center, on the upper tier"
         }
       ],
@@ -718,16 +856,28 @@
           "side": "right",
           "description": "Greenside bunker right, catches short approaches that miss the uphill",
           "dataSource": "CONFIRMED",
-          "center": { "lat": 47.02385, "lon": -120.62395 },
-          "dimensions": { "width_yds": 8, "depth_yds": 5 }
+          "center": {
+            "lat": 47.02385,
+            "lon": -120.62395
+          },
+          "dimensions": {
+            "width_yds": 8,
+            "depth_yds": 5
+          }
         },
         {
           "type": "bunker",
           "side": "left",
           "description": "Greenside bunker left",
           "dataSource": "ESTIMATED",
-          "center": { "lat": 47.02388, "lon": -120.62425 },
-          "dimensions": { "width_yds": 6, "depth_yds": 4 }
+          "center": {
+            "lat": 47.02388,
+            "lon": -120.62425
+          },
+          "dimensions": {
+            "width_yds": 6,
+            "depth_yds": 4
+          }
         }
       ],
       "trees": [
@@ -739,7 +889,13 @@
         }
       ],
       "elevationChange_ft": 15,
-      "notes": "Signature hole. Significant uphill approach (12-15 ft rise) to a blind/semi-blind green. Club selection critical -- most players underclub. Greenside bunkers catch short shots that don't make the hill. Highest point on the course."
+      "notes": "Signature hole. Significant uphill approach (12-15 ft rise) to a blind/semi-blind green. Club selection critical -- most players underclub. Greenside bunkers catch short shots that don't make the hill. Highest point on the course.",
+      "length_yd_osm": 481,
+      "osm_way_ids": {
+        "hole": 1387385191,
+        "fairway": 1387385192,
+        "green": 1387385193
+      }
     },
     {
       "number": 8,
@@ -752,14 +908,14 @@
       },
       "teePositions": {
         "blue": {
-          "lat": 47.02410,
-          "lon": -120.62440,
+          "lat": 47.0241,
+          "lon": -120.6244,
           "elevation_ft": 1530,
           "heading_deg": 215
         },
         "white": {
-          "lat": 47.02400,
-          "lon": -120.62450,
+          "lat": 47.024,
+          "lon": -120.6245,
           "elevation_ft": 1530,
           "heading_deg": 215
         }
@@ -773,13 +929,19 @@
         "width_yds": 30,
         "shape": "slight_dogleg_left",
         "landingZone": {
-          "center": { "lat": 47.02275, "lon": -120.62560 },
+          "center": {
+            "lat": 47.02275,
+            "lon": -120.6256
+          },
           "distFromTee_yds": 240,
           "width_yds": 32
         }
       },
       "green": {
-        "center": { "lat": 47.02150, "lon": -120.62680 },
+        "center": {
+          "lat": 47.0215,
+          "lon": -120.6268
+        },
         "elevation_ft": 1520,
         "width_yds": 25,
         "depth_yds": 27,
@@ -787,18 +949,21 @@
         "slopeDirection": "back_to_front",
         "slopePercent": 2.5,
         "stimp": 9.5,
-        "surface": "Bentgrass"
+        "surface": "Bentgrass",
+        "lat": 47.0184334,
+        "lon": -120.625392,
+        "source": "osm_confirmed"
       },
       "pinPositions": [
         {
           "id": "front_center",
           "lat": 47.02144,
-          "lon": -120.62680,
+          "lon": -120.6268,
           "description": "Front-center, narrow part of pear"
         },
         {
           "id": "middle_right",
-          "lat": 47.02150,
+          "lat": 47.0215,
           "lon": -120.62668,
           "description": "Middle-right"
         },
@@ -811,7 +976,7 @@
         {
           "id": "back_right",
           "lat": 47.02157,
-          "lon": -120.62670,
+          "lon": -120.6267,
           "description": "Back-right"
         }
       ],
@@ -838,11 +1003,17 @@
         }
       ],
       "elevationChange_ft": -10,
-      "notes": "Downhill from the high point of Hole 7. Slight dogleg left through a tree-lined corridor. Plays shorter than yardage due to elevation loss. Pear-shaped green rewards precise approach shots."
+      "notes": "Downhill from the high point of Hole 7. Slight dogleg left through a tree-lined corridor. Plays shorter than yardage due to elevation loss. Pear-shaped green rewards precise approach shots.",
+      "length_yd_osm": 338,
+      "osm_way_ids": {
+        "hole": 1387385194,
+        "fairway": 1387385195,
+        "green": 1387385196
+      }
     },
     {
       "number": 9,
-      "par": 4,
+      "par": 3,
       "handicapIndex": 4,
       "dataSource": "ESTIMATED",
       "yardages": {
@@ -852,7 +1023,7 @@
       "teePositions": {
         "blue": {
           "lat": 47.02125,
-          "lon": -120.62710,
+          "lon": -120.6271,
           "elevation_ft": 1520,
           "heading_deg": 235
         },
@@ -872,13 +1043,19 @@
         "width_yds": 32,
         "shape": "straight",
         "landingZone": {
-          "center": { "lat": 47.02010, "lon": -120.62890 },
+          "center": {
+            "lat": 47.0201,
+            "lon": -120.6289
+          },
           "distFromTee_yds": 250,
           "width_yds": 34
         }
       },
       "green": {
-        "center": { "lat": 47.01885, "lon": -120.63070 },
+        "center": {
+          "lat": 47.01885,
+          "lon": -120.6307
+        },
         "elevation_ft": 1518,
         "width_yds": 28,
         "depth_yds": 30,
@@ -886,25 +1063,28 @@
         "slopeDirection": "right_to_left",
         "slopePercent": 2.0,
         "stimp": 9.5,
-        "surface": "Bentgrass"
+        "surface": "Bentgrass",
+        "lat": 47.0195887,
+        "lon": -120.6265351,
+        "source": "osm_confirmed"
       },
       "pinPositions": [
         {
           "id": "front_left",
           "lat": 47.01879,
-          "lon": -120.63080,
+          "lon": -120.6308,
           "description": "Front-left, accessible"
         },
         {
           "id": "front_right",
-          "lat": 47.01880,
-          "lon": -120.63060,
+          "lat": 47.0188,
+          "lon": -120.6306,
           "description": "Front-right, OB side"
         },
         {
           "id": "back_center",
           "lat": 47.01892,
-          "lon": -120.63070,
+          "lon": -120.6307,
           "description": "Back-center, longest approach"
         },
         {
@@ -921,10 +1101,22 @@
           "description": "OB right, property line / road, runs full length",
           "dataSource": "CONFIRMED",
           "boundaryPoints": [
-            { "lat": 47.02125, "lon": -120.62690 },
-            { "lat": 47.02060, "lon": -120.62810 },
-            { "lat": 47.01980, "lon": -120.62940 },
-            { "lat": 47.01880, "lon": -120.63040 }
+            {
+              "lat": 47.02125,
+              "lon": -120.6269
+            },
+            {
+              "lat": 47.0206,
+              "lon": -120.6281
+            },
+            {
+              "lat": 47.0198,
+              "lon": -120.6294
+            },
+            {
+              "lat": 47.0188,
+              "lon": -120.6304
+            }
           ]
         }
       ],
@@ -937,20 +1129,80 @@
         }
       ],
       "elevationChange_ft": -2,
-      "notes": "Long finishing par 4 back toward the clubhouse. OB right is the primary concern. Typically plays into the prevailing W-NW wind, making it play even longer. A strong drive down the left-center leaves a mid-iron approach."
+      "notes": "Long finishing par 4 back toward the clubhouse. OB right is the primary concern. Typically plays into the prevailing W-NW wind, making it play even longer. A strong drive down the left-center leaves a mid-iron approach.",
+      "length_yd_osm": 144,
+      "osm_way_ids": {
+        "hole": 1387385197,
+        "fairway": 1387385198,
+        "green": 1387385199
+      }
     }
   ],
   "scorecard": {
     "holes": [
-      { "number": 1, "par": 4, "blue": 380, "white": 348, "handicap": 3 },
-      { "number": 2, "par": 4, "blue": 340, "white": 310, "handicap": 7 },
-      { "number": 3, "par": 3, "blue": 165, "white": 142, "handicap": 9 },
-      { "number": 4, "par": 5, "blue": 490, "white": 455, "handicap": 1 },
-      { "number": 5, "par": 4, "blue": 355, "white": 325, "handicap": 5 },
-      { "number": 6, "par": 3, "blue": 150, "white": 128, "handicap": 8 },
-      { "number": 7, "par": 4, "blue": 400, "white": 370, "handicap": 2 },
-      { "number": 8, "par": 4, "blue": 375, "white": 342, "handicap": 6 },
-      { "number": 9, "par": 4, "blue": 420, "white": 360, "handicap": 4 }
+      {
+        "number": 1,
+        "par": 4,
+        "blue": 380,
+        "white": 348,
+        "handicap": 3
+      },
+      {
+        "number": 2,
+        "par": 4,
+        "blue": 340,
+        "white": 310,
+        "handicap": 7
+      },
+      {
+        "number": 3,
+        "par": 3,
+        "blue": 165,
+        "white": 142,
+        "handicap": 9
+      },
+      {
+        "number": 4,
+        "par": 5,
+        "blue": 490,
+        "white": 455,
+        "handicap": 1
+      },
+      {
+        "number": 5,
+        "par": 4,
+        "blue": 355,
+        "white": 325,
+        "handicap": 5
+      },
+      {
+        "number": 6,
+        "par": 3,
+        "blue": 150,
+        "white": 128,
+        "handicap": 8
+      },
+      {
+        "number": 7,
+        "par": 4,
+        "blue": 400,
+        "white": 370,
+        "handicap": 2
+      },
+      {
+        "number": 8,
+        "par": 4,
+        "blue": 375,
+        "white": 342,
+        "handicap": 6
+      },
+      {
+        "number": 9,
+        "par": 4,
+        "blue": 420,
+        "white": 360,
+        "handicap": 4
+      }
     ],
     "out": {
       "par": 35,
@@ -965,11 +1217,26 @@
       "type": "fence",
       "dataSource": "CONFIRMED",
       "points": [
-        { "lat": 47.01940, "lon": -120.63010 },
-        { "lat": 47.01980, "lon": -120.62995 },
-        { "lat": 47.02060, "lon": -120.62955 },
-        { "lat": 47.02140, "lon": -120.62880 },
-        { "lat": 47.02210, "lon": -120.62770 }
+        {
+          "lat": 47.0194,
+          "lon": -120.6301
+        },
+        {
+          "lat": 47.0198,
+          "lon": -120.62995
+        },
+        {
+          "lat": 47.0206,
+          "lon": -120.62955
+        },
+        {
+          "lat": 47.0214,
+          "lon": -120.6288
+        },
+        {
+          "lat": 47.0221,
+          "lon": -120.6277
+        }
       ]
     },
     {
@@ -978,10 +1245,22 @@
       "type": "river",
       "dataSource": "CONFIRMED",
       "points": [
-        { "lat": 47.02600, "lon": -120.61900 },
-        { "lat": 47.02570, "lon": -120.61830 },
-        { "lat": 47.02540, "lon": -120.61760 },
-        { "lat": 47.02520, "lon": -120.61720 }
+        {
+          "lat": 47.026,
+          "lon": -120.619
+        },
+        {
+          "lat": 47.0257,
+          "lon": -120.6183
+        },
+        {
+          "lat": 47.0254,
+          "lon": -120.6176
+        },
+        {
+          "lat": 47.0252,
+          "lon": -120.6172
+        }
       ]
     },
     {
@@ -990,10 +1269,22 @@
       "type": "property_line",
       "dataSource": "CONFIRMED",
       "points": [
-        { "lat": 47.02125, "lon": -120.62690 },
-        { "lat": 47.02060, "lon": -120.62810 },
-        { "lat": 47.01980, "lon": -120.62940 },
-        { "lat": 47.01880, "lon": -120.63040 }
+        {
+          "lat": 47.02125,
+          "lon": -120.6269
+        },
+        {
+          "lat": 47.0206,
+          "lon": -120.6281
+        },
+        {
+          "lat": 47.0198,
+          "lon": -120.6294
+        },
+        {
+          "lat": 47.0188,
+          "lon": -120.6304
+        }
       ]
     }
   ],
@@ -1002,8 +1293,8 @@
     "puttingGreen": {
       "available": true,
       "location": {
-        "lat": 47.01920,
-        "lon": -120.63020
+        "lat": 47.0192,
+        "lon": -120.6302
       },
       "dataSource": "ESTIMATED"
     },
@@ -1013,8 +1304,8 @@
     }
   },
   "clubhouse": {
-    "lat": 47.01910,
-    "lon": -120.63050,
+    "lat": 47.0191,
+    "lon": -120.6305,
     "elevation_ft": 1518,
     "dataSource": "ESTIMATED"
   }

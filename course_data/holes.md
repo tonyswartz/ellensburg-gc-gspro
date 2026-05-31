@@ -11,7 +11,30 @@
 ## Data Confidence Legend
 
 - **[CONFIRMED]** -- Known from scorecard, GPS data, satellite imagery, or direct observation
+- **[OSM]** -- From OpenStreetMap satellite-traced data (queried 2026-05-31). Accurate to ~5-10m. Files: `course_data/osm_features.geojson`, `course_data/hole_positions.json`
 - **[ESTIMATED]** -- Reasonable estimate based on satellite imagery, typical course design patterns, and known course characteristics. Needs on-course verification.
+
+---
+
+## OSM-Confirmed Hole Positions (use these over earlier estimates)
+
+| Hole | Par | Yards (OSM) | Tee Lat | Tee Lon | Green Lat | Green Lon | Green m² |
+|------|-----|-------------|---------|---------|-----------|-----------|----------|
+| 1 | 4 | 347 | 47.019341 | -120.627761 | 47.017166 | -120.625111 | 289 |
+| 2 | 4 | 334 | 47.017491 | -120.624465 | 47.020222 | -120.624597 | 363 |
+| 3 | 4 | 442 | 47.019868 | -120.624109 | 47.021193 | -120.619433 | 367 |
+| 4 | 4 | 292 | 47.021737 | -120.619318 | 47.023627 | -120.621437 | 325 |
+| 5 | 3 | 176 | 47.023516 | -120.622106 | 47.024721 | -120.623302 | 319 |
+| 6 | 4 | 431 | 47.024648 | -120.624031 | 47.021631 | -120.621455 | 420 |
+| 7 | 5 | 481 | 47.021469 | -120.620058 | 47.021050 | -120.625839 | 326 |
+| 8 | 4 | 338 | 47.021049 | -120.626689 | 47.018433 | -120.625392 | 355 |
+| 9 | 3 | 144 | 47.018487 | -120.625880 | 47.019589 | -120.626535 | 277 |
+
+**Par 35, ~2,985 yd total.** OSM also has fairway and green polygons for all 9 holes.
+See `svg/osm_course_opcd.svg` for an Inkscape-ready OPCD layer file with fairways + greens.
+
+**Still not in OSM (need field collection):** bunkers, water hazards, OB lines,
+cart paths, tee box corners, pin positions, elevation details.
 
 ---
 

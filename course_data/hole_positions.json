@@ -1,0 +1,109 @@
+{
+  "source": "OpenStreetMap (confirmed from satellite/survey data)",
+  "osm_query_date": "2026-05-31",
+  "course": "Ellensburg Golf and Country Club",
+  "total_holes": 9,
+  "par": 35,
+  "total_length_yd": 2985,
+  "holes": {
+    "1": {
+      "par": 4,
+      "length_yd": 347,
+      "tee_lat": 47.0193413,
+      "tee_lon": -120.6277614,
+      "green_lat": 47.0171662,
+      "green_lon": -120.6251106,
+      "green_area_m2": 289,
+      "green_polygon_pts": 18,
+      "fairway_polygon_pts": 24
+    },
+    "2": {
+      "par": 4,
+      "length_yd": 334,
+      "tee_lat": 47.0174909,
+      "tee_lon": -120.6244655,
+      "green_lat": 47.0202224,
+      "green_lon": -120.6245972,
+      "green_area_m2": 363,
+      "green_polygon_pts": 16,
+      "fairway_polygon_pts": 18
+    },
+    "3": {
+      "par": 4,
+      "length_yd": 442,
+      "tee_lat": 47.0198684,
+      "tee_lon": -120.6241089,
+      "green_lat": 47.0211928,
+      "green_lon": -120.619433,
+      "green_area_m2": 367,
+      "green_polygon_pts": 17,
+      "fairway_polygon_pts": 29
+    },
+    "4": {
+      "par": 4,
+      "length_yd": 292,
+      "tee_lat": 47.0217374,
+      "tee_lon": -120.6193178,
+      "green_lat": 47.0236271,
+      "green_lon": -120.6214369,
+      "green_area_m2": 325,
+      "green_polygon_pts": 17,
+      "fairway_polygon_pts": 17
+    },
+    "5": {
+      "par": 3,
+      "length_yd": 176,
+      "tee_lat": 47.0235157,
+      "tee_lon": -120.6221062,
+      "green_lat": 47.0247211,
+      "green_lon": -120.6233018,
+      "green_area_m2": 319,
+      "green_polygon_pts": 17,
+      "fairway_polygon_pts": 17
+    },
+    "6": {
+      "par": 4,
+      "length_yd": 431,
+      "tee_lat": 47.0246476,
+      "tee_lon": -120.6240314,
+      "green_lat": 47.0216315,
+      "green_lon": -120.6214555,
+      "green_area_m2": 420,
+      "green_polygon_pts": 17,
+      "fairway_polygon_pts": 25
+    },
+    "7": {
+      "par": 5,
+      "length_yd": 481,
+      "tee_lat": 47.0214689,
+      "tee_lon": -120.6200582,
+      "green_lat": 47.0210496,
+      "green_lon": -120.6258385,
+      "green_area_m2": 326,
+      "green_polygon_pts": 16,
+      "fairway_polygon_pts": 18
+    },
+    "8": {
+      "par": 4,
+      "length_yd": 338,
+      "tee_lat": 47.0210491,
+      "tee_lon": -120.6266886,
+      "green_lat": 47.0184334,
+      "green_lon": -120.625392,
+      "green_area_m2": 355,
+      "green_polygon_pts": 17,
+      "fairway_polygon_pts": 34
+    },
+    "9": {
+      "par": 3,
+      "length_yd": 144,
+      "tee_lat": 47.0184875,
+      "tee_lon": -120.6258801,
+      "green_lat": 47.0195887,
+      "green_lon": -120.6265351,
+      "green_area_m2": 277,
+      "green_polygon_pts": 17,
+      "fairway_polygon_pts": 15
+    }
+  }
+}
