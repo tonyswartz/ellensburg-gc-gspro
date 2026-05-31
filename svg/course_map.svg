@@ -1,0 +1,337 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+    <pattern id="obPattern" patternUnits="userSpaceOnUse" width="12" height="12" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#cc3333" stroke-width="2"/>
+    </pattern>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="1" dy="1" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#e8f0e0"/>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#1a3d1a">Ellensburg Golf Club</text>
+  <text x="600" y="62" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#2d5a2d">Course Layout — 9 Holes, Par 35, 3,075 Yards</text>
+
+  <!-- North Arrow -->
+  <g transform="translate(1120, 120)">
+    <circle cx="0" cy="0" r="28" fill="white" stroke="#333" stroke-width="1.5" opacity="0.9"/>
+    <line x1="0" y1="18" x2="0" y2="-18" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="0" y="-22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">N</text>
+  </g>
+
+  <!-- Scale Bar -->
+  <g transform="translate(50, 860)">
+    <line x1="0" y1="0" x2="100" y2="0" stroke="#333" stroke-width="2"/>
+    <line x1="0" y1="-5" x2="0" y2="5" stroke="#333" stroke-width="2"/>
+    <line x1="100" y1="-5" x2="100" y2="5" stroke="#333" stroke-width="2"/>
+    <text x="50" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">200 yards</text>
+  </g>
+
+  <!-- Yakima River (along south/east boundary) -->
+  <path d="M 750,80 Q 850,120 920,200 Q 980,300 1000,400 Q 1020,500 980,580 Q 940,650 880,720 Q 820,780 750,830 Q 680,860 600,870" 
+        fill="none" stroke="#4a90d9" stroke-width="35" opacity="0.3"/>
+  <path d="M 750,80 Q 850,120 920,200 Q 980,300 1000,400 Q 1020,500 980,580 Q 940,650 880,720 Q 820,780 750,830 Q 680,860 600,870" 
+        fill="none" stroke="#4a90d9" stroke-width="18" opacity="0.5"/>
+  <path d="M 750,80 Q 850,120 920,200 Q 980,300 1000,400 Q 1020,500 980,580 Q 940,650 880,720 Q 820,780 750,830 Q 680,860 600,870" 
+        fill="none" stroke="#4a90d9" stroke-width="6" opacity="0.7"/>
+  <!-- River label -->
+  <text x="960" y="450" font-family="Arial, sans-serif" font-size="13" fill="#2a6ab0" font-style="italic"
+        transform="rotate(-70, 960, 450)">Yakima River</text>
+
+  <!-- Tree clusters along river -->
+  <circle cx="770" cy="95" r="10" fill="#1a5c1a" opacity="0.6"/>
+  <circle cx="790" cy="85" r="8" fill="#1a6a1a" opacity="0.5"/>
+  <circle cx="860" cy="140" r="11" fill="#1a5c1a" opacity="0.6"/>
+  <circle cx="880" cy="155" r="9" fill="#1a6a1a" opacity="0.5"/>
+  <circle cx="930" cy="220" r="10" fill="#1a5c1a" opacity="0.6"/>
+  <circle cx="950" cy="240" r="8" fill="#1a6a1a" opacity="0.5"/>
+  <circle cx="990" cy="340" r="11" fill="#1a5c1a" opacity="0.6"/>
+  <circle cx="1005" cy="360" r="9" fill="#1a6a1a" opacity="0.5"/>
+  <circle cx="1010" cy="430" r="10" fill="#1a5c1a" opacity="0.6"/>
+  <circle cx="1000" cy="510" r="11" fill="#1a5c1a" opacity="0.6"/>
+  <circle cx="970" cy="570" r="9" fill="#1a6a1a" opacity="0.5"/>
+  <circle cx="930" cy="640" r="10" fill="#1a5c1a" opacity="0.6"/>
+  <circle cx="900" cy="700" r="11" fill="#1a5c1a" opacity="0.6"/>
+  <circle cx="850" cy="760" r="9" fill="#1a6a1a" opacity="0.5"/>
+
+  <!-- ==================== CLUBHOUSE ==================== -->
+  <rect x="130" y="530" width="60" height="40" rx="3" fill="#888" stroke="#555" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="160" y="555" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">CLUB</text>
+  <text x="160" y="565" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">HOUSE</text>
+  <!-- Parking -->
+  <rect x="110" y="575" width="50" height="25" rx="2" fill="#aaa" stroke="#888" stroke-width="1"/>
+  <text x="135" y="591" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#555">PARKING</text>
+
+  <!-- ==================== HOLE 1: Par 4, 380 yds, NE, dogleg right ==================== -->
+  <!-- OB left (road) -->
+  <line x1="160" y1="510" x2="330" y2="310" stroke="#cc3333" stroke-width="1.5" stroke-dasharray="8,5"/>
+  <!-- Fairway -->
+  <path d="M 185,500 Q 220,440 260,380 Q 300,330 340,300 Q 360,290 380,285 
+           Q 380,295 360,310 Q 320,345 280,400 Q 240,460 210,510 Z" 
+        fill="#90c695" stroke="#6a9a6a" stroke-width="1"/>
+  <!-- Tee box -->
+  <rect x="185" y="505" width="18" height="8" rx="1" fill="#5a8a5a" stroke="#3a6a3a" stroke-width="1"/>
+  <!-- Bunker right of fairway -->
+  <ellipse cx="350" cy="320" rx="10" ry="6" fill="#d4b97c" stroke="#b89a5c" stroke-width="1"/>
+  <!-- Green -->
+  <ellipse cx="385" cy="280" rx="18" ry="14" fill="#2d7a3a" stroke="#1a5a2a" stroke-width="1.5"/>
+  <!-- Pin -->
+  <circle cx="385" cy="278" r="2" fill="white"/>
+  <line x1="385" y1="278" x2="385" y2="268" stroke="white" stroke-width="1"/>
+  <!-- Trees right side -->
+  <circle cx="240" cy="470" r="7" fill="#1a5c1a" opacity="0.5"/>
+  <circle cx="290" cy="420" r="6" fill="#1a6a1a" opacity="0.5"/>
+  <circle cx="320" cy="370" r="7" fill="#1a5c1a" opacity="0.5"/>
+  <!-- Hole label -->
+  <text x="260" y="425" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" stroke="#3a6a3a" stroke-width="0.5">1</text>
+  <text x="260" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2d5a2d">380 yds</text>
+
+  <!-- Cart path from clubhouse to hole 1 -->
+  <path d="M 170,530 Q 175,515 185,509" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- ==================== HOLE 2: Par 4, 340 yds, straight NE, bunker right of green ==================== -->
+  <!-- Fairway -->
+  <path d="M 395,275 Q 420,240 450,200 Q 480,170 520,145 Q 545,132 565,125 
+           Q 560,140 535,155 Q 495,185 465,215 Q 435,255 410,285 Z" 
+        fill="#90c695" stroke="#6a9a6a" stroke-width="1"/>
+  <!-- Tee box -->
+  <rect x="395" y="272" width="16" height="7" rx="1" fill="#5a8a5a" stroke="#3a6a3a" stroke-width="1"/>
+  <!-- Bunker right of green -->
+  <ellipse cx="582" cy="130" rx="10" ry="7" fill="#d4b97c" stroke="#b89a5c" stroke-width="1"/>
+  <!-- Green -->
+  <ellipse cx="565" cy="120" rx="16" ry="13" fill="#2d7a3a" stroke="#1a5a2a" stroke-width="1.5"/>
+  <!-- Pin -->
+  <circle cx="563" cy="118" r="2" fill="white"/>
+  <line x1="563" y1="118" x2="563" y2="108" stroke="white" stroke-width="1"/>
+  <!-- Trees left -->
+  <circle cx="415" cy="235" r="6" fill="#1a5c1a" opacity="0.5"/>
+  <circle cx="450" cy="190" r="7" fill="#1a6a1a" opacity="0.5"/>
+  <!-- Cart path -->
+  <path d="M 390,280 Q 393,278 395,275" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <!-- Hole label -->
+  <text x="470" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" stroke="#3a6a3a" stroke-width="0.5">2</text>
+  <text x="470" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2d5a2d">340 yds</text>
+
+  <!-- ==================== HOLE 3: Par 3, 165 yds, E, slightly uphill, bunker front-left ==================== -->
+  <!-- Fairway (short) -->
+  <path d="M 575,128 Q 610,130 650,130 Q 685,128 710,125 
+           Q 710,140 685,142 Q 650,145 610,145 Q 580,142 575,138 Z" 
+        fill="#90c695" stroke="#6a9a6a" stroke-width="1"/>
+  <!-- Tee box -->
+  <rect x="575" y="129" width="14" height="7" rx="1" fill="#5a8a5a" stroke="#3a6a3a" stroke-width="1"/>
+  <!-- Bunker front-left -->
+  <ellipse cx="698" cy="142" rx="9" ry="6" fill="#d4b97c" stroke="#b89a5c" stroke-width="1"/>
+  <!-- Green -->
+  <ellipse cx="715" cy="128" rx="15" ry="12" fill="#2d7a3a" stroke="#1a5a2a" stroke-width="1.5"/>
+  <!-- Pin -->
+  <circle cx="717" cy="127" r="2" fill="white"/>
+  <line x1="717" y1="127" x2="717" y2="117" stroke="white" stroke-width="1"/>
+  <!-- Hole label -->
+  <text x="645" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" stroke="#3a6a3a" stroke-width="0.5">3</text>
+  <text x="645" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2d5a2d">165 yds</text>
+
+  <!-- ==================== HOLE 4: Par 5, 490 yds, dogleg left SE toward river ==================== -->
+  <!-- Fairway - dogleg left -->
+  <path d="M 720,140 Q 740,170 760,220 Q 775,280 790,340 Q 810,400 840,450 Q 860,480 880,500 
+           Q 870,510 850,495 Q 820,465 800,420 Q 780,360 765,300 Q 750,240 735,190 Q 725,160 715,148 Z" 
+        fill="#90c695" stroke="#6a9a6a" stroke-width="1"/>
+  <!-- Tee box -->
+  <rect x="715" y="138" width="14" height="7" rx="1" fill="#5a8a5a" stroke="#3a6a3a" stroke-width="1"/>
+  <!-- OB right (river) on approach -->
+  <line x1="870" y1="430" x2="910" y2="520" stroke="#cc3333" stroke-width="1.5" stroke-dasharray="8,5"/>
+  <!-- Trees right -->
+  <circle cx="780" cy="260" r="8" fill="#1a5c1a" opacity="0.5"/>
+  <circle cx="800" cy="320" r="7" fill="#1a6a1a" opacity="0.5"/>
+  <circle cx="830" cy="400" r="8" fill="#1a5c1a" opacity="0.5"/>
+  <!-- Green -->
+  <ellipse cx="880" cy="505" rx="16" ry="13" fill="#2d7a3a" stroke="#1a5a2a" stroke-width="1.5"/>
+  <!-- Pin -->
+  <circle cx="878" cy="503" r="2" fill="white"/>
+  <line x1="878" y1="503" x2="878" y2="493" stroke="white" stroke-width="1"/>
+  <!-- Hole label -->
+  <text x="760" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" stroke="#3a6a3a" stroke-width="0.5">4</text>
+  <text x="760" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2d5a2d">490 yds</text>
+
+  <!-- ==================== HOLE 5: Par 4, 355 yds, SW back, narrow ==================== -->
+  <!-- Fairway -->
+  <path d="M 870,515 Q 840,540 800,570 Q 750,600 700,625 Q 660,640 630,650 
+           Q 635,660 665,650 Q 710,638 760,615 Q 810,585 850,555 Q 875,530 880,520 Z" 
+        fill="#90c695" stroke="#6a9a6a" stroke-width="1"/>
+  <!-- Tee box -->
+  <rect x="870" y="513" width="14" height="7" rx="1" fill="#5a8a5a" stroke="#3a6a3a" stroke-width="1"/>
+  <!-- Trees both sides -->
+  <circle cx="810" cy="555" r="6" fill="#1a5c1a" opacity="0.5"/>
+  <circle cx="750" cy="590" r="7" fill="#1a6a1a" opacity="0.5"/>
+  <circle cx="830" cy="575" r="6" fill="#1a5c1a" opacity="0.5"/>
+  <circle cx="770" cy="620" r="7" fill="#1a6a1a" opacity="0.5"/>
+  <!-- Green -->
+  <ellipse cx="625" cy="648" rx="15" ry="12" fill="#2d7a3a" stroke="#1a5a2a" stroke-width="1.5"/>
+  <!-- Pin -->
+  <circle cx="623" cy="647" r="2" fill="white"/>
+  <line x1="623" y1="647" x2="623" y2="637" stroke="white" stroke-width="1"/>
+  <!-- Hole label -->
+  <text x="750" y="605" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" stroke="#3a6a3a" stroke-width="0.5">5</text>
+  <text x="750" y="620" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2d5a2d">355 yds</text>
+
+  <!-- ==================== HOLE 6: Par 3, 150 yds, W, water left (irrigation pond) ==================== -->
+  <!-- Irrigation pond -->
+  <ellipse cx="520" cy="665" rx="25" ry="18" fill="#4a90d9" opacity="0.5" stroke="#3a70b0" stroke-width="1"/>
+  <text x="520" y="670" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#2a5a90" font-style="italic">Pond</text>
+  <!-- Fairway -->
+  <path d="M 618,645 Q 590,640 560,638 Q 540,636 525,635 
+           Q 525,648 540,650 Q 560,652 590,654 Q 610,656 618,658 Z" 
+        fill="#90c695" stroke="#6a9a6a" stroke-width="1"/>
+  <!-- Tee box -->
+  <rect x="616" y="644" width="14" height="7" rx="1" fill="#5a8a5a" stroke="#3a6a3a" stroke-width="1"/>
+  <!-- Green -->
+  <ellipse cx="518" cy="635" rx="14" ry="11" fill="#2d7a3a" stroke="#1a5a2a" stroke-width="1.5"/>
+  <!-- Pin -->
+  <circle cx="516" cy="634" r="2" fill="white"/>
+  <line x1="516" y1="634" x2="516" y2="624" stroke="white" stroke-width="1"/>
+  <!-- Hole label -->
+  <text x="570" y="632" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" stroke="#3a6a3a" stroke-width="0.5">6</text>
+  <text x="570" y="647" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2d5a2d">150 yds</text>
+
+  <!-- ==================== HOLE 7: Par 4, 400 yds, NW, uphill, bunkers greenside ==================== -->
+  <!-- Fairway -->
+  <path d="M 510,630 Q 480,600 440,560 Q 400,510 370,470 Q 340,430 310,400 Q 290,380 275,365 
+           Q 280,355 300,370 Q 325,390 355,425 Q 390,470 425,520 Q 465,570 500,610 Q 515,625 520,632 Z" 
+        fill="#90c695" stroke="#6a9a6a" stroke-width="1"/>
+  <!-- Tee box -->
+  <rect x="510" y="628" width="14" height="7" rx="1" fill="#5a8a5a" stroke="#3a6a3a" stroke-width="1"/>
+  <!-- Bunkers greenside -->
+  <ellipse cx="262" cy="368" rx="9" ry="6" fill="#d4b97c" stroke="#b89a5c" stroke-width="1"/>
+  <ellipse cx="290" cy="352" rx="8" ry="5" fill="#d4b97c" stroke="#b89a5c" stroke-width="1"/>
+  <!-- Green -->
+  <ellipse cx="275" cy="358" rx="16" ry="13" fill="#2d7a3a" stroke="#1a5a2a" stroke-width="1.5"/>
+  <!-- Pin -->
+  <circle cx="273" cy="356" r="2" fill="white"/>
+  <line x1="273" y1="356" x2="273" y2="346" stroke="white" stroke-width="1"/>
+  <!-- Trees -->
+  <circle cx="440" cy="545" r="7" fill="#1a5c1a" opacity="0.5"/>
+  <circle cx="380" cy="485" r="6" fill="#1a6a1a" opacity="0.5"/>
+  <!-- Hole label -->
+  <text x="410" y="510" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" stroke="#3a6a3a" stroke-width="0.5">7</text>
+  <text x="410" y="525" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2d5a2d">400 yds</text>
+
+  <!-- ==================== HOLE 8: Par 4, 375 yds, SSW, slight dogleg left, trees both sides ==================== -->
+  <!-- Fairway -->
+  <path d="M 272,370 Q 265,400 260,440 Q 258,480 260,520 Q 265,560 275,600 Q 285,630 295,660 
+           Q 305,660 295,628 Q 282,590 278,550 Q 275,510 276,470 Q 278,430 282,395 Q 285,378 283,372 Z" 
+        fill="#90c695" stroke="#6a9a6a" stroke-width="1"/>
+  <!-- Tee box -->
+  <rect x="272" y="368" width="14" height="7" rx="1" fill="#5a8a5a" stroke="#3a6a3a" stroke-width="1"/>
+  <!-- Trees both sides -->
+  <circle cx="255" cy="430" r="6" fill="#1a5c1a" opacity="0.5"/>
+  <circle cx="295" cy="460" r="7" fill="#1a6a1a" opacity="0.5"/>
+  <circle cx="252" cy="500" r="6" fill="#1a5c1a" opacity="0.5"/>
+  <circle cx="300" cy="530" r="7" fill="#1a6a1a" opacity="0.5"/>
+  <circle cx="258" cy="570" r="6" fill="#1a5c1a" opacity="0.5"/>
+  <circle cx="303" cy="600" r="7" fill="#1a6a1a" opacity="0.5"/>
+  <!-- Green -->
+  <ellipse cx="295" cy="668" rx="15" ry="12" fill="#2d7a3a" stroke="#1a5a2a" stroke-width="1.5"/>
+  <!-- Pin -->
+  <circle cx="293" cy="666" r="2" fill="white"/>
+  <line x1="293" y1="666" x2="293" y2="656" stroke="white" stroke-width="1"/>
+  <!-- Hole label -->
+  <text x="265" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" stroke="#3a6a3a" stroke-width="0.5">8</text>
+  <text x="265" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2d5a2d">375 yds</text>
+
+  <!-- ==================== HOLE 9: Par 4, 420 yds, WSW back to clubhouse, OB right ==================== -->
+  <!-- OB right -->
+  <line x1="300" y1="710" x2="170" y2="610" stroke="#cc3333" stroke-width="1.5" stroke-dasharray="8,5"/>
+  <!-- Fairway -->
+  <path d="M 295,672 Q 275,685 260,695 Q 240,705 220,710 Q 200,712 185,710 Q 170,705 160,695 
+           Q 155,688 165,685 Q 180,690 200,695 Q 220,695 240,690 Q 260,682 278,670 Q 288,664 292,665 Z" 
+        fill="#90c695" stroke="#6a9a6a" stroke-width="1"/>
+  <!-- Extend fairway further left -->
+  <path d="M 160,695 Q 158,690 155,685 Q 155,678 158,672 
+           Q 165,668 170,675 Q 165,685 160,695 Z" 
+        fill="#90c695" stroke="#6a9a6a" stroke-width="1"/>
+  <!-- Tee box -->
+  <rect x="290" y="670" width="14" height="7" rx="1" fill="#5a8a5a" stroke="#3a6a3a" stroke-width="1"/>
+  <!-- Green near clubhouse -->
+  <ellipse cx="155" cy="575" rx="16" ry="13" fill="#2d7a3a" stroke="#1a5a2a" stroke-width="1.5"/>
+  <!-- Extended fairway to green -->
+  <path d="M 160,690 Q 155,680 152,660 Q 150,640 150,620 Q 150,600 152,590 
+           Q 158,590 160,600 Q 162,620 162,640 Q 162,660 165,680 Q 168,690 165,692 Z"
+        fill="#90c695" stroke="#6a9a6a" stroke-width="1"/>
+  <!-- Pin -->
+  <circle cx="153" cy="573" r="2" fill="white"/>
+  <line x1="153" y1="573" x2="153" y2="563" stroke="white" stroke-width="1"/>
+  <!-- Hole label -->
+  <text x="220" y="680" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" stroke="#3a6a3a" stroke-width="0.5">9</text>
+  <text x="220" y="695" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2d5a2d">420 yds</text>
+
+  <!-- Cart paths connecting holes -->
+  <path d="M 385,290 Q 390,282 395,275" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <path d="M 565,130 Q 570,130 575,130" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <path d="M 720,135 Q 718,138 716,140" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <path d="M 880,510 Q 876,513 872,515" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <path d="M 625,650 Q 620,648 618,646" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <path d="M 515,633 Q 513,631 510,630" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <path d="M 275,365 Q 274,367 273,370" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <path d="M 295,665 Q 294,668 293,670" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Main cart path loop -->
+  <path d="M 170,535 Q 175,510 190,505 Q 220,440 280,390 Q 310,360 350,310 Q 380,290 400,275 
+           Q 430,240 480,190 Q 530,150 570,130 Q 600,128 640,128 Q 680,130 715,140 
+           Q 730,160 750,220 Q 770,290 790,360 Q 810,420 840,470 Q 865,505 875,515 
+           Q 850,540 810,570 Q 760,600 710,630 Q 665,645 625,650 
+           Q 580,640 540,635 Q 515,632 510,630 
+           Q 475,595 435,550 Q 395,500 355,450 Q 320,410 290,380 Q 280,370 275,365 
+           Q 270,400 268,450 Q 265,510 270,570 Q 278,630 290,665 
+           Q 295,675 285,695 Q 255,705 220,710 Q 185,710 165,700 
+           Q 155,685 152,660 Q 150,620 155,585 Q 158,570 160,555 Q 162,545 165,535 Z" 
+        fill="none" stroke="#999" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+
+  <!-- Legend -->
+  <g transform="translate(50, 90)">
+    <rect x="-10" y="-15" width="150" height="175" rx="5" fill="white" opacity="0.85" stroke="#ccc" stroke-width="1"/>
+    <text x="5" y="0" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">Legend</text>
+    <!-- Fairway -->
+    <rect x="5" y="12" width="20" height="10" fill="#90c695" stroke="#6a9a6a" stroke-width="0.5"/>
+    <text x="32" y="21" font-family="Arial, sans-serif" font-size="10" fill="#333">Fairway</text>
+    <!-- Green -->
+    <ellipse cx="15" cy="37" rx="10" ry="5" fill="#2d7a3a" stroke="#1a5a2a" stroke-width="0.5"/>
+    <text x="32" y="40" font-family="Arial, sans-serif" font-size="10" fill="#333">Green</text>
+    <!-- Bunker -->
+    <ellipse cx="15" cy="55" rx="10" ry="5" fill="#d4b97c" stroke="#b89a5c" stroke-width="0.5"/>
+    <text x="32" y="58" font-family="Arial, sans-serif" font-size="10" fill="#333">Bunker</text>
+    <!-- Water -->
+    <rect x="5" y="68" width="20" height="10" fill="#4a90d9" opacity="0.5" stroke="#3a70b0" stroke-width="0.5"/>
+    <text x="32" y="77" font-family="Arial, sans-serif" font-size="10" fill="#333">Water</text>
+    <!-- Tee -->
+    <rect x="8" y="87" width="14" height="6" fill="#5a8a5a" stroke="#3a6a3a" stroke-width="0.5"/>
+    <text x="32" y="94" font-family="Arial, sans-serif" font-size="10" fill="#333">Tee Box</text>
+    <!-- Trees -->
+    <circle cx="15" cy="109" r="6" fill="#1a5c1a" opacity="0.6"/>
+    <text x="32" y="112" font-family="Arial, sans-serif" font-size="10" fill="#333">Trees</text>
+    <!-- OB -->
+    <line x1="5" y1="127" x2="25" y2="127" stroke="#cc3333" stroke-width="1.5" stroke-dasharray="5,3"/>
+    <text x="32" y="130" font-family="Arial, sans-serif" font-size="10" fill="#333">Out of Bounds</text>
+    <!-- Cart path -->
+    <line x1="5" y1="145" x2="25" y2="145" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="32" y="148" font-family="Arial, sans-serif" font-size="10" fill="#333">Cart Path</text>
+  </g>
+
+  <!-- Par summary box -->
+  <g transform="translate(950, 780)">
+    <rect x="-10" y="-15" width="220" height="100" rx="5" fill="white" opacity="0.85" stroke="#ccc" stroke-width="1"/>
+    <text x="5" y="2" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">Scorecard Summary</text>
+    <text x="5" y="18" font-family="Arial, sans-serif" font-size="9" fill="#555">Hole: 1  2  3  4  5  6  7  8  9</text>
+    <text x="5" y="32" font-family="Arial, sans-serif" font-size="9" fill="#555">Par:  4  4  3  5  4  3  4  4  4 = 35</text>
+    <text x="5" y="46" font-family="Arial, sans-serif" font-size="9" fill="#555">Yds: 380 340 165 490 355 150 400 375 420</text>
+    <text x="5" y="60" font-family="Arial, sans-serif" font-size="9" fill="#555">Total: 3,075 yards</text>
+    <text x="5" y="76" font-family="Arial, sans-serif" font-size="9" fill="#555">47.0193°N, 120.6294°W</text>
+  </g>
+
+  <!-- Copyright -->
+  <text x="600" y="892" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#999">Ellensburg Golf Club — Ellensburg, WA — GS Pro Course Design</text>
+</svg>

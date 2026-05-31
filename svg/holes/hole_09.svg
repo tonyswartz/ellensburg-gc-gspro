@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <marker id="windArrow9" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#5577aa"/>
+    </marker>
+    <linearGradient id="fairwayGrad9" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#82b888"/>
+      <stop offset="50%" style="stop-color:#90c695"/>
+      <stop offset="100%" style="stop-color:#82b888"/>
+    </linearGradient>
+    <radialGradient id="greenGrad9">
+      <stop offset="0%" style="stop-color:#3a9a4a"/>
+      <stop offset="100%" style="stop-color:#2d7a3a"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="#7aaa7a"/>
+
+  <!-- Hole info -->
+  <rect x="10" y="10" width="280" height="50" rx="5" fill="rgba(0,0,0,0.6)"/>
+  <text x="20" y="32" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="white">Hole 9 — Par 4</text>
+  <text x="20" y="50" font-family="Arial, sans-serif" font-size="13" fill="#ccc">420 Yards • Straightaway Finisher • OB Right</text>
+
+  <!-- Wind arrow -->
+  <g transform="translate(540, 40)">
+    <circle cx="0" cy="0" r="22" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <line x1="10" y1="-6" x2="-10" y2="6" stroke="#5577aa" stroke-width="2" marker-end="url(#windArrow9)"/>
+    <text x="0" y="-26" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">WIND</text>
+    <text x="-14" y="10" font-family="Arial, sans-serif" font-size="7" fill="#aac">WSW</text>
+  </g>
+
+  <!-- OB right -->
+  <line x1="540" y1="165" x2="120" y2="235" stroke="#cc3333" stroke-width="2" stroke-dasharray="10,6"/>
+  <text x="420" y="200" font-family="Arial, sans-serif" font-size="9" fill="#cc3333" font-weight="bold">OB — PROPERTY LINE</text>
+
+  <!-- Fairway - straight, plays WSW (right to left in view) -->
+  <path d="M 530,130 Q 490,128 440,130 Q 380,135 320,140 Q 260,148 200,158 
+           Q 150,168 110,178 Q 85,185 70,192
+           Q 68,205 82,200 Q 108,193 148,185 Q 200,175 260,168 
+           Q 320,160 380,155 Q 440,150 490,148 Q 520,147 535,148 Z" 
+        fill="url(#fairwayGrad9)" stroke="#6a9a6a" stroke-width="1.5"/>
+
+  <!-- Trees left scattered -->
+  <circle cx="480" cy="115" r="9" fill="#1a5c1a" opacity="0.6"/>
+  <circle cx="400" cy="118" r="8" fill="#1f6a1f" opacity="0.6"/>
+  <circle cx="320" cy="122" r="9" fill="#1a5c1a" opacity="0.6"/>
+  <circle cx="240" cy="132" r="8" fill="#1f6a1f" opacity="0.6"/>
+  <circle cx="160" cy="148" r="9" fill="#1a5c1a" opacity="0.6"/>
+
+  <!-- Trees right scattered -->
+  <circle cx="450" cy="170" r="8" fill="#1a5c1a" opacity="0.5"/>
+  <circle cx="350" cy="178" r="7" fill="#1f6a1f" opacity="0.5"/>
+
+  <!-- Yardage markers -->
+  <text x="370" y="128" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold" opacity="0.8">250</text>
+  <line x1="370" y1="133" x2="370" y2="148" stroke="white" stroke-width="1.5" opacity="0.7"/>
+
+  <text x="270" y="138" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold" opacity="0.8">200</text>
+  <line x1="270" y1="143" x2="270" y2="158" stroke="white" stroke-width="1.5" opacity="0.7"/>
+
+  <text x="175" y="152" font-family="Arial, sans-serif" font-size="10" fill="#ff0" font-weight="bold" opacity="0.8">150</text>
+  <line x1="175" y1="157" x2="175" y2="172" stroke="#ff0" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Green -->
+  <ellipse cx="62" cy="195" rx="26" ry="22" fill="url(#greenGrad9)" stroke="#1a5a2a" stroke-width="2"/>
+  <ellipse cx="60" cy="193" rx="16" ry="14" fill="none" stroke="#2a8a3a" stroke-width="0.5" opacity="0.4"/>
+  <ellipse cx="58" cy="191" rx="8" ry="7" fill="none" stroke="#2a8a3a" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Pin -->
+  <circle cx="60" cy="192" r="3" fill="white" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="60" y1="192" x2="60" y2="175" stroke="white" stroke-width="1.5"/>
+  <polygon points="60,175 48,179 60,183" fill="#cc3333"/>
+
+  <!-- Clubhouse indicator near green -->
+  <rect x="40" y="240" width="50" height="30" rx="3" fill="#888" stroke="#555" stroke-width="1.5" opacity="0.7"/>
+  <text x="65" y="258" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white" font-weight="bold">CLUB</text>
+  <text x="65" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white" font-weight="bold">HOUSE</text>
+
+  <!-- Tee boxes -->
+  <rect x="530" y="126" width="22" height="10" rx="2" fill="#3366aa" stroke="#2255aa" stroke-width="1"/>
+  <text x="541" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3366aa">BLUE</text>
+  <rect x="520" y="142" width="20" height="9" rx="2" fill="white" stroke="#aaa" stroke-width="1"/>
+  <text x="530" y="162" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#888">WHITE</text>
+
+  <!-- Finish strong note -->
+  <text x="300" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" font-style="italic">The long finisher back to the clubhouse</text>
+  <text x="300" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.4)" font-style="italic">Keep it left of the OB stakes!</text>
+</svg>

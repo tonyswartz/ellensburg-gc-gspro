@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+venv/
+.venv/
+env/
+
+# LIDAR data (large binary files - don't commit)
+lidar/data/
+lidar/output/
+*.laz
+*.las
+*.tif
+*.tiff
+*.png
+!svg/**/*.svg
+
+# Blender
+*.blend1
+*.blend2
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary
+tmp/
+temp/
+*.bak
+*.tmp

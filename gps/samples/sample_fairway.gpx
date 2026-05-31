@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="gpx_to_svg sample"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+       http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Ellensburg GC Hole 1 Fairway</name>
+    <desc>Sample fairway edges for hole 1 (~350 yards, par 4). Left and right
+          edges walked with a GPS app at 1-second intervals.</desc>
+    <time>2026-05-15T08:30:00Z</time>
+  </metadata>
+
+  <!-- Waypoint: Hole 1 tee-box center -->
+  <wpt lat="47.01940" lon="-120.62990">
+    <name>tee-center-1</name>
+    <desc>Hole 1 tee box center</desc>
+  </wpt>
+
+  <!-- Waypoint: Hole 1 green center -->
+  <wpt lat="47.02210" lon="-120.62740">
+    <name>green-center-1</name>
+    <desc>Hole 1 green center, ~320m from tee</desc>
+  </wpt>
+
+  <!-- Waypoint: Hole 1 150-yard marker -->
+  <wpt lat="47.02085" lon="-120.62860">
+    <name>150-marker-1</name>
+    <desc>150 yard marker, hole 1</desc>
+  </wpt>
+
+  <!-- ===== LEFT EDGE OF FAIRWAY ===== -->
+  <trk>
+    <name>fairway-left-1</name>
+    <desc>Left edge of hole 1 fairway, walked tee to green</desc>
+    <trkseg>
+      <!-- Tee end — fairway starts about 40m from tee -->
+      <trkpt lat="47.01968" lon="-120.62985"><time>2026-05-15T08:32:00Z</time></trkpt>
+      <trkpt lat="47.01972" lon="-120.62981"><time>2026-05-15T08:32:01Z</time></trkpt>
+      <trkpt lat="47.01976" lon="-120.62978"><time>2026-05-15T08:32:02Z</time></trkpt>
+      <trkpt lat="47.01980" lon="-120.62974"><time>2026-05-15T08:32:03Z</time></trkpt>
+      <trkpt lat="47.01984" lon="-120.62971"><time>2026-05-15T08:32:04Z</time></trkpt>
+      <trkpt lat="47.01989" lon="-120.62967"><time>2026-05-15T08:32:05Z</time></trkpt>
+      <trkpt lat="47.01993" lon="-120.62963"><time>2026-05-15T08:32:06Z</time></trkpt>
+      <trkpt lat="47.01997" lon="-120.62960"><time>2026-05-15T08:32:07Z</time></trkpt>
+      <trkpt lat="47.02002" lon="-120.62956"><time>2026-05-15T08:32:08Z</time></trkpt>
+      <trkpt lat="47.02006" lon="-120.62952"><time>2026-05-15T08:32:09Z</time></trkpt>
+      <!-- Slight curve left through landing zone -->
+      <trkpt lat="47.02011" lon="-120.62949"><time>2026-05-15T08:32:10Z</time></trkpt>
+      <trkpt lat="47.02015" lon="-120.62946"><time>2026-05-15T08:32:11Z</time></trkpt>
+      <trkpt lat="47.02020" lon="-120.62942"><time>2026-05-15T08:32:12Z</time></trkpt>
+      <trkpt lat="47.02024" lon="-120.62939"><time>2026-05-15T08:32:13Z</time></trkpt>
+      <trkpt lat="47.02029" lon="-120.62935"><time>2026-05-15T08:32:14Z</time></trkpt>
+      <trkpt lat="47.02033" lon="-120.62932"><time>2026-05-15T08:32:15Z</time></trkpt>
+      <trkpt lat="47.02038" lon="-120.62928"><time>2026-05-15T08:32:16Z</time></trkpt>
+      <trkpt lat="47.02042" lon="-120.62924"><time>2026-05-15T08:32:17Z</time></trkpt>
+      <trkpt lat="47.02046" lon="-120.62920"><time>2026-05-15T08:32:18Z</time></trkpt>
+      <trkpt lat="47.02051" lon="-120.62916"><time>2026-05-15T08:32:19Z</time></trkpt>
+      <!-- Mid fairway — widening -->
+      <trkpt lat="47.02055" lon="-120.62913"><time>2026-05-15T08:32:20Z</time></trkpt>
+      <trkpt lat="47.02060" lon="-120.62910"><time>2026-05-15T08:32:21Z</time></trkpt>
+      <trkpt lat="47.02064" lon="-120.62907"><time>2026-05-15T08:32:22Z</time></trkpt>
+      <trkpt lat="47.02069" lon="-120.62903"><time>2026-05-15T08:32:23Z</time></trkpt>
+      <trkpt lat="47.02073" lon="-120.62899"><time>2026-05-15T08:32:24Z</time></trkpt>
+      <trkpt lat="47.02078" lon="-120.62895"><time>2026-05-15T08:32:25Z</time></trkpt>
+      <trkpt lat="47.02082" lon="-120.62891"><time>2026-05-15T08:32:26Z</time></trkpt>
+      <trkpt lat="47.02087" lon="-120.62887"><time>2026-05-15T08:32:27Z</time></trkpt>
+      <trkpt lat="47.02091" lon="-120.62883"><time>2026-05-15T08:32:28Z</time></trkpt>
+      <trkpt lat="47.02096" lon="-120.62879"><time>2026-05-15T08:32:29Z</time></trkpt>
+      <!-- Approach zone — narrowing toward green -->
+      <trkpt lat="47.02100" lon="-120.62875"><time>2026-05-15T08:32:30Z</time></trkpt>
+      <trkpt lat="47.02105" lon="-120.62871"><time>2026-05-15T08:32:31Z</time></trkpt>
+      <trkpt lat="47.02109" lon="-120.62867"><time>2026-05-15T08:32:32Z</time></trkpt>
+      <trkpt lat="47.02114" lon="-120.62863"><time>2026-05-15T08:32:33Z</time></trkpt>
+      <trkpt lat="47.02118" lon="-120.62859"><time>2026-05-15T08:32:34Z</time></trkpt>
+      <trkpt lat="47.02123" lon="-120.62855"><time>2026-05-15T08:32:35Z</time></trkpt>
+      <trkpt lat="47.02127" lon="-120.62851"><time>2026-05-15T08:32:36Z</time></trkpt>
+      <trkpt lat="47.02132" lon="-120.62847"><time>2026-05-15T08:32:37Z</time></trkpt>
+      <trkpt lat="47.02136" lon="-120.62843"><time>2026-05-15T08:32:38Z</time></trkpt>
+      <trkpt lat="47.02141" lon="-120.62839"><time>2026-05-15T08:32:39Z</time></trkpt>
+      <!-- Near green -->
+      <trkpt lat="47.02145" lon="-120.62835"><time>2026-05-15T08:32:40Z</time></trkpt>
+      <trkpt lat="47.02150" lon="-120.62831"><time>2026-05-15T08:32:41Z</time></trkpt>
+      <trkpt lat="47.02154" lon="-120.62827"><time>2026-05-15T08:32:42Z</time></trkpt>
+      <trkpt lat="47.02159" lon="-120.62823"><time>2026-05-15T08:32:43Z</time></trkpt>
+      <trkpt lat="47.02163" lon="-120.62819"><time>2026-05-15T08:32:44Z</time></trkpt>
+      <trkpt lat="47.02168" lon="-120.62815"><time>2026-05-15T08:32:45Z</time></trkpt>
+      <trkpt lat="47.02172" lon="-120.62811"><time>2026-05-15T08:32:46Z</time></trkpt>
+      <trkpt lat="47.02177" lon="-120.62807"><time>2026-05-15T08:32:47Z</time></trkpt>
+      <trkpt lat="47.02181" lon="-120.62803"><time>2026-05-15T08:32:48Z</time></trkpt>
+      <trkpt lat="47.02186" lon="-120.62799"><time>2026-05-15T08:32:49Z</time></trkpt>
+    </trkseg>
+  </trk>
+
+  <!-- ===== RIGHT EDGE OF FAIRWAY ===== -->
+  <trk>
+    <name>fairway-right-1</name>
+    <desc>Right edge of hole 1 fairway, walked tee to green</desc>
+    <trkseg>
+      <!-- Tee end — offset ~30m right of left edge -->
+      <trkpt lat="47.01965" lon="-120.62950"><time>2026-05-15T08:40:00Z</time></trkpt>
+      <trkpt lat="47.01969" lon="-120.62946"><time>2026-05-15T08:40:01Z</time></trkpt>
+      <trkpt lat="47.01973" lon="-120.62942"><time>2026-05-15T08:40:02Z</time></trkpt>
+      <trkpt lat="47.01977" lon="-120.62938"><time>2026-05-15T08:40:03Z</time></trkpt>
+      <trkpt lat="47.01981" lon="-120.62935"><time>2026-05-15T08:40:04Z</time></trkpt>
+      <trkpt lat="47.01986" lon="-120.62931"><time>2026-05-15T08:40:05Z</time></trkpt>
+      <trkpt lat="47.01990" lon="-120.62927"><time>2026-05-15T08:40:06Z</time></trkpt>
+      <trkpt lat="47.01994" lon="-120.62924"><time>2026-05-15T08:40:07Z</time></trkpt>
+      <trkpt lat="47.01999" lon="-120.62920"><time>2026-05-15T08:40:08Z</time></trkpt>
+      <trkpt lat="47.02003" lon="-120.62916"><time>2026-05-15T08:40:09Z</time></trkpt>
+      <!-- Landing zone — fairway widens right -->
+      <trkpt lat="47.02007" lon="-120.62912"><time>2026-05-15T08:40:10Z</time></trkpt>
+      <trkpt lat="47.02012" lon="-120.62908"><time>2026-05-15T08:40:11Z</time></trkpt>
+      <trkpt lat="47.02016" lon="-120.62904"><time>2026-05-15T08:40:12Z</time></trkpt>
+      <trkpt lat="47.02020" lon="-120.62900"><time>2026-05-15T08:40:13Z</time></trkpt>
+      <trkpt lat="47.02025" lon="-120.62896"><time>2026-05-15T08:40:14Z</time></trkpt>
+      <trkpt lat="47.02029" lon="-120.62892"><time>2026-05-15T08:40:15Z</time></trkpt>
+      <trkpt lat="47.02034" lon="-120.62888"><time>2026-05-15T08:40:16Z</time></trkpt>
+      <trkpt lat="47.02038" lon="-120.62884"><time>2026-05-15T08:40:17Z</time></trkpt>
+      <trkpt lat="47.02043" lon="-120.62880"><time>2026-05-15T08:40:18Z</time></trkpt>
+      <trkpt lat="47.02047" lon="-120.62876"><time>2026-05-15T08:40:19Z</time></trkpt>
+      <!-- Mid fairway -->
+      <trkpt lat="47.02052" lon="-120.62872"><time>2026-05-15T08:40:20Z</time></trkpt>
+      <trkpt lat="47.02056" lon="-120.62868"><time>2026-05-15T08:40:21Z</time></trkpt>
+      <trkpt lat="47.02061" lon="-120.62865"><time>2026-05-15T08:40:22Z</time></trkpt>
+      <trkpt lat="47.02065" lon="-120.62861"><time>2026-05-15T08:40:23Z</time></trkpt>
+      <trkpt lat="47.02070" lon="-120.62857"><time>2026-05-15T08:40:24Z</time></trkpt>
+      <trkpt lat="47.02074" lon="-120.62853"><time>2026-05-15T08:40:25Z</time></trkpt>
+      <trkpt lat="47.02079" lon="-120.62849"><time>2026-05-15T08:40:26Z</time></trkpt>
+      <trkpt lat="47.02083" lon="-120.62845"><time>2026-05-15T08:40:27Z</time></trkpt>
+      <trkpt lat="47.02088" lon="-120.62841"><time>2026-05-15T08:40:28Z</time></trkpt>
+      <trkpt lat="47.02092" lon="-120.62837"><time>2026-05-15T08:40:29Z</time></trkpt>
+      <!-- Approach — narrows back -->
+      <trkpt lat="47.02097" lon="-120.62833"><time>2026-05-15T08:40:30Z</time></trkpt>
+      <trkpt lat="47.02101" lon="-120.62829"><time>2026-05-15T08:40:31Z</time></trkpt>
+      <trkpt lat="47.02106" lon="-120.62825"><time>2026-05-15T08:40:32Z</time></trkpt>
+      <trkpt lat="47.02110" lon="-120.62822"><time>2026-05-15T08:40:33Z</time></trkpt>
+      <trkpt lat="47.02115" lon="-120.62818"><time>2026-05-15T08:40:34Z</time></trkpt>
+      <trkpt lat="47.02119" lon="-120.62814"><time>2026-05-15T08:40:35Z</time></trkpt>
+      <trkpt lat="47.02124" lon="-120.62810"><time>2026-05-15T08:40:36Z</time></trkpt>
+      <trkpt lat="47.02128" lon="-120.62806"><time>2026-05-15T08:40:37Z</time></trkpt>
+      <trkpt lat="47.02133" lon="-120.62802"><time>2026-05-15T08:40:38Z</time></trkpt>
+      <trkpt lat="47.02137" lon="-120.62798"><time>2026-05-15T08:40:39Z</time></trkpt>
+      <!-- Near green -->
+      <trkpt lat="47.02142" lon="-120.62794"><time>2026-05-15T08:40:40Z</time></trkpt>
+      <trkpt lat="47.02146" lon="-120.62790"><time>2026-05-15T08:40:41Z</time></trkpt>
+      <trkpt lat="47.02151" lon="-120.62786"><time>2026-05-15T08:40:42Z</time></trkpt>
+      <trkpt lat="47.02155" lon="-120.62783"><time>2026-05-15T08:40:43Z</time></trkpt>
+      <trkpt lat="47.02160" lon="-120.62779"><time>2026-05-15T08:40:44Z</time></trkpt>
+      <trkpt lat="47.02164" lon="-120.62775"><time>2026-05-15T08:40:45Z</time></trkpt>
+      <trkpt lat="47.02169" lon="-120.62771"><time>2026-05-15T08:40:46Z</time></trkpt>
+      <trkpt lat="47.02173" lon="-120.62768"><time>2026-05-15T08:40:47Z</time></trkpt>
+      <trkpt lat="47.02178" lon="-120.62764"><time>2026-05-15T08:40:48Z</time></trkpt>
+      <trkpt lat="47.02182" lon="-120.62760"><time>2026-05-15T08:40:49Z</time></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

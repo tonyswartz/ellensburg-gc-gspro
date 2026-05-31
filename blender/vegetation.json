@@ -1,0 +1,213 @@
+{
+  "_metadata": {
+    "course": "Ellensburg Golf Club",
+    "location": "Ellensburg, WA",
+    "center_lat": 47.0193,
+    "center_lon": -120.6294,
+    "coordinate_system": "WGS84 (EPSG:4326)",
+    "notes": [
+      "Positions are estimated from satellite imagery and course knowledge.",
+      "Semi-arid Central WA climate — sparse tree cover compared to western WA.",
+      "Ponderosa pines are the dominant native conifer in the Kittitas Valley.",
+      "Cottonwood and willow line the Yakima River on the south/east boundary.",
+      "Heights are estimated; verify/adjust during on-course data collection.",
+      "Tree positions should be refined using GPS waypoints from field survey."
+    ],
+    "total_trees": 134,
+    "last_updated": "2026-05-31"
+  },
+
+  "species_info": {
+    "ponderosa_pine": {
+      "common_name": "Ponderosa Pine",
+      "scientific_name": "Pinus ponderosa",
+      "typical_height_m": "15-30",
+      "typical_canopy_m": "6-12",
+      "trunk_diameter_m": "0.3-1.0",
+      "blender_material": "Foliage_Pine / TreeTrunk_Ponderosa",
+      "notes": "Dominant native conifer. Orange-brown puzzle bark on mature trees. Long needles in clusters of 3."
+    },
+    "cottonwood": {
+      "common_name": "Black Cottonwood",
+      "scientific_name": "Populus trichocarpa",
+      "typical_height_m": "20-35",
+      "typical_canopy_m": "10-18",
+      "trunk_diameter_m": "0.5-1.5",
+      "blender_material": "Foliage_Cottonwood / TreeTrunk_Cottonwood",
+      "notes": "Large deciduous. Found along Yakima River. Leaves flutter in wind — important for Kittitas Valley's windy conditions."
+    },
+    "willow": {
+      "common_name": "Pacific Willow",
+      "scientific_name": "Salix lasiandra",
+      "typical_height_m": "8-15",
+      "typical_canopy_m": "6-10",
+      "trunk_diameter_m": "0.2-0.5",
+      "blender_material": "Foliage_Willow / TreeTrunk_Cottonwood",
+      "notes": "Riparian species along river and irrigation ditches. Often multi-stemmed."
+    },
+    "ornamental_deciduous": {
+      "common_name": "Ornamental (maple/ash)",
+      "scientific_name": "Various",
+      "typical_height_m": "8-15",
+      "typical_canopy_m": "5-10",
+      "trunk_diameter_m": "0.2-0.5",
+      "blender_material": "Foliage_Cottonwood / TreeTrunk_Cottonwood",
+      "notes": "Planted ornamentals near clubhouse and tees. Use generic deciduous model."
+    }
+  },
+
+  "trees": [
+    {"_comment": "=== HOLE 1 — Par 4 ==="},
+    {"id": "H1_PP01", "species": "ponderosa_pine", "lat": 47.01985, "lon": -120.63050, "estimated_height_m": 18, "canopy_diameter_m": 8, "trunk_diameter_m": 0.45, "notes": "Left of tee box"},
+    {"id": "H1_PP02", "species": "ponderosa_pine", "lat": 47.01978, "lon": -120.63040, "estimated_height_m": 20, "canopy_diameter_m": 9, "trunk_diameter_m": 0.50, "notes": "Left of tee box, behind first"},
+    {"id": "H1_PP03", "species": "ponderosa_pine", "lat": 47.01960, "lon": -120.62980, "estimated_height_m": 16, "canopy_diameter_m": 7, "trunk_diameter_m": 0.40, "notes": "Left rough, halfway to green"},
+    {"id": "H1_OD01", "species": "ornamental_deciduous", "lat": 47.01940, "lon": -120.62920, "estimated_height_m": 10, "canopy_diameter_m": 6, "trunk_diameter_m": 0.25, "notes": "Near green, left side"},
+
+    {"_comment": "=== HOLE 2 — Par 4 ==="},
+    {"id": "H2_PP01", "species": "ponderosa_pine", "lat": 47.01920, "lon": -120.62900, "estimated_height_m": 22, "canopy_diameter_m": 10, "trunk_diameter_m": 0.55, "notes": "Right of fairway"},
+    {"id": "H2_PP02", "species": "ponderosa_pine", "lat": 47.01910, "lon": -120.62880, "estimated_height_m": 19, "canopy_diameter_m": 8, "trunk_diameter_m": 0.48, "notes": "Right of fairway cluster"},
+    {"id": "H2_PP03", "species": "ponderosa_pine", "lat": 47.01925, "lon": -120.62870, "estimated_height_m": 17, "canopy_diameter_m": 7, "trunk_diameter_m": 0.42, "notes": "Right rough"},
+    {"id": "H2_OD01", "species": "ornamental_deciduous", "lat": 47.01905, "lon": -120.62840, "estimated_height_m": 12, "canopy_diameter_m": 7, "trunk_diameter_m": 0.30, "notes": "Left of green"},
+    {"id": "H2_OD02", "species": "ornamental_deciduous", "lat": 47.01900, "lon": -120.62850, "estimated_height_m": 11, "canopy_diameter_m": 6, "trunk_diameter_m": 0.28, "notes": "Behind green"},
+
+    {"_comment": "=== HOLE 3 — Par 3 ==="},
+    {"id": "H3_PP01", "species": "ponderosa_pine", "lat": 47.01880, "lon": -120.62830, "estimated_height_m": 21, "canopy_diameter_m": 9, "trunk_diameter_m": 0.52, "notes": "Right of tee"},
+    {"id": "H3_PP02", "species": "ponderosa_pine", "lat": 47.01870, "lon": -120.62810, "estimated_height_m": 15, "canopy_diameter_m": 7, "trunk_diameter_m": 0.38, "notes": "Behind green, right"},
+    {"id": "H3_OD01", "species": "ornamental_deciduous", "lat": 47.01875, "lon": -120.62820, "estimated_height_m": 9, "canopy_diameter_m": 5, "trunk_diameter_m": 0.22, "notes": "Left of green"},
+
+    {"_comment": "=== HOLE 4 — Par 4 (tree-lined) ==="},
+    {"id": "H4_PP01", "species": "ponderosa_pine", "lat": 47.01860, "lon": -120.62790, "estimated_height_m": 24, "canopy_diameter_m": 10, "trunk_diameter_m": 0.60, "notes": "Left tree line start"},
+    {"id": "H4_PP02", "species": "ponderosa_pine", "lat": 47.01855, "lon": -120.62775, "estimated_height_m": 22, "canopy_diameter_m": 9, "trunk_diameter_m": 0.55, "notes": "Left tree line"},
+    {"id": "H4_PP03", "species": "ponderosa_pine", "lat": 47.01848, "lon": -120.62760, "estimated_height_m": 20, "canopy_diameter_m": 9, "trunk_diameter_m": 0.50, "notes": "Left tree line"},
+    {"id": "H4_PP04", "species": "ponderosa_pine", "lat": 47.01842, "lon": -120.62745, "estimated_height_m": 25, "canopy_diameter_m": 11, "trunk_diameter_m": 0.65, "notes": "Left tree line, large specimen"},
+    {"id": "H4_PP05", "species": "ponderosa_pine", "lat": 47.01835, "lon": -120.62730, "estimated_height_m": 19, "canopy_diameter_m": 8, "trunk_diameter_m": 0.48, "notes": "Left tree line"},
+    {"id": "H4_PP06", "species": "ponderosa_pine", "lat": 47.01828, "lon": -120.62715, "estimated_height_m": 21, "canopy_diameter_m": 9, "trunk_diameter_m": 0.52, "notes": "Left tree line, near green"},
+    {"id": "H4_PP07", "species": "ponderosa_pine", "lat": 47.01865, "lon": -120.62780, "estimated_height_m": 18, "canopy_diameter_m": 8, "trunk_diameter_m": 0.45, "notes": "Right tree line start"},
+    {"id": "H4_PP08", "species": "ponderosa_pine", "lat": 47.01858, "lon": -120.62765, "estimated_height_m": 23, "canopy_diameter_m": 10, "trunk_diameter_m": 0.58, "notes": "Right tree line"},
+    {"id": "H4_PP09", "species": "ponderosa_pine", "lat": 47.01850, "lon": -120.62750, "estimated_height_m": 20, "canopy_diameter_m": 9, "trunk_diameter_m": 0.50, "notes": "Right tree line"},
+    {"id": "H4_PP10", "species": "ponderosa_pine", "lat": 47.01843, "lon": -120.62735, "estimated_height_m": 17, "canopy_diameter_m": 7, "trunk_diameter_m": 0.42, "notes": "Right tree line"},
+    {"id": "H4_PP11", "species": "ponderosa_pine", "lat": 47.01836, "lon": -120.62720, "estimated_height_m": 22, "canopy_diameter_m": 10, "trunk_diameter_m": 0.55, "notes": "Right tree line, near green"},
+
+    {"_comment": "=== HOLE 5 — Par 5 (tree-lined, along river) ==="},
+    {"id": "H5_PP01", "species": "ponderosa_pine", "lat": 47.01820, "lon": -120.62700, "estimated_height_m": 26, "canopy_diameter_m": 11, "trunk_diameter_m": 0.65, "notes": "Left of tee, large"},
+    {"id": "H5_PP02", "species": "ponderosa_pine", "lat": 47.01812, "lon": -120.62680, "estimated_height_m": 20, "canopy_diameter_m": 9, "trunk_diameter_m": 0.50, "notes": "Left fairway edge"},
+    {"id": "H5_PP03", "species": "ponderosa_pine", "lat": 47.01805, "lon": -120.62660, "estimated_height_m": 18, "canopy_diameter_m": 8, "trunk_diameter_m": 0.45, "notes": "Left fairway, mid"},
+    {"id": "H5_PP04", "species": "ponderosa_pine", "lat": 47.01798, "lon": -120.62640, "estimated_height_m": 22, "canopy_diameter_m": 10, "trunk_diameter_m": 0.55, "notes": "Left fairway, near landing zone"},
+    {"id": "H5_PP05", "species": "ponderosa_pine", "lat": 47.01815, "lon": -120.62690, "estimated_height_m": 19, "canopy_diameter_m": 8, "trunk_diameter_m": 0.48, "notes": "Right of fairway"},
+    {"id": "H5_PP06", "species": "ponderosa_pine", "lat": 47.01808, "lon": -120.62670, "estimated_height_m": 21, "canopy_diameter_m": 9, "trunk_diameter_m": 0.52, "notes": "Right of fairway"},
+    {"id": "H5_CW01", "species": "cottonwood", "lat": 47.01790, "lon": -120.62630, "estimated_height_m": 28, "canopy_diameter_m": 14, "trunk_diameter_m": 0.80, "notes": "Near river, right side"},
+    {"id": "H5_CW02", "species": "cottonwood", "lat": 47.01785, "lon": -120.62615, "estimated_height_m": 30, "canopy_diameter_m": 15, "trunk_diameter_m": 0.90, "notes": "River bank, large specimen"},
+    {"id": "H5_WL01", "species": "willow", "lat": 47.01788, "lon": -120.62620, "estimated_height_m": 10, "canopy_diameter_m": 8, "trunk_diameter_m": 0.30, "notes": "River bank, multi-stem"},
+    {"id": "H5_WL02", "species": "willow", "lat": 47.01782, "lon": -120.62608, "estimated_height_m": 12, "canopy_diameter_m": 9, "trunk_diameter_m": 0.35, "notes": "River bank"},
+
+    {"_comment": "=== HOLE 6 — Par 3 ==="},
+    {"id": "H6_PP01", "species": "ponderosa_pine", "lat": 47.01770, "lon": -120.62600, "estimated_height_m": 17, "canopy_diameter_m": 7, "trunk_diameter_m": 0.42, "notes": "Left of tee"},
+    {"id": "H6_PP02", "species": "ponderosa_pine", "lat": 47.01765, "lon": -120.62585, "estimated_height_m": 15, "canopy_diameter_m": 7, "trunk_diameter_m": 0.38, "notes": "Right of green"},
+    {"id": "H6_OD01", "species": "ornamental_deciduous", "lat": 47.01768, "lon": -120.62590, "estimated_height_m": 8, "canopy_diameter_m": 5, "trunk_diameter_m": 0.20, "notes": "Between tee and green"},
+
+    {"_comment": "=== HOLE 7 — Par 4 (tree-lined) ==="},
+    {"id": "H7_PP01", "species": "ponderosa_pine", "lat": 47.01755, "lon": -120.62570, "estimated_height_m": 23, "canopy_diameter_m": 10, "trunk_diameter_m": 0.58, "notes": "Left tree line start"},
+    {"id": "H7_PP02", "species": "ponderosa_pine", "lat": 47.01748, "lon": -120.62555, "estimated_height_m": 20, "canopy_diameter_m": 9, "trunk_diameter_m": 0.50, "notes": "Left tree line"},
+    {"id": "H7_PP03", "species": "ponderosa_pine", "lat": 47.01740, "lon": -120.62540, "estimated_height_m": 24, "canopy_diameter_m": 10, "trunk_diameter_m": 0.60, "notes": "Left tree line, large"},
+    {"id": "H7_PP04", "species": "ponderosa_pine", "lat": 47.01733, "lon": -120.62525, "estimated_height_m": 19, "canopy_diameter_m": 8, "trunk_diameter_m": 0.48, "notes": "Left tree line"},
+    {"id": "H7_PP05", "species": "ponderosa_pine", "lat": 47.01725, "lon": -120.62510, "estimated_height_m": 21, "canopy_diameter_m": 9, "trunk_diameter_m": 0.52, "notes": "Left tree line, near green"},
+    {"id": "H7_PP06", "species": "ponderosa_pine", "lat": 47.01760, "lon": -120.62565, "estimated_height_m": 18, "canopy_diameter_m": 8, "trunk_diameter_m": 0.45, "notes": "Right tree line start"},
+    {"id": "H7_PP07", "species": "ponderosa_pine", "lat": 47.01752, "lon": -120.62550, "estimated_height_m": 22, "canopy_diameter_m": 9, "trunk_diameter_m": 0.55, "notes": "Right tree line"},
+    {"id": "H7_PP08", "species": "ponderosa_pine", "lat": 47.01745, "lon": -120.62535, "estimated_height_m": 17, "canopy_diameter_m": 7, "trunk_diameter_m": 0.42, "notes": "Right tree line"},
+    {"id": "H7_PP09", "species": "ponderosa_pine", "lat": 47.01738, "lon": -120.62520, "estimated_height_m": 20, "canopy_diameter_m": 9, "trunk_diameter_m": 0.50, "notes": "Right tree line"},
+    {"id": "H7_CW01", "species": "cottonwood", "lat": 47.01720, "lon": -120.62500, "estimated_height_m": 25, "canopy_diameter_m": 13, "trunk_diameter_m": 0.75, "notes": "Behind green, near river"},
+
+    {"_comment": "=== HOLE 8 — Par 5 (tree-lined, river on right) ==="},
+    {"id": "H8_PP01", "species": "ponderosa_pine", "lat": 47.01710, "lon": -120.62490, "estimated_height_m": 25, "canopy_diameter_m": 11, "trunk_diameter_m": 0.62, "notes": "Left of tee"},
+    {"id": "H8_PP02", "species": "ponderosa_pine", "lat": 47.01702, "lon": -120.62470, "estimated_height_m": 22, "canopy_diameter_m": 10, "trunk_diameter_m": 0.55, "notes": "Left fairway edge"},
+    {"id": "H8_PP03", "species": "ponderosa_pine", "lat": 47.01694, "lon": -120.62450, "estimated_height_m": 19, "canopy_diameter_m": 8, "trunk_diameter_m": 0.48, "notes": "Left fairway"},
+    {"id": "H8_PP04", "species": "ponderosa_pine", "lat": 47.01686, "lon": -120.62430, "estimated_height_m": 23, "canopy_diameter_m": 10, "trunk_diameter_m": 0.58, "notes": "Left fairway, near second landing zone"},
+    {"id": "H8_PP05", "species": "ponderosa_pine", "lat": 47.01678, "lon": -120.62410, "estimated_height_m": 20, "canopy_diameter_m": 9, "trunk_diameter_m": 0.50, "notes": "Left of approach"},
+    {"id": "H8_PP06", "species": "ponderosa_pine", "lat": 47.01705, "lon": -120.62480, "estimated_height_m": 18, "canopy_diameter_m": 8, "trunk_diameter_m": 0.45, "notes": "Right fairway edge"},
+    {"id": "H8_PP07", "species": "ponderosa_pine", "lat": 47.01697, "lon": -120.62460, "estimated_height_m": 21, "canopy_diameter_m": 9, "trunk_diameter_m": 0.52, "notes": "Right fairway"},
+    {"id": "H8_CW01", "species": "cottonwood", "lat": 47.01700, "lon": -120.62465, "estimated_height_m": 30, "canopy_diameter_m": 16, "trunk_diameter_m": 0.95, "notes": "River bank, right side, very large"},
+    {"id": "H8_CW02", "species": "cottonwood", "lat": 47.01692, "lon": -120.62445, "estimated_height_m": 28, "canopy_diameter_m": 14, "trunk_diameter_m": 0.85, "notes": "River bank"},
+    {"id": "H8_CW03", "species": "cottonwood", "lat": 47.01684, "lon": -120.62425, "estimated_height_m": 26, "canopy_diameter_m": 13, "trunk_diameter_m": 0.78, "notes": "River bank"},
+    {"id": "H8_CW04", "species": "cottonwood", "lat": 47.01676, "lon": -120.62405, "estimated_height_m": 32, "canopy_diameter_m": 17, "trunk_diameter_m": 1.00, "notes": "River bank, largest on course"},
+    {"id": "H8_WL01", "species": "willow", "lat": 47.01698, "lon": -120.62458, "estimated_height_m": 11, "canopy_diameter_m": 8, "trunk_diameter_m": 0.30, "notes": "River edge"},
+    {"id": "H8_WL02", "species": "willow", "lat": 47.01690, "lon": -120.62438, "estimated_height_m": 9, "canopy_diameter_m": 7, "trunk_diameter_m": 0.25, "notes": "River edge"},
+    {"id": "H8_WL03", "species": "willow", "lat": 47.01682, "lon": -120.62418, "estimated_height_m": 13, "canopy_diameter_m": 9, "trunk_diameter_m": 0.35, "notes": "River edge, large"},
+
+    {"_comment": "=== HOLE 9 — Par 4 ==="},
+    {"id": "H9_PP01", "species": "ponderosa_pine", "lat": 47.01670, "lon": -120.62400, "estimated_height_m": 20, "canopy_diameter_m": 9, "trunk_diameter_m": 0.50, "notes": "Left of tee"},
+    {"id": "H9_PP02", "species": "ponderosa_pine", "lat": 47.01665, "lon": -120.62385, "estimated_height_m": 18, "canopy_diameter_m": 8, "trunk_diameter_m": 0.45, "notes": "Right of tee"},
+    {"id": "H9_PP03", "species": "ponderosa_pine", "lat": 47.01658, "lon": -120.62370, "estimated_height_m": 22, "canopy_diameter_m": 10, "trunk_diameter_m": 0.55, "notes": "Left fairway, dogleg"},
+    {"id": "H9_PP04", "species": "ponderosa_pine", "lat": 47.01650, "lon": -120.62355, "estimated_height_m": 19, "canopy_diameter_m": 8, "trunk_diameter_m": 0.48, "notes": "Left of approach"},
+    {"id": "H9_OD01", "species": "ornamental_deciduous", "lat": 47.01645, "lon": -120.62340, "estimated_height_m": 10, "canopy_diameter_m": 6, "trunk_diameter_m": 0.25, "notes": "Near green, left"},
+    {"id": "H9_OD02", "species": "ornamental_deciduous", "lat": 47.01648, "lon": -120.62345, "estimated_height_m": 12, "canopy_diameter_m": 7, "trunk_diameter_m": 0.28, "notes": "Behind green"},
+
+    {"_comment": "=== RIVER CORRIDOR — South/East boundary ==="},
+    {"id": "RC_CW01", "species": "cottonwood", "lat": 47.01780, "lon": -120.62640, "estimated_height_m": 30, "canopy_diameter_m": 15, "trunk_diameter_m": 0.90, "notes": "River corridor, between holes 5-6"},
+    {"id": "RC_CW02", "species": "cottonwood", "lat": 47.01775, "lon": -120.62625, "estimated_height_m": 28, "canopy_diameter_m": 14, "trunk_diameter_m": 0.85, "notes": "River corridor"},
+    {"id": "RC_CW03", "species": "cottonwood", "lat": 47.01768, "lon": -120.62608, "estimated_height_m": 32, "canopy_diameter_m": 16, "trunk_diameter_m": 1.00, "notes": "River corridor, large specimen"},
+    {"id": "RC_CW04", "species": "cottonwood", "lat": 47.01760, "lon": -120.62590, "estimated_height_m": 27, "canopy_diameter_m": 13, "trunk_diameter_m": 0.80, "notes": "River corridor"},
+    {"id": "RC_CW05", "species": "cottonwood", "lat": 47.01752, "lon": -120.62575, "estimated_height_m": 29, "canopy_diameter_m": 14, "trunk_diameter_m": 0.88, "notes": "River corridor"},
+    {"id": "RC_CW06", "species": "cottonwood", "lat": 47.01745, "lon": -120.62558, "estimated_height_m": 26, "canopy_diameter_m": 12, "trunk_diameter_m": 0.75, "notes": "River corridor"},
+    {"id": "RC_CW07", "species": "cottonwood", "lat": 47.01738, "lon": -120.62540, "estimated_height_m": 31, "canopy_diameter_m": 16, "trunk_diameter_m": 0.95, "notes": "River corridor, near hole 7 green"},
+    {"id": "RC_CW08", "species": "cottonwood", "lat": 47.01730, "lon": -120.62525, "estimated_height_m": 25, "canopy_diameter_m": 12, "trunk_diameter_m": 0.72, "notes": "River corridor"},
+    {"id": "RC_CW09", "species": "cottonwood", "lat": 47.01722, "lon": -120.62508, "estimated_height_m": 28, "canopy_diameter_m": 14, "trunk_diameter_m": 0.82, "notes": "River corridor"},
+    {"id": "RC_CW10", "species": "cottonwood", "lat": 47.01715, "lon": -120.62495, "estimated_height_m": 30, "canopy_diameter_m": 15, "trunk_diameter_m": 0.92, "notes": "River corridor"},
+    {"id": "RC_WL01", "species": "willow", "lat": 47.01778, "lon": -120.62635, "estimated_height_m": 10, "canopy_diameter_m": 7, "trunk_diameter_m": 0.28, "notes": "River edge understory"},
+    {"id": "RC_WL02", "species": "willow", "lat": 47.01770, "lon": -120.62612, "estimated_height_m": 12, "canopy_diameter_m": 8, "trunk_diameter_m": 0.32, "notes": "River edge"},
+    {"id": "RC_WL03", "species": "willow", "lat": 47.01762, "lon": -120.62595, "estimated_height_m": 9, "canopy_diameter_m": 6, "trunk_diameter_m": 0.22, "notes": "River edge, small"},
+    {"id": "RC_WL04", "species": "willow", "lat": 47.01755, "lon": -120.62578, "estimated_height_m": 11, "canopy_diameter_m": 8, "trunk_diameter_m": 0.30, "notes": "River edge"},
+    {"id": "RC_WL05", "species": "willow", "lat": 47.01748, "lon": -120.62562, "estimated_height_m": 14, "canopy_diameter_m": 10, "trunk_diameter_m": 0.38, "notes": "River edge, larger specimen"},
+    {"id": "RC_WL06", "species": "willow", "lat": 47.01740, "lon": -120.62545, "estimated_height_m": 10, "canopy_diameter_m": 7, "trunk_diameter_m": 0.28, "notes": "River edge"},
+    {"id": "RC_WL07", "species": "willow", "lat": 47.01732, "lon": -120.62528, "estimated_height_m": 12, "canopy_diameter_m": 8, "trunk_diameter_m": 0.32, "notes": "River edge"},
+    {"id": "RC_WL08", "species": "willow", "lat": 47.01725, "lon": -120.62512, "estimated_height_m": 8, "canopy_diameter_m": 6, "trunk_diameter_m": 0.22, "notes": "River edge, small"},
+    {"id": "RC_WL09", "species": "willow", "lat": 47.01718, "lon": -120.62498, "estimated_height_m": 11, "canopy_diameter_m": 7, "trunk_diameter_m": 0.28, "notes": "River edge"},
+
+    {"_comment": "=== COURSE PERIMETER — scattered pines ==="},
+    {"id": "PE_PP01", "species": "ponderosa_pine", "lat": 47.01990, "lon": -120.63060, "estimated_height_m": 20, "canopy_diameter_m": 9, "trunk_diameter_m": 0.50, "notes": "Entrance area"},
+    {"id": "PE_PP02", "species": "ponderosa_pine", "lat": 47.01995, "lon": -120.63045, "estimated_height_m": 18, "canopy_diameter_m": 8, "trunk_diameter_m": 0.45, "notes": "Entrance area"},
+    {"id": "PE_PP03", "species": "ponderosa_pine", "lat": 47.01988, "lon": -120.63070, "estimated_height_m": 22, "canopy_diameter_m": 10, "trunk_diameter_m": 0.55, "notes": "Northwest corner"},
+    {"id": "PE_PP04", "species": "ponderosa_pine", "lat": 47.01982, "lon": -120.63080, "estimated_height_m": 16, "canopy_diameter_m": 7, "trunk_diameter_m": 0.40, "notes": "Northwest corner"},
+    {"id": "PE_PP05", "species": "ponderosa_pine", "lat": 47.01975, "lon": -120.63055, "estimated_height_m": 24, "canopy_diameter_m": 11, "trunk_diameter_m": 0.62, "notes": "North boundary, large"},
+    {"id": "PE_PP06", "species": "ponderosa_pine", "lat": 47.01965, "lon": -120.63000, "estimated_height_m": 19, "canopy_diameter_m": 8, "trunk_diameter_m": 0.48, "notes": "Between holes 1-2"},
+    {"id": "PE_PP07", "species": "ponderosa_pine", "lat": 47.01950, "lon": -120.62950, "estimated_height_m": 21, "canopy_diameter_m": 9, "trunk_diameter_m": 0.52, "notes": "Between holes 2-3"},
+    {"id": "PE_PP08", "species": "ponderosa_pine", "lat": 47.01930, "lon": -120.62910, "estimated_height_m": 17, "canopy_diameter_m": 7, "trunk_diameter_m": 0.42, "notes": "West boundary"},
+    {"id": "PE_PP09", "species": "ponderosa_pine", "lat": 47.01660, "lon": -120.62365, "estimated_height_m": 20, "canopy_diameter_m": 9, "trunk_diameter_m": 0.50, "notes": "Near hole 9 green"},
+    {"id": "PE_PP10", "species": "ponderosa_pine", "lat": 47.01655, "lon": -120.62350, "estimated_height_m": 18, "canopy_diameter_m": 8, "trunk_diameter_m": 0.45, "notes": "Southeast area"},
+
+    {"_comment": "=== CLUBHOUSE AREA — ornamental plantings ==="},
+    {"id": "CL_OD01", "species": "ornamental_deciduous", "lat": 47.01992, "lon": -120.63035, "estimated_height_m": 10, "canopy_diameter_m": 6, "trunk_diameter_m": 0.25, "notes": "Clubhouse front, shade tree"},
+    {"id": "CL_OD02", "species": "ornamental_deciduous", "lat": 47.01988, "lon": -120.63025, "estimated_height_m": 12, "canopy_diameter_m": 7, "trunk_diameter_m": 0.30, "notes": "Clubhouse side"},
+    {"id": "CL_OD03", "species": "ornamental_deciduous", "lat": 47.01995, "lon": -120.63020, "estimated_height_m": 8, "canopy_diameter_m": 5, "trunk_diameter_m": 0.20, "notes": "Parking area"},
+    {"id": "CL_OD04", "species": "ornamental_deciduous", "lat": 47.01998, "lon": -120.63030, "estimated_height_m": 11, "canopy_diameter_m": 6, "trunk_diameter_m": 0.28, "notes": "Practice green area"},
+    {"id": "CL_OD05", "species": "ornamental_deciduous", "lat": 47.01990, "lon": -120.63015, "estimated_height_m": 9, "canopy_diameter_m": 5, "trunk_diameter_m": 0.22, "notes": "Near first tee"},
+    {"id": "CL_PP01", "species": "ponderosa_pine", "lat": 47.01997, "lon": -120.63040, "estimated_height_m": 22, "canopy_diameter_m": 10, "trunk_diameter_m": 0.55, "notes": "Large pine near clubhouse entrance"},
+    {"id": "CL_PP02", "species": "ponderosa_pine", "lat": 47.01985, "lon": -120.63010, "estimated_height_m": 20, "canopy_diameter_m": 9, "trunk_diameter_m": 0.50, "notes": "Between clubhouse and first tee"}
+  ],
+
+  "summary_by_species": {
+    "ponderosa_pine": {
+      "count": 72,
+      "description": "Primary tree species. Found along fairway edges on holes 4, 5, 7, 8 and scattered throughout course perimeter.",
+      "height_range_m": "15-26",
+      "model_recommendation": "Use 3-4 variations of pine model with random rotation and scale for natural look."
+    },
+    "cottonwood": {
+      "count": 19,
+      "description": "Large deciduous trees along Yakima River corridor and scattered near holes 5, 7, 8.",
+      "height_range_m": "25-32",
+      "model_recommendation": "Use 2-3 broad canopy deciduous models. These are the largest trees on the course."
+    },
+    "willow": {
+      "count": 21,
+      "description": "Riparian species along river bank. Often understory beneath cottonwoods.",
+      "height_range_m": "8-14",
+      "model_recommendation": "Use weeping/drooping canopy model. Multi-stem variants for variety."
+    },
+    "ornamental_deciduous": {
+      "count": 22,
+      "description": "Planted shade trees near clubhouse, tees, and greens. Generic deciduous.",
+      "height_range_m": "8-12",
+      "model_recommendation": "Use generic medium deciduous models with round canopy."
+    }
+  }
+}

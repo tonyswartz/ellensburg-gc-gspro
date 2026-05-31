@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="gpx_to_svg sample"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+       http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Ellensburg GC Hole 1 Green</name>
+    <desc>Green edge walk for hole 1. Roughly oval, ~27 yards wide x 30 yards deep.
+          Walked clockwise starting from front-left.</desc>
+    <time>2026-05-15T09:15:00Z</time>
+  </metadata>
+
+  <!-- Green center reference -->
+  <wpt lat="47.02210" lon="-120.62740">
+    <name>green-center-1</name>
+    <desc>Hole 1 green center (pin placement area)</desc>
+  </wpt>
+
+  <trk>
+    <name>green-edge-1</name>
+    <desc>Perimeter of hole 1 green, walked clockwise from front-left</desc>
+    <trkseg>
+      <!-- Front-left (closest to fairway approach, left side) -->
+      <trkpt lat="47.02199" lon="-120.62754"><time>2026-05-15T09:15:00Z</time></trkpt>
+      <trkpt lat="47.02200" lon="-120.62751"><time>2026-05-15T09:15:01Z</time></trkpt>
+      <trkpt lat="47.02200" lon="-120.62748"><time>2026-05-15T09:15:02Z</time></trkpt>
+      <trkpt lat="47.02199" lon="-120.62745"><time>2026-05-15T09:15:03Z</time></trkpt>
+      <!-- Front-center -->
+      <trkpt lat="47.02199" lon="-120.62742"><time>2026-05-15T09:15:04Z</time></trkpt>
+      <trkpt lat="47.02198" lon="-120.62739"><time>2026-05-15T09:15:05Z</time></trkpt>
+      <trkpt lat="47.02198" lon="-120.62736"><time>2026-05-15T09:15:06Z</time></trkpt>
+      <trkpt lat="47.02199" lon="-120.62733"><time>2026-05-15T09:15:07Z</time></trkpt>
+      <!-- Front-right -->
+      <trkpt lat="47.02199" lon="-120.62730"><time>2026-05-15T09:15:08Z</time></trkpt>
+      <trkpt lat="47.02200" lon="-120.62727"><time>2026-05-15T09:15:09Z</time></trkpt>
+      <!-- Right side — curving back -->
+      <trkpt lat="47.02201" lon="-120.62725"><time>2026-05-15T09:15:10Z</time></trkpt>
+      <trkpt lat="47.02203" lon="-120.62723"><time>2026-05-15T09:15:11Z</time></trkpt>
+      <trkpt lat="47.02205" lon="-120.62722"><time>2026-05-15T09:15:12Z</time></trkpt>
+      <trkpt lat="47.02207" lon="-120.62721"><time>2026-05-15T09:15:13Z</time></trkpt>
+      <trkpt lat="47.02209" lon="-120.62721"><time>2026-05-15T09:15:14Z</time></trkpt>
+      <trkpt lat="47.02211" lon="-120.62721"><time>2026-05-15T09:15:15Z</time></trkpt>
+      <trkpt lat="47.02213" lon="-120.62722"><time>2026-05-15T09:15:16Z</time></trkpt>
+      <trkpt lat="47.02215" lon="-120.62723"><time>2026-05-15T09:15:17Z</time></trkpt>
+      <!-- Back-right -->
+      <trkpt lat="47.02217" lon="-120.62724"><time>2026-05-15T09:15:18Z</time></trkpt>
+      <trkpt lat="47.02219" lon="-120.62726"><time>2026-05-15T09:15:19Z</time></trkpt>
+      <trkpt lat="47.02220" lon="-120.62728"><time>2026-05-15T09:15:20Z</time></trkpt>
+      <trkpt lat="47.02221" lon="-120.62730"><time>2026-05-15T09:15:21Z</time></trkpt>
+      <!-- Back-center -->
+      <trkpt lat="47.02222" lon="-120.62733"><time>2026-05-15T09:15:22Z</time></trkpt>
+      <trkpt lat="47.02222" lon="-120.62736"><time>2026-05-15T09:15:23Z</time></trkpt>
+      <trkpt lat="47.02222" lon="-120.62739"><time>2026-05-15T09:15:24Z</time></trkpt>
+      <trkpt lat="47.02222" lon="-120.62742"><time>2026-05-15T09:15:25Z</time></trkpt>
+      <trkpt lat="47.02221" lon="-120.62745"><time>2026-05-15T09:15:26Z</time></trkpt>
+      <!-- Back-left -->
+      <trkpt lat="47.02221" lon="-120.62748"><time>2026-05-15T09:15:27Z</time></trkpt>
+      <trkpt lat="47.02220" lon="-120.62751"><time>2026-05-15T09:15:28Z</time></trkpt>
+      <trkpt lat="47.02219" lon="-120.62753"><time>2026-05-15T09:15:29Z</time></trkpt>
+      <trkpt lat="47.02217" lon="-120.62755"><time>2026-05-15T09:15:30Z</time></trkpt>
+      <!-- Left side — curving forward -->
+      <trkpt lat="47.02215" lon="-120.62756"><time>2026-05-15T09:15:31Z</time></trkpt>
+      <trkpt lat="47.02213" lon="-120.62757"><time>2026-05-15T09:15:32Z</time></trkpt>
+      <trkpt lat="47.02211" lon="-120.62758"><time>2026-05-15T09:15:33Z</time></trkpt>
+      <trkpt lat="47.02209" lon="-120.62758"><time>2026-05-15T09:15:34Z</time></trkpt>
+      <trkpt lat="47.02207" lon="-120.62757"><time>2026-05-15T09:15:35Z</time></trkpt>
+      <trkpt lat="47.02205" lon="-120.62757"><time>2026-05-15T09:15:36Z</time></trkpt>
+      <trkpt lat="47.02203" lon="-120.62756"><time>2026-05-15T09:15:37Z</time></trkpt>
+      <trkpt lat="47.02201" lon="-120.62755"><time>2026-05-15T09:15:38Z</time></trkpt>
+      <!-- Close the loop — back to front-left -->
+      <trkpt lat="47.02200" lon="-120.62754"><time>2026-05-15T09:15:39Z</time></trkpt>
+      <trkpt lat="47.02199" lon="-120.62754"><time>2026-05-15T09:15:40Z</time></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <marker id="windArrow8" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#5577aa"/>
+    </marker>
+    <linearGradient id="fairwayGrad8" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#82b888"/>
+      <stop offset="50%" style="stop-color:#90c695"/>
+      <stop offset="100%" style="stop-color:#82b888"/>
+    </linearGradient>
+    <radialGradient id="greenGrad8">
+      <stop offset="0%" style="stop-color:#3a9a4a"/>
+      <stop offset="100%" style="stop-color:#2d7a3a"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="#7aaa7a"/>
+
+  <!-- Hole info -->
+  <rect x="10" y="10" width="260" height="50" rx="5" fill="rgba(0,0,0,0.6)"/>
+  <text x="20" y="32" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="white">Hole 8 — Par 4</text>
+  <text x="20" y="50" font-family="Arial, sans-serif" font-size="13" fill="#ccc">375 Yards • Slight Dogleg Left</text>
+
+  <!-- Wind arrow -->
+  <g transform="translate(540, 40)">
+    <circle cx="0" cy="0" r="22" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <line x1="4" y1="-12" x2="-4" y2="10" stroke="#5577aa" stroke-width="2" marker-end="url(#windArrow8)"/>
+    <text x="0" y="-26" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">WIND</text>
+    <text x="-8" y="18" font-family="Arial, sans-serif" font-size="7" fill="#aac">SSW</text>
+  </g>
+
+  <!-- Fairway - slight dogleg left, plays SSW (top to bottom in view) -->
+  <path d="M 310,50 Q 305,80 298,120 Q 290,160 280,200 Q 268,240 255,275 
+           Q 240,305 225,330 Q 212,350 200,365
+           Q 190,360 205,340 Q 218,315 232,285 Q 248,248 260,210 
+           Q 272,170 280,135 Q 288,100 292,70 Q 295,52 298,45 Z" 
+        fill="url(#fairwayGrad8)" stroke="#6a9a6a" stroke-width="1.5"/>
+  <!-- Dogleg extension left -->
+  <path d="M 200,365 Q 192,372 185,378 Q 180,382 175,384
+           Q 170,378 178,372 Q 185,365 192,358 Q 195,355 200,360 Z" 
+        fill="url(#fairwayGrad8)" stroke="#6a9a6a" stroke-width="1"/>
+
+  <!-- Dense trees left side -->
+  <circle cx="248" cy="120" r="9" fill="#1a5c1a" opacity="0.7"/>
+  <circle cx="238" cy="170" r="10" fill="#1f6a1f" opacity="0.7"/>
+  <circle cx="228" cy="220" r="9" fill="#1a5c1a" opacity="0.7"/>
+  <circle cx="215" cy="265" r="10" fill="#1f6a1f" opacity="0.7"/>
+  <circle cx="200" cy="310" r="9" fill="#1a5c1a" opacity="0.7"/>
+  <circle cx="160" cy="365" r="8" fill="#1f6a1f" opacity="0.6"/>
+
+  <!-- Dense trees right side -->
+  <circle cx="340" cy="90" r="9" fill="#1a5c1a" opacity="0.7"/>
+  <circle cx="335" cy="140" r="10" fill="#1f6a1f" opacity="0.7"/>
+  <circle cx="325" cy="190" r="9" fill="#1a5c1a" opacity="0.7"/>
+  <circle cx="315" cy="240" r="10" fill="#1f6a1f" opacity="0.7"/>
+  <circle cx="300" cy="290" r="9" fill="#1a5c1a" opacity="0.7"/>
+  <circle cx="280" cy="330" r="8" fill="#1f6a1f" opacity="0.6"/>
+
+  <!-- Additional scattered trees -->
+  <circle cx="225" cy="140" r="6" fill="#1a5c1a" opacity="0.5"/>
+  <circle cx="355" cy="170" r="7" fill="#1a5c1a" opacity="0.5"/>
+  <circle cx="350" cy="120" r="6" fill="#1f6a1f" opacity="0.5"/>
+
+  <!-- Yardage markers -->
+  <text x="263" y="167" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold" opacity="0.8">250</text>
+  <line x1="270" y1="170" x2="284" y2="172" stroke="white" stroke-width="1.5" opacity="0.7"/>
+
+  <text x="250" y="225" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold" opacity="0.8">200</text>
+  <line x1="260" y1="228" x2="272" y2="228" stroke="white" stroke-width="1.5" opacity="0.7"/>
+
+  <text x="230" y="290" font-family="Arial, sans-serif" font-size="10" fill="#ff0" font-weight="bold" opacity="0.8">150</text>
+  <line x1="242" y1="293" x2="255" y2="290" stroke="#ff0" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Green -->
+  <ellipse cx="170" cy="380" rx="24" ry="18" fill="url(#greenGrad8)" stroke="#1a5a2a" stroke-width="2"/>
+  <ellipse cx="168" cy="378" rx="15" ry="11" fill="none" stroke="#2a8a3a" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Pin -->
+  <circle cx="168" cy="377" r="3" fill="white" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="168" y1="377" x2="168" y2="360" stroke="white" stroke-width="1.5"/>
+  <polygon points="168,360 156,364 168,368" fill="#cc3333"/>
+
+  <!-- Tee boxes -->
+  <rect x="300" y="40" width="22" height="10" rx="2" fill="#3366aa" stroke="#2255aa" stroke-width="1"/>
+  <text x="335" y="50" font-family="Arial, sans-serif" font-size="8" fill="#3366aa">BLUE</text>
+  <rect x="295" y="55" width="20" height="9" rx="2" fill="white" stroke="#aaa" stroke-width="1"/>
+  <text x="330" y="65" font-family="Arial, sans-serif" font-size="8" fill="#888">WHITE</text>
+
+  <!-- Tree-lined note -->
+  <text x="430" y="200" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.5)" font-style="italic">Trees both sides</text>
+</svg>

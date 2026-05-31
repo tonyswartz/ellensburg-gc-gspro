@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <marker id="windArrow7" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#5577aa"/>
+    </marker>
+    <linearGradient id="fairwayGrad7" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#82b888"/>
+      <stop offset="50%" style="stop-color:#90c695"/>
+      <stop offset="100%" style="stop-color:#82b888"/>
+    </linearGradient>
+    <radialGradient id="greenGrad7">
+      <stop offset="0%" style="stop-color:#3a9a4a"/>
+      <stop offset="100%" style="stop-color:#2d7a3a"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="#7aaa7a"/>
+
+  <!-- Hole info -->
+  <rect x="10" y="10" width="260" height="50" rx="5" fill="rgba(0,0,0,0.6)"/>
+  <text x="20" y="32" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="white">Hole 7 — Par 4</text>
+  <text x="20" y="50" font-family="Arial, sans-serif" font-size="13" fill="#ccc">400 Yards • Uphill • Blind Approach</text>
+
+  <!-- Wind arrow -->
+  <g transform="translate(540, 40)">
+    <circle cx="0" cy="0" r="22" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <line x1="8" y1="10" x2="-8" y2="-8" stroke="#5577aa" stroke-width="2" marker-end="url(#windArrow7)"/>
+    <text x="0" y="-26" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">WIND</text>
+    <text x="-14" y="-10" font-family="Arial, sans-serif" font-size="7" fill="#aac">NW</text>
+  </g>
+
+  <!-- Elevation contour lines showing uphill -->
+  <path d="M 230,280 Q 260,265 290,280" fill="none" stroke="#6a9a6a" stroke-width="1" opacity="0.4"/>
+  <path d="M 210,260 Q 250,240 290,260" fill="none" stroke="#6a9a6a" stroke-width="1" opacity="0.4"/>
+  <path d="M 190,240 Q 240,218 290,240" fill="none" stroke="#6a9a6a" stroke-width="1" opacity="0.4"/>
+  <path d="M 170,220 Q 225,195 280,220" fill="none" stroke="#6a9a6a" stroke-width="1" opacity="0.4"/>
+  <path d="M 155,200 Q 210,175 265,200" fill="none" stroke="#6a9a6a" stroke-width="1" opacity="0.35"/>
+
+  <!-- Blind approach ridge line -->
+  <path d="M 130,185 Q 200,160 270,185" fill="none" stroke="#5a8a5a" stroke-width="2.5" opacity="0.5"/>
+  <text x="200" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" font-style="italic">Ridge — Blind Approach</text>
+
+  <!-- Fairway - plays NW, uphill -->
+  <path d="M 490,365 Q 460,340 425,305 Q 390,270 350,235 Q 310,200 270,170 
+           Q 235,148 200,132 Q 170,120 145,112 Q 125,108 110,106
+           Q 105,118 120,122 Q 140,128 165,138 Q 195,152 230,172 
+           Q 265,195 300,225 Q 340,260 380,295 Q 420,325 455,350 
+           Q 478,365 488,372 Z" 
+        fill="url(#fairwayGrad7)" stroke="#6a9a6a" stroke-width="1.5"/>
+
+  <!-- Trees scattered -->
+  <circle cx="445" cy="310" r="8" fill="#1a5c1a" opacity="0.6"/>
+  <circle cx="360" cy="240" r="9" fill="#1f6a1f" opacity="0.6"/>
+  <circle cx="300" cy="230" r="8" fill="#1a5c1a" opacity="0.6"/>
+  <circle cx="470" cy="340" r="7" fill="#1f6a1f" opacity="0.6"/>
+  <circle cx="400" cy="280" r="8" fill="#1a5c1a" opacity="0.6"/>
+
+  <!-- Yardage markers -->
+  <text x="365" y="290" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold" opacity="0.8">250</text>
+  <text x="295" y="240" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold" opacity="0.8">200</text>
+  <text x="225" y="185" font-family="Arial, sans-serif" font-size="10" fill="#ff0" font-weight="bold" opacity="0.8">150</text>
+
+  <!-- Greenside bunkers -->
+  <ellipse cx="88" cy="118" rx="14" ry="9" fill="#d4b97c" stroke="#b89a5c" stroke-width="1.5"/>
+  <ellipse cx="88" cy="118" rx="9" ry="5" fill="#e0c88a" opacity="0.5"/>
+  <ellipse cx="125" cy="95" rx="12" ry="8" fill="#d4b97c" stroke="#b89a5c" stroke-width="1.5"/>
+  <ellipse cx="125" cy="95" rx="8" ry="4" fill="#e0c88a" opacity="0.5"/>
+
+  <!-- Green -->
+  <ellipse cx="105" cy="102" rx="26" ry="22" fill="url(#greenGrad7)" stroke="#1a5a2a" stroke-width="2"/>
+  <ellipse cx="103" cy="100" rx="16" ry="14" fill="none" stroke="#2a8a3a" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Pin -->
+  <circle cx="103" cy="100" r="3" fill="white" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="103" y1="100" x2="103" y2="83" stroke="white" stroke-width="1.5"/>
+  <polygon points="103,83 91,87 103,91" fill="#cc3333"/>
+
+  <!-- Tee boxes -->
+  <rect x="485" y="360" width="22" height="10" rx="2" fill="#3366aa" stroke="#2255aa" stroke-width="1"/>
+  <text x="496" y="384" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3366aa">BLUE</text>
+  <rect x="470" y="350" width="20" height="9" rx="2" fill="white" stroke="#aaa" stroke-width="1"/>
+  <text x="480" y="346" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#888">WHITE</text>
+
+  <!-- Uphill arrow -->
+  <text x="180" y="310" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.5)" font-style="italic">Uphill approach +15ft</text>
+</svg>

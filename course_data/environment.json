@@ -1,0 +1,552 @@
+{
+  "format": "GSPro_Environment",
+  "version": "1.0.0",
+  "courseName": "Ellensburg Golf Club",
+  "location": {
+    "latitude": 47.0193,
+    "longitude": -120.6294,
+    "elevation_ft": 1525,
+    "timezone": "America/Los_Angeles",
+    "utcOffset": -7,
+    "magneticDeclination_deg": 14.8
+  },
+  "orientation": {
+    "courseAxis_deg": 135,
+    "description": "Course runs roughly NW to SE. Hole 1 tee is near center-south, playing NE. Holes route outward and return.",
+    "clubhouseDirection_deg": 225,
+    "notes": "Sun rises over the hills to the ESE and sets over the Cascades to the WNW. Shadows are longest on early morning and late afternoon rounds."
+  },
+  "timeOfDayPresets": [
+    {
+      "id": "early_morning",
+      "name": "Early Morning",
+      "description": "First tee time. Low sun from the ESE, long shadows, cool temperatures. Dew on greens. Minimal wind -- calmest conditions of the day.",
+      "timeRange": "06:30-08:00",
+      "sunAzimuth_deg": 75,
+      "sunElevation_deg": 12,
+      "ambientLight": 0.55,
+      "shadowLength": "long",
+      "temperature_f": 52,
+      "dewPoint_f": 42,
+      "humidity_pct": 55,
+      "skyColor": "#87CEEB",
+      "horizonColor": "#FFD4A0",
+      "fogDensity": 0.08,
+      "fogNotes": "Light ground fog possible along Yakima River, especially Hole 4 area"
+    },
+    {
+      "id": "morning",
+      "name": "Mid-Morning",
+      "description": "Sun climbing higher, warming up. Wind typically starting to build. Dew burning off. Best visibility.",
+      "timeRange": "09:00-11:00",
+      "sunAzimuth_deg": 120,
+      "sunElevation_deg": 38,
+      "ambientLight": 0.78,
+      "shadowLength": "medium",
+      "temperature_f": 64,
+      "dewPoint_f": 40,
+      "humidity_pct": 38,
+      "skyColor": "#4A90D9",
+      "horizonColor": "#B0D4F1",
+      "fogDensity": 0.0
+    },
+    {
+      "id": "midday",
+      "name": "Midday",
+      "description": "Peak sun, harshest light. Wind at its strongest -- 15-25 mph typical. Semi-arid landscape fully lit. Flat, bright light with minimal shadows.",
+      "timeRange": "11:30-14:00",
+      "sunAzimuth_deg": 180,
+      "sunElevation_deg": 62,
+      "ambientLight": 1.0,
+      "shadowLength": "short",
+      "temperature_f": 78,
+      "dewPoint_f": 35,
+      "humidity_pct": 25,
+      "skyColor": "#3B7DD8",
+      "horizonColor": "#A8C8E8",
+      "fogDensity": 0.0
+    },
+    {
+      "id": "afternoon",
+      "name": "Afternoon",
+      "description": "Sun tracking west, still strong. Wind remains gusty. Warm and dry. Light beginning to warm in color.",
+      "timeRange": "14:30-16:30",
+      "sunAzimuth_deg": 240,
+      "sunElevation_deg": 40,
+      "ambientLight": 0.82,
+      "shadowLength": "medium",
+      "temperature_f": 80,
+      "dewPoint_f": 32,
+      "humidity_pct": 22,
+      "skyColor": "#4A88CC",
+      "horizonColor": "#D4B896",
+      "fogDensity": 0.0
+    },
+    {
+      "id": "golden_hour",
+      "name": "Golden Hour",
+      "description": "Warm, golden light from the WNW. Dramatic shadows stretch across fairways. Wind typically calming. Best visual conditions for screenshots/photos. Cascade Range silhouette on western horizon.",
+      "timeRange": "17:30-19:30",
+      "sunAzimuth_deg": 285,
+      "sunElevation_deg": 10,
+      "ambientLight": 0.45,
+      "shadowLength": "very_long",
+      "temperature_f": 70,
+      "dewPoint_f": 38,
+      "humidity_pct": 32,
+      "skyColor": "#6B8EC2",
+      "horizonColor": "#FF8C42",
+      "fogDensity": 0.0,
+      "notes": "Mount Stuart and the Stuart Range may be visible to the NW in clear conditions"
+    },
+    {
+      "id": "twilight",
+      "name": "Twilight",
+      "description": "Post-sunset glow. Deep blue sky with warm horizon. Last holes of the day. Very calm conditions.",
+      "timeRange": "19:30-21:00",
+      "sunAzimuth_deg": 300,
+      "sunElevation_deg": -3,
+      "ambientLight": 0.2,
+      "shadowLength": "none",
+      "temperature_f": 60,
+      "dewPoint_f": 40,
+      "humidity_pct": 45,
+      "skyColor": "#2B4570",
+      "horizonColor": "#D4886B",
+      "fogDensity": 0.02
+    }
+  ],
+  "weather": {
+    "climate": "semi-arid continental (BSk)",
+    "annualPrecipitation_in": 8.9,
+    "sunnyDaysPct": 65,
+    "notes": "Kittitas Valley is one of the driest and windiest areas in WA. Rain shadow of the Cascades. Summer is extremely dry with near-zero precipitation Jun-Aug.",
+    "presets": [
+      {
+        "id": "clear_calm",
+        "name": "Clear & Calm (Rare Morning)",
+        "description": "Rare calm morning before wind builds. Crystal clear skies, dry air. Best scoring conditions.",
+        "probability_pct": 15,
+        "cloudCover_pct": 5,
+        "cloudType": "none",
+        "precipitation": "none",
+        "visibility_mi": 50,
+        "windSpeed_mph": 3,
+        "windGusts_mph": 5,
+        "windDirection_deg": 290,
+        "temperature_f": 68,
+        "humidity_pct": 30,
+        "barometer_inHg": 30.12
+      },
+      {
+        "id": "typical_windy",
+        "name": "Typical Kittitas Wind",
+        "description": "The standard Ellensburg day. Clear to partly cloudy with persistent W-NW wind. This is what most rounds will feel like.",
+        "probability_pct": 40,
+        "cloudCover_pct": 20,
+        "cloudType": "scattered_cumulus",
+        "precipitation": "none",
+        "visibility_mi": 40,
+        "windSpeed_mph": 18,
+        "windGusts_mph": 28,
+        "windDirection_deg": 300,
+        "temperature_f": 75,
+        "humidity_pct": 25,
+        "barometer_inHg": 30.05
+      },
+      {
+        "id": "very_windy",
+        "name": "Strong Kittitas Wind",
+        "description": "Common high-wind day. The Kittitas Valley funnels wind through the gap between the Cascades and the Wenatchee Mountains. Significant club selection challenges.",
+        "probability_pct": 20,
+        "cloudCover_pct": 30,
+        "cloudType": "scattered_cumulus_with_lenticular",
+        "precipitation": "none",
+        "visibility_mi": 35,
+        "windSpeed_mph": 28,
+        "windGusts_mph": 42,
+        "windDirection_deg": 295,
+        "temperature_f": 72,
+        "humidity_pct": 22,
+        "barometer_inHg": 29.90,
+        "notes": "Lenticular clouds over the Cascades are a telltale sign of extreme wind days"
+      },
+      {
+        "id": "partly_cloudy",
+        "name": "Partly Cloudy",
+        "description": "Dramatic Central WA sky with big cumulus clouds. Moderate wind. Temperature comfortable.",
+        "probability_pct": 15,
+        "cloudCover_pct": 50,
+        "cloudType": "cumulus_mediocris",
+        "precipitation": "none",
+        "visibility_mi": 30,
+        "windSpeed_mph": 12,
+        "windGusts_mph": 20,
+        "windDirection_deg": 280,
+        "temperature_f": 70,
+        "humidity_pct": 35,
+        "barometer_inHg": 30.00
+      },
+      {
+        "id": "overcast_light_rain",
+        "name": "Overcast with Light Rain",
+        "description": "Uncommon during golf season but possible in spring and fall. Low clouds, drizzle, reduced wind. Rare enough to be notable.",
+        "probability_pct": 8,
+        "cloudCover_pct": 90,
+        "cloudType": "stratus",
+        "precipitation": "light_rain",
+        "precipitationRate_inHr": 0.05,
+        "visibility_mi": 8,
+        "windSpeed_mph": 8,
+        "windGusts_mph": 12,
+        "windDirection_deg": 200,
+        "temperature_f": 55,
+        "humidity_pct": 75,
+        "barometer_inHg": 29.75
+      },
+      {
+        "id": "thunderstorm",
+        "name": "Afternoon Thunderstorm",
+        "description": "Rare but dramatic summer thunderstorm. Builds over the Cascades and pushes east. Usually brief with gusty winds and possible lightning.",
+        "probability_pct": 2,
+        "cloudCover_pct": 80,
+        "cloudType": "cumulonimbus",
+        "precipitation": "rain_with_thunder",
+        "precipitationRate_inHr": 0.3,
+        "visibility_mi": 3,
+        "windSpeed_mph": 20,
+        "windGusts_mph": 50,
+        "windDirection_deg": 260,
+        "temperature_f": 65,
+        "humidity_pct": 60,
+        "barometer_inHg": 29.60
+      }
+    ]
+  },
+  "wind": {
+    "predominantDirection_deg": 300,
+    "predominantDirectionName": "WNW",
+    "secondaryDirection_deg": 280,
+    "secondaryDirectionName": "W",
+    "averageSpeed_mph": 15,
+    "typicalRange_mph": [10, 25],
+    "gustFactor": 1.6,
+    "maxRecordedGusts_mph": 60,
+    "calmProbability_pct": 12,
+    "notes": "Kittitas Valley is one of the windiest locations in Washington state. Wind is funneled through the valley between the Cascade Range and Saddle Mountains. Wind farm-quality sustained winds are common. Morning calm is the exception, not the rule. Wind typically builds from 9-10 AM and peaks mid-afternoon.",
+    "dailyPattern": {
+      "earlyMorning": { "speed_mph": 5, "gustFactor": 1.2 },
+      "midMorning": { "speed_mph": 12, "gustFactor": 1.4 },
+      "midday": { "speed_mph": 20, "gustFactor": 1.6 },
+      "afternoon": { "speed_mph": 22, "gustFactor": 1.7 },
+      "evening": { "speed_mph": 10, "gustFactor": 1.3 }
+    },
+    "holeImpact": [
+      { "hole": 1, "direction": "NE", "windEffect": "crosswind_left_to_right", "impact": "moderate" },
+      { "hole": 2, "direction": "NE", "windEffect": "crosswind_left_to_right", "impact": "moderate" },
+      { "hole": 3, "direction": "N", "windEffect": "crosswind_right_to_left", "impact": "significant" },
+      { "hole": 4, "direction": "ESE", "windEffect": "helping_to_crosswind", "impact": "moderate" },
+      { "hole": 5, "direction": "SSW", "windEffect": "into_wind", "impact": "significant" },
+      { "hole": 6, "direction": "WSW", "windEffect": "helping_to_slightly_helping", "impact": "moderate" },
+      { "hole": 7, "direction": "NW", "windEffect": "directly_into_wind", "impact": "severe" },
+      { "hole": 8, "direction": "SSW", "windEffect": "helping_wind", "impact": "moderate" },
+      { "hole": 9, "direction": "WSW", "windEffect": "into_wind_with_left_to_right", "impact": "severe" }
+    ]
+  },
+  "skybox": {
+    "type": "semi_arid_valley",
+    "description": "Wide-open Kittitas Valley with mountain backdrops. Stuart Range and Cascade foothills to the NW/W. Manastash Ridge to the SW. Rolling hills to the E. Big sky country with dramatic cloud formations.",
+    "horizonFeatures": {
+      "north": "Teanaway Ridge, forested foothills",
+      "northeast": "Table Mountain, open rangeland",
+      "east": "Rolling grassland hills, wind turbines visible on ridgelines",
+      "southeast": "Kittitas Valley floor, agricultural fields",
+      "south": "Manastash Ridge, dry grass and scattered timber",
+      "southwest": "Manastash Ridge continues, higher elevation",
+      "west": "Cascade Range foothills, forested",
+      "northwest": "Stuart Range peaks visible on clear days, snow-capped in spring"
+    },
+    "dominantColors": {
+      "summer": {
+        "sky": "#4A90D9",
+        "horizon": "#C8D8E8",
+        "hills": "#8B7D55",
+        "irrigatedGrass": "#4A8C3F",
+        "dryGrass": "#C4A854"
+      },
+      "spring": {
+        "sky": "#5B9BD5",
+        "horizon": "#D0E0F0",
+        "hills": "#6B8F4A",
+        "irrigatedGrass": "#3D7A32",
+        "dryGrass": "#8FA86B"
+      }
+    },
+    "atmosphericHaze": {
+      "summer": 0.15,
+      "smokeSeasonAug": 0.45,
+      "spring": 0.08,
+      "notes": "Wildfire smoke from August fires can significantly reduce visibility and create orange/red skies. Haze values above 0.3 indicate smoke."
+    }
+  },
+  "seasonalVariations": [
+    {
+      "id": "spring",
+      "name": "Spring (April-May)",
+      "description": "Course greening up, still some brown patches. Snow possible on mountain backdrops. Cool mornings, mild afternoons. Wind picking up as season progresses.",
+      "temperature_range_f": [38, 68],
+      "grassColor": "#4A7A3F",
+      "roughHeight_in": 2.5,
+      "greenSpeed_stimp": 9.0,
+      "fairwayFirmness": "soft",
+      "notes": "Irrigation system recently activated. Course may have some winter damage spots."
+    },
+    {
+      "id": "early_summer",
+      "name": "Early Summer (June)",
+      "description": "Peak course condition. Lush green irrigated turf contrasts with surrounding dry grassland. Long days (15+ hours of daylight). Wind in full effect.",
+      "temperature_range_f": [48, 80],
+      "grassColor": "#3D8030",
+      "roughHeight_in": 3.0,
+      "greenSpeed_stimp": 9.5,
+      "fairwayFirmness": "medium",
+      "notes": "Best overall playing conditions. Surrounding hills turning gold."
+    },
+    {
+      "id": "peak_summer",
+      "name": "Peak Summer (July-August)",
+      "description": "Hot and dry. Irrigated course is a green oasis surrounded by brown/gold landscape. Possible wildfire smoke in August. Firm, fast fairways.",
+      "temperature_range_f": [55, 92],
+      "grassColor": "#458B2F",
+      "roughHeight_in": 2.0,
+      "greenSpeed_stimp": 10.0,
+      "fairwayFirmness": "firm",
+      "notes": "Reduced rough height due to heat stress. Course plays fastest. Watch for smoke days in Aug."
+    },
+    {
+      "id": "fall",
+      "name": "Fall (September-October)",
+      "description": "Cooling temperatures, cottonwoods and willows along the river turn gold and orange. Beautiful backdrop. Wind moderating slightly. Course still in good condition.",
+      "temperature_range_f": [35, 70],
+      "grassColor": "#4D7A3B",
+      "roughHeight_in": 2.5,
+      "greenSpeed_stimp": 9.5,
+      "fairwayFirmness": "medium",
+      "deciduousTreeColor": "#D4A030",
+      "notes": "Fall colors along Yakima River corridor (Hole 4 especially) make for scenic rounds."
+    }
+  ],
+  "ambientSounds": {
+    "layers": [
+      {
+        "id": "wind",
+        "description": "Constant wind noise -- the signature sound of Ellensburg golf",
+        "volume": 0.7,
+        "frequencyRange": "low_to_mid",
+        "spatial": "omnidirectional",
+        "variability": "high",
+        "notes": "Wind through grass and trees. Louder and lower-pitched on windy days. Should be the dominant ambient sound."
+      },
+      {
+        "id": "river",
+        "description": "Yakima River flow -- audible on holes 4, 5, and nearby",
+        "volume": 0.3,
+        "frequencyRange": "mid_white_noise",
+        "spatial": "directional_south_east",
+        "variability": "low",
+        "affectedHoles": [4, 5, 6],
+        "notes": "Gentle river sound, not rapids. More of a steady flow noise. Loudest on Hole 4 near the river bank."
+      },
+      {
+        "id": "birds",
+        "description": "Songbirds, meadowlarks, red-winged blackbirds, occasional raptor calls",
+        "volume": 0.25,
+        "frequencyRange": "high",
+        "spatial": "scattered",
+        "variability": "medium",
+        "peakTime": "morning",
+        "notes": "Western Meadowlark is the WA state bird and common in Kittitas Valley. Red-winged blackbirds near pond (Hole 6) and river."
+      },
+      {
+        "id": "wind_in_pines",
+        "description": "Wind rustling through Ponderosa pine needles",
+        "volume": 0.2,
+        "frequencyRange": "high_whisper",
+        "spatial": "near_trees",
+        "affectedHoles": [3, 5, 7, 8],
+        "notes": "Distinctive whisper/sigh of wind through pine needles. Adds texture to tree-lined holes."
+      },
+      {
+        "id": "insects",
+        "description": "Crickets, grasshoppers (summer afternoons)",
+        "volume": 0.1,
+        "frequencyRange": "high",
+        "spatial": "ground_level",
+        "peakTime": "afternoon",
+        "seasonalPeak": "july_august"
+      },
+      {
+        "id": "distant_traffic",
+        "description": "Occasional vehicle on Thorp Highway",
+        "volume": 0.05,
+        "frequencyRange": "low",
+        "spatial": "directional_south",
+        "affectedHoles": [1, 9],
+        "notes": "Very faint. Rural highway, low traffic volume."
+      }
+    ]
+  },
+  "lighting": {
+    "sunPath": {
+      "summerSolstice": {
+        "sunrise_deg": 58,
+        "sunset_deg": 302,
+        "maxElevation_deg": 66,
+        "daylightHours": 15.8
+      },
+      "equinox": {
+        "sunrise_deg": 89,
+        "sunset_deg": 271,
+        "maxElevation_deg": 43,
+        "daylightHours": 12.1
+      }
+    },
+    "shadowDirection": {
+      "morning": "Shadows fall W-NW (sun from ESE)",
+      "midday": "Short shadows fall N",
+      "afternoon": "Shadows fall E-NE (sun from WSW)",
+      "goldenHour": "Long shadows fall E-SE"
+    },
+    "globalIllumination": {
+      "intensity": "high",
+      "notes": "Semi-arid climate means intense, direct sunlight with high UV. Dry air produces sharp, well-defined shadows. Very little atmospheric diffusion compared to coastal WA."
+    }
+  },
+  "turf": {
+    "teeBox": {
+      "species": "Kentucky Bluegrass (Poa pratensis)",
+      "height_in": 0.625,
+      "density": "thick",
+      "color": "#3D7A30",
+      "mowPattern": "striped",
+      "irrigated": true,
+      "notes": "Well-maintained tee surfaces, typical for irrigated Central WA municipal course"
+    },
+    "fairway": {
+      "species": "Kentucky Bluegrass (Poa pratensis)",
+      "height_in": 0.5,
+      "density": "medium_thick",
+      "color": "#458B35",
+      "mowPattern": "striped_diagonal",
+      "irrigated": true,
+      "firmness": "medium",
+      "ballRoll": "moderate",
+      "notes": "Irrigated bluegrass fairways. Firm in summer heat, softer in spring. Ball sits up nicely."
+    },
+    "primaryRough": {
+      "species": "Perennial Ryegrass / Fine Fescue blend",
+      "height_in": 3.0,
+      "density": "medium",
+      "color": "#4A7A3F",
+      "irrigated": true,
+      "penaltyLevel": "light_to_moderate",
+      "notes": "First cut rough. Irrigated to maintain green appearance and playability."
+    },
+    "secondaryRough": {
+      "species": "Native fescue / volunteer grasses",
+      "height_in": 5.0,
+      "density": "sparse_to_medium",
+      "color": "#8B8040",
+      "irrigated": false,
+      "penaltyLevel": "moderate_to_heavy",
+      "notes": "Transition to native vegetation. Brown/gold in summer. Can lose balls here."
+    },
+    "green": {
+      "species": "Creeping Bentgrass (Agrostis stolonifera) - likely Penncross or similar",
+      "height_in": 0.125,
+      "density": "very_thick",
+      "color": "#2D6B28",
+      "stimpmeter": 9.5,
+      "irrigated": true,
+      "notes": "Bentgrass greens, typical for PNW inland courses. Speed moderate -- not tour-fast but consistent."
+    },
+    "bunkerSand": {
+      "type": "Medium-grain washed sand",
+      "color": "#D4C8A0",
+      "depth_in": 4,
+      "notes": "Typical municipal course bunker sand. Not extremely fine."
+    },
+    "nativeAreas": {
+      "species": "Bluebunch wheatgrass, sagebrush, rabbitbrush (beyond course boundary)",
+      "color": "#A09060",
+      "notes": "Semi-arid native vegetation visible beyond maintained areas. Provides visual contrast with irrigated turf."
+    }
+  },
+  "vegetation": {
+    "trees": [
+      {
+        "species": "Ponderosa Pine (Pinus ponderosa)",
+        "prevalence": "common",
+        "heightRange_ft": [30, 60],
+        "canopyWidth_ft": [15, 25],
+        "trunkDiameter_in": [12, 24],
+        "foliage": "evergreen",
+        "description": "Dominant tree species on course. Long needles, distinctive orange-brown bark. Found on multiple holes.",
+        "affectedHoles": [2, 3, 5, 7, 8]
+      },
+      {
+        "species": "Black Cottonwood (Populus trichocarpa)",
+        "prevalence": "common_near_river",
+        "heightRange_ft": [40, 80],
+        "canopyWidth_ft": [25, 40],
+        "trunkDiameter_in": [18, 36],
+        "foliage": "deciduous",
+        "fallColor": "#D4A030",
+        "description": "Tall deciduous trees along Yakima River corridor. Turn golden in fall. Produce cotton in late spring.",
+        "affectedHoles": [4, 6, 8]
+      },
+      {
+        "species": "Willow (Salix spp.)",
+        "prevalence": "common_near_water",
+        "heightRange_ft": [15, 30],
+        "canopyWidth_ft": [15, 25],
+        "foliage": "deciduous",
+        "fallColor": "#C8B050",
+        "description": "Found along river banks and near irrigation pond. Drooping branches, dense foliage.",
+        "affectedHoles": [4, 6]
+      }
+    ],
+    "shrubs": [
+      {
+        "species": "Big Sagebrush (Artemisia tridentata)",
+        "prevalence": "peripheral",
+        "description": "Native sagebrush visible at course boundaries and unmaintained areas. Aromatic. Silver-green foliage.",
+        "notes": "Adds authentic Central WA character to skybox and course edges."
+      }
+    ]
+  },
+  "water": {
+    "yakimaRiver": {
+      "type": "river",
+      "flow": "moderate",
+      "width_ft": [40, 80],
+      "depth_ft": [2, 6],
+      "color": "#5A7A6A",
+      "transparency": "semi_turbid",
+      "affectedHoles": [4],
+      "bankVegetation": "dense_riparian",
+      "notes": "The Yakima River runs along the south/east boundary of the course. Glacially-fed, runs year-round. Cooler water color, not bright blue."
+    },
+    "irrigationPond": {
+      "type": "pond",
+      "shape": "irregular_oval",
+      "dimensions": { "width_yds": 25, "depth_yds": 20 },
+      "depth_ft": [3, 8],
+      "color": "#4A6B5A",
+      "transparency": "low",
+      "affectedHoles": [6],
+      "bankType": "natural_grass",
+      "notes": "Used for course irrigation. Likely has some algae growth in summer. Cattails/reeds possible at edges."
+    }
+  }
+}

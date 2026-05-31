@@ -1,0 +1,45 @@
+{
+    "pipeline": [
+        {
+            "type": "readers.las",
+            "filename": "data/laz/*.laz",
+            "override_srs": "EPSG:2856"
+        },
+        {
+            "type": "filters.range",
+            "limits": "Classification[2:2]",
+            "tag": "ground_only"
+        },
+        {
+            "type": "filters.reprojection",
+            "in_srs": "EPSG:2856",
+            "out_srs": "EPSG:32610"
+        },
+        {
+            "type": "filters.elm",
+            "tag": "outlier_removal"
+        },
+        {
+            "type": "filters.outlier",
+            "method": "statistical",
+            "mean_k": 12,
+            "multiplier": 2.2
+        },
+        {
+            "type": "writers.gdal",
+            "filename": "data/dem_raw.tif",
+            "gdaldriver": "GTiff",
+            "output_type": "mean",
+            "resolution": 0.5,
+            "radius": 1.0,
+            "power": 2.0,
+            "nodata": -9999,
+            "data_type": "float32",
+            "gdalopts": [
+                "COMPRESS=LZW",
+                "TILED=YES",
+                "BIGTIFF=YES"
+            ]
+        }
+    ]
+}

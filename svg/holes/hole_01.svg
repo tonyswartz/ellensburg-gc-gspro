@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <marker id="windArrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#5577aa"/>
+    </marker>
+    <linearGradient id="fairwayGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#82b888"/>
+      <stop offset="50%" style="stop-color:#90c695"/>
+      <stop offset="100%" style="stop-color:#82b888"/>
+    </linearGradient>
+    <radialGradient id="greenGrad1">
+      <stop offset="0%" style="stop-color:#3a9a4a"/>
+      <stop offset="100%" style="stop-color:#2d7a3a"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background - rough -->
+  <rect width="600" height="400" fill="#7aaa7a"/>
+
+  <!-- Hole info -->
+  <rect x="10" y="10" width="200" height="50" rx="5" fill="rgba(0,0,0,0.6)"/>
+  <text x="20" y="32" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="white">Hole 1 — Par 4</text>
+  <text x="20" y="50" font-family="Arial, sans-serif" font-size="13" fill="#ccc">380 Yards • Slight Dogleg Right</text>
+
+  <!-- Wind arrow -->
+  <g transform="translate(540, 40)">
+    <circle cx="0" cy="0" r="22" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <line x1="-12" y1="8" x2="10" y2="-6" stroke="#5577aa" stroke-width="2" marker-end="url(#windArrow)"/>
+    <text x="0" y="-26" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">WIND</text>
+    <text x="14" y="-10" font-family="Arial, sans-serif" font-size="7" fill="#aac">NE</text>
+  </g>
+
+  <!-- OB line left (road) -->
+  <line x1="60" y1="380" x2="180" y2="60" stroke="#cc3333" stroke-width="2" stroke-dasharray="10,6"/>
+  <text x="55" y="280" font-family="Arial, sans-serif" font-size="9" fill="#cc3333" font-weight="bold"
+        transform="rotate(-72, 55, 280)">OB — ROAD</text>
+
+  <!-- Fairway shape - dogleg right -->
+  <path d="M 170,365 Q 180,340 190,310 Q 200,280 215,250 Q 230,220 250,190 
+           Q 270,165 295,145 Q 320,130 350,118 Q 375,110 395,105 Q 410,102 420,100
+           Q 425,115 410,118 Q 390,122 370,128 Q 345,138 320,150 
+           Q 295,165 275,185 Q 255,210 240,240 Q 225,270 215,300 
+           Q 205,330 200,355 Q 198,370 195,375 Z" 
+        fill="url(#fairwayGrad1)" stroke="#6a9a6a" stroke-width="1.5"/>
+
+  <!-- Rough texture spots -->
+  <circle cx="140" cy="200" r="4" fill="#6a9a6a" opacity="0.3"/>
+  <circle cx="320" cy="220" r="5" fill="#6a9a6a" opacity="0.3"/>
+  <circle cx="350" cy="180" r="4" fill="#6a9a6a" opacity="0.3"/>
+
+  <!-- Yardage markers -->
+  <!-- 250 from green -->
+  <line x1="195" y1="268" x2="225" y2="262" stroke="white" stroke-width="1.5" opacity="0.7"/>
+  <text x="168" y="273" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold" opacity="0.8">250</text>
+
+  <!-- 200 from green -->
+  <line x1="220" y1="228" x2="250" y2="218" stroke="white" stroke-width="1.5" opacity="0.7"/>
+  <text x="193" y="233" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold" opacity="0.8">200</text>
+
+  <!-- 150 from green -->
+  <line x1="258" y1="186" x2="286" y2="178" stroke="#ff0" stroke-width="1.5" opacity="0.7"/>
+  <text x="232" y="192" font-family="Arial, sans-serif" font-size="10" fill="#ff0" font-weight="bold" opacity="0.8">150</text>
+
+  <!-- Trees right side of fairway -->
+  <circle cx="235" cy="340" r="10" fill="#1a5c1a" opacity="0.7"/>
+  <circle cx="250" cy="320" r="8" fill="#1f6a1f" opacity="0.6"/>
+  <circle cx="265" cy="295" r="9" fill="#1a5c1a" opacity="0.7"/>
+  <circle cx="280" cy="265" r="8" fill="#1f6a1f" opacity="0.6"/>
+  <circle cx="300" cy="235" r="10" fill="#1a5c1a" opacity="0.7"/>
+  <circle cx="325" cy="200" r="9" fill="#1f6a1f" opacity="0.6"/>
+  <circle cx="350" cy="170" r="8" fill="#1a5c1a" opacity="0.7"/>
+
+  <!-- Trees left sparse -->
+  <circle cx="120" cy="250" r="8" fill="#1a5c1a" opacity="0.5"/>
+  <circle cx="145" cy="190" r="7" fill="#1f6a1f" opacity="0.5"/>
+  <circle cx="170" cy="140" r="8" fill="#1a5c1a" opacity="0.5"/>
+
+  <!-- Bunker right of green approach -->
+  <ellipse cx="435" cy="120" rx="15" ry="9" fill="#d4b97c" stroke="#b89a5c" stroke-width="1.5"/>
+  <ellipse cx="435" cy="120" rx="10" ry="5" fill="#e0c88a" opacity="0.5"/>
+
+  <!-- Green -->
+  <ellipse cx="420" cy="98" rx="28" ry="22" fill="url(#greenGrad1)" stroke="#1a5a2a" stroke-width="2"/>
+  <!-- Green contour lines -->
+  <ellipse cx="418" cy="96" rx="18" ry="14" fill="none" stroke="#2a8a3a" stroke-width="0.5" opacity="0.4"/>
+  <ellipse cx="415" cy="94" rx="10" ry="8" fill="none" stroke="#2a8a3a" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Pin -->
+  <circle cx="418" cy="95" r="3" fill="white" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="418" y1="95" x2="418" y2="78" stroke="white" stroke-width="1.5"/>
+  <polygon points="418,78 430,82 418,86" fill="#cc3333"/>
+
+  <!-- Tee boxes -->
+  <!-- Blue tees (back) -->
+  <rect x="165" y="362" width="22" height="10" rx="2" fill="#3366aa" stroke="#2255aa" stroke-width="1"/>
+  <text x="176" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3366aa">BLUE</text>
+
+  <!-- White tees (forward) -->
+  <rect x="180" y="348" width="20" height="9" rx="2" fill="white" stroke="#aaa" stroke-width="1"/>
+  <text x="190" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#888">WHITE</text>
+
+  <!-- Direction arrow on fairway -->
+  <path d="M 200,330 L 280,200" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+  <polygon points="280,200 272,210 276,206" fill="rgba(255,255,255,0.3)"/>
+</svg>

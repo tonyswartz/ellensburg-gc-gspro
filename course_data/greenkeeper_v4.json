@@ -1,0 +1,1021 @@
+{
+  "format": "GreenKeeper_V4",
+  "version": "4.0.0",
+  "course": {
+    "name": "Ellensburg Golf Club",
+    "shortName": "Ellensburg GC",
+    "location": {
+      "address": "3231 Thorp Hwy S",
+      "city": "Ellensburg",
+      "state": "WA",
+      "zip": "98926",
+      "country": "US",
+      "latitude": 47.0193,
+      "longitude": -120.6294,
+      "elevation_ft": 1525,
+      "timezone": "America/Los_Angeles"
+    },
+    "designer": "Unknown",
+    "yearBuilt": null,
+    "holeCount": 9,
+    "par": 35,
+    "totalYardage": {
+      "blue": 3075,
+      "white": 2780
+    },
+    "courseRating": {
+      "blue": 34.8,
+      "white": 33.2
+    },
+    "slopeRating": {
+      "blue": 119,
+      "white": 113
+    },
+    "grassTypes": {
+      "tee": "Kentucky Bluegrass",
+      "fairway": "Kentucky Bluegrass",
+      "rough": "Perennial Ryegrass / Fine Fescue mix",
+      "green": "Bentgrass (Penncross)"
+    },
+    "climate": "semi-arid continental",
+    "notes": "9-hole municipal course in the Kittitas Valley along the Yakima River. Known for persistent W-NW winds. Course runs roughly NW-SE.",
+    "dataConfidence": "PARTIAL - Hole 1 GPS-confirmed, holes 2-9 estimated from satellite/known yardages"
+  },
+  "teeBoxes": [
+    {
+      "id": "blue",
+      "name": "Blue",
+      "color": "#0000FF",
+      "totalYardage": 3075,
+      "courseRating": 34.8,
+      "slopeRating": 119,
+      "gender": "M"
+    },
+    {
+      "id": "white",
+      "name": "White",
+      "color": "#FFFFFF",
+      "totalYardage": 2780,
+      "courseRating": 33.2,
+      "slopeRating": 113,
+      "gender": "M"
+    }
+  ],
+  "holes": [
+    {
+      "number": 1,
+      "par": 4,
+      "handicapIndex": 3,
+      "dataSource": "GPS_CONFIRMED",
+      "yardages": {
+        "blue": 380,
+        "white": 348
+      },
+      "teePositions": {
+        "blue": {
+          "lat": 47.01940,
+          "lon": -120.62990,
+          "elevation_ft": 1520,
+          "heading_deg": 42
+        },
+        "white": {
+          "lat": 47.01955,
+          "lon": -120.62975,
+          "elevation_ft": 1520,
+          "heading_deg": 42
+        }
+      },
+      "teeBox": {
+        "width_yds": 8,
+        "depth_yds": 12,
+        "surface": "Kentucky Bluegrass"
+      },
+      "fairway": {
+        "width_yds": 38,
+        "shape": "slight_dogleg_right",
+        "landingZone": {
+          "center": { "lat": 47.02075, "lon": -120.62870 },
+          "distFromTee_yds": 240,
+          "width_yds": 42
+        }
+      },
+      "green": {
+        "center": { "lat": 47.02210, "lon": -120.62740 },
+        "elevation_ft": 1522,
+        "width_yds": 27,
+        "depth_yds": 30,
+        "shape": "oval",
+        "slopeDirection": "back_to_front",
+        "slopePercent": 2.5,
+        "stimp": 9.5,
+        "surface": "Bentgrass"
+      },
+      "pinPositions": [
+        {
+          "id": "front_left",
+          "lat": 47.02203,
+          "lon": -120.62750,
+          "description": "Front-left, 4 paces from left edge, 5 paces from front"
+        },
+        {
+          "id": "front_right",
+          "lat": 47.02203,
+          "lon": -120.62730,
+          "description": "Front-right, 4 paces from right edge, 6 paces from front"
+        },
+        {
+          "id": "back_left",
+          "lat": 47.02218,
+          "lon": -120.62748,
+          "description": "Back-left, 5 paces from left edge, 4 paces from back"
+        },
+        {
+          "id": "back_right",
+          "lat": 47.02218,
+          "lon": -120.62732,
+          "description": "Back-right, tucked behind right bunker, 5 paces from back"
+        }
+      ],
+      "hazards": [
+        {
+          "type": "OB",
+          "side": "left",
+          "description": "OB fence left, runs full length of hole",
+          "dataSource": "CONFIRMED",
+          "boundaryPoints": [
+            { "lat": 47.01940, "lon": -120.63010 },
+            { "lat": 47.01980, "lon": -120.62995 },
+            { "lat": 47.02060, "lon": -120.62955 },
+            { "lat": 47.02140, "lon": -120.62880 },
+            { "lat": 47.02210, "lon": -120.62770 }
+          ]
+        }
+      ],
+      "trees": [],
+      "elevationChange_ft": 2,
+      "notes": "Wide opening hole with slight dogleg right. OB left is the main trouble. Generous fairway for a confident opening tee shot."
+    },
+    {
+      "number": 2,
+      "par": 4,
+      "handicapIndex": 7,
+      "dataSource": "ESTIMATED",
+      "yardages": {
+        "blue": 340,
+        "white": 310
+      },
+      "teePositions": {
+        "blue": {
+          "lat": 47.02245,
+          "lon": -120.62710,
+          "elevation_ft": 1522,
+          "heading_deg": 55
+        },
+        "white": {
+          "lat": 47.02258,
+          "lon": -120.62698,
+          "elevation_ft": 1522,
+          "heading_deg": 55
+        }
+      },
+      "teeBox": {
+        "width_yds": 7,
+        "depth_yds": 10,
+        "surface": "Kentucky Bluegrass"
+      },
+      "fairway": {
+        "width_yds": 34,
+        "shape": "straight",
+        "landingZone": {
+          "center": { "lat": 47.02385, "lon": -120.62530 },
+          "distFromTee_yds": 220,
+          "width_yds": 36
+        }
+      },
+      "green": {
+        "center": { "lat": 47.02480, "lon": -120.62400 },
+        "elevation_ft": 1524,
+        "width_yds": 24,
+        "depth_yds": 26,
+        "shape": "round",
+        "slopeDirection": "right_to_left",
+        "slopePercent": 2.0,
+        "stimp": 9.5,
+        "surface": "Bentgrass"
+      },
+      "pinPositions": [
+        {
+          "id": "front_center",
+          "lat": 47.02473,
+          "lon": -120.62400,
+          "description": "Front-center, 5 paces from front edge"
+        },
+        {
+          "id": "middle_right",
+          "lat": 47.02480,
+          "lon": -120.62390,
+          "description": "Middle-right, guarded by bunker"
+        },
+        {
+          "id": "back_left",
+          "lat": 47.02488,
+          "lon": -120.62410,
+          "description": "Back-left, away from bunker, safe bail-out"
+        },
+        {
+          "id": "back_right",
+          "lat": 47.02487,
+          "lon": -120.62392,
+          "description": "Back-right, directly behind bunker, difficult"
+        }
+      ],
+      "hazards": [
+        {
+          "type": "bunker",
+          "side": "right",
+          "description": "Greenside bunker, right side, ~8 yards wide",
+          "dataSource": "CONFIRMED",
+          "center": { "lat": 47.02478, "lon": -120.62382 },
+          "dimensions": { "width_yds": 8, "depth_yds": 6 }
+        }
+      ],
+      "trees": [
+        {
+          "type": "Ponderosa Pine",
+          "side": "left",
+          "description": "Scattered pines along left rough",
+          "dataSource": "ESTIMATED"
+        }
+      ],
+      "elevationChange_ft": 2,
+      "notes": "Straight, shorter par 4. Bunker right of green is the primary defense. Good birdie opportunity for accurate iron players."
+    },
+    {
+      "number": 3,
+      "par": 3,
+      "handicapIndex": 9,
+      "dataSource": "ESTIMATED",
+      "yardages": {
+        "blue": 165,
+        "white": 142
+      },
+      "teePositions": {
+        "blue": {
+          "lat": 47.02510,
+          "lon": -120.62370,
+          "elevation_ft": 1524,
+          "heading_deg": 15
+        },
+        "white": {
+          "lat": 47.02520,
+          "lon": -120.62368,
+          "elevation_ft": 1524,
+          "heading_deg": 15
+        }
+      },
+      "teeBox": {
+        "width_yds": 7,
+        "depth_yds": 8,
+        "surface": "Kentucky Bluegrass"
+      },
+      "fairway": {
+        "width_yds": 0,
+        "shape": "par3_no_fairway",
+        "landingZone": null
+      },
+      "green": {
+        "center": { "lat": 47.02640, "lon": -120.62340 },
+        "elevation_ft": 1530,
+        "width_yds": 22,
+        "depth_yds": 25,
+        "shape": "kidney",
+        "slopeDirection": "back_to_front",
+        "slopePercent": 3.0,
+        "stimp": 9.5,
+        "surface": "Bentgrass"
+      },
+      "pinPositions": [
+        {
+          "id": "front_right",
+          "lat": 47.02633,
+          "lon": -120.62332,
+          "description": "Front-right, 4 paces from front, accessible"
+        },
+        {
+          "id": "middle_left",
+          "lat": 47.02640,
+          "lon": -120.62350,
+          "description": "Middle-left, behind bunker, tucked"
+        },
+        {
+          "id": "back_center",
+          "lat": 47.02648,
+          "lon": -120.62340,
+          "description": "Back-center, uphill putt from front"
+        },
+        {
+          "id": "back_left",
+          "lat": 47.02647,
+          "lon": -120.62352,
+          "description": "Back-left, most protected by bunker"
+        }
+      ],
+      "hazards": [
+        {
+          "type": "bunker",
+          "side": "front_left",
+          "description": "Bunker front-left of green, catches short/left misses",
+          "dataSource": "CONFIRMED",
+          "center": { "lat": 47.02630, "lon": -120.62355 },
+          "dimensions": { "width_yds": 7, "depth_yds": 5 }
+        }
+      ],
+      "trees": [
+        {
+          "type": "Ponderosa Pine",
+          "side": "right",
+          "description": "Line of pines right of green",
+          "dataSource": "ESTIMATED"
+        }
+      ],
+      "elevationChange_ft": 6,
+      "notes": "Slightly uphill par 3. Bunker front-left penalizes pulled or short shots. Club up for the uphill and typical headwind."
+    },
+    {
+      "number": 4,
+      "par": 5,
+      "handicapIndex": 1,
+      "dataSource": "ESTIMATED",
+      "yardages": {
+        "blue": 490,
+        "white": 455
+      },
+      "teePositions": {
+        "blue": {
+          "lat": 47.02660,
+          "lon": -120.62310,
+          "elevation_ft": 1528,
+          "heading_deg": 110
+        },
+        "white": {
+          "lat": 47.02655,
+          "lon": -120.62295,
+          "elevation_ft": 1528,
+          "heading_deg": 110
+        }
+      },
+      "teeBox": {
+        "width_yds": 8,
+        "depth_yds": 12,
+        "surface": "Kentucky Bluegrass"
+      },
+      "fairway": {
+        "width_yds": 32,
+        "shape": "dogleg_left",
+        "doglegAngle_deg": 25,
+        "doglegDistance_yds": 260,
+        "landingZone": {
+          "center": { "lat": 47.02630, "lon": -120.62050 },
+          "distFromTee_yds": 250,
+          "width_yds": 35
+        }
+      },
+      "green": {
+        "center": { "lat": 47.02550, "lon": -120.61780 },
+        "elevation_ft": 1525,
+        "width_yds": 28,
+        "depth_yds": 32,
+        "shape": "oval",
+        "slopeDirection": "right_to_left",
+        "slopePercent": 2.5,
+        "stimp": 9.5,
+        "surface": "Bentgrass"
+      },
+      "pinPositions": [
+        {
+          "id": "front_center",
+          "lat": 47.02543,
+          "lon": -120.61780,
+          "description": "Front-center, accessible with good layup"
+        },
+        {
+          "id": "front_right",
+          "lat": 47.02545,
+          "lon": -120.61768,
+          "description": "Front-right, near river side"
+        },
+        {
+          "id": "back_left",
+          "lat": 47.02558,
+          "lon": -120.61792,
+          "description": "Back-left, safest pin away from river"
+        },
+        {
+          "id": "back_right",
+          "lat": 47.02557,
+          "lon": -120.61770,
+          "description": "Back-right, dangerous with river OB right"
+        }
+      ],
+      "hazards": [
+        {
+          "type": "OB",
+          "side": "right",
+          "description": "Yakima River OB right, comes into play on approach and green",
+          "dataSource": "CONFIRMED",
+          "boundaryPoints": [
+            { "lat": 47.02600, "lon": -120.61900 },
+            { "lat": 47.02570, "lon": -120.61830 },
+            { "lat": 47.02540, "lon": -120.61760 },
+            { "lat": 47.02520, "lon": -120.61720 }
+          ]
+        },
+        {
+          "type": "trees",
+          "side": "right",
+          "description": "Cottonwood and willow trees along river, right side off tee",
+          "dataSource": "CONFIRMED"
+        }
+      ],
+      "trees": [
+        {
+          "type": "Cottonwood/Willow",
+          "side": "right",
+          "description": "Dense riparian vegetation along Yakima River, right side from landing zone to green",
+          "dataSource": "CONFIRMED"
+        },
+        {
+          "type": "Ponderosa Pine",
+          "side": "left",
+          "description": "Scattered pines along left rough at dogleg",
+          "dataSource": "ESTIMATED"
+        }
+      ],
+      "elevationChange_ft": -3,
+      "notes": "Number 1 handicap hole. Dogleg left par 5 with Yakima River OB right on approach. Trees right off the tee force a draw or straight shot. Lay up short of the river on second shot unless going for it with a perfect line."
+    },
+    {
+      "number": 5,
+      "par": 4,
+      "handicapIndex": 5,
+      "dataSource": "ESTIMATED",
+      "yardages": {
+        "blue": 355,
+        "white": 325
+      },
+      "teePositions": {
+        "blue": {
+          "lat": 47.02530,
+          "lon": -120.61750,
+          "elevation_ft": 1524,
+          "heading_deg": 195
+        },
+        "white": {
+          "lat": 47.02520,
+          "lon": -120.61755,
+          "elevation_ft": 1524,
+          "heading_deg": 195
+        }
+      },
+      "teeBox": {
+        "width_yds": 7,
+        "depth_yds": 10,
+        "surface": "Kentucky Bluegrass"
+      },
+      "fairway": {
+        "width_yds": 26,
+        "shape": "straight_to_slight_right",
+        "landingZone": {
+          "center": { "lat": 47.02365, "lon": -120.61780 },
+          "distFromTee_yds": 230,
+          "width_yds": 28
+        }
+      },
+      "green": {
+        "center": { "lat": 47.02245, "lon": -120.61810 },
+        "elevation_ft": 1522,
+        "width_yds": 24,
+        "depth_yds": 24,
+        "shape": "round",
+        "slopeDirection": "back_to_front",
+        "slopePercent": 2.0,
+        "stimp": 9.5,
+        "surface": "Bentgrass"
+      },
+      "pinPositions": [
+        {
+          "id": "front_left",
+          "lat": 47.02240,
+          "lon": -120.61820,
+          "description": "Front-left, most accessible"
+        },
+        {
+          "id": "front_right",
+          "lat": 47.02240,
+          "lon": -120.61800,
+          "description": "Front-right"
+        },
+        {
+          "id": "back_center",
+          "lat": 47.02252,
+          "lon": -120.61810,
+          "description": "Back-center"
+        },
+        {
+          "id": "back_right",
+          "lat": 47.02251,
+          "lon": -120.61800,
+          "description": "Back-right, tightest pin on narrow green"
+        }
+      ],
+      "hazards": [
+        {
+          "type": "trees",
+          "side": "both",
+          "description": "Mature trees line both sides of narrow fairway",
+          "dataSource": "CONFIRMED"
+        }
+      ],
+      "trees": [
+        {
+          "type": "Ponderosa Pine",
+          "side": "both",
+          "description": "Dense pines both sides creating a chute effect",
+          "dataSource": "ESTIMATED"
+        }
+      ],
+      "elevationChange_ft": -2,
+      "notes": "Narrow fairway with trees both sides. Accuracy over distance off the tee. Slight right tendency in the fairway. Keep it in the short grass and a wedge approach should yield a birdie look."
+    },
+    {
+      "number": 6,
+      "par": 3,
+      "handicapIndex": 8,
+      "dataSource": "ESTIMATED",
+      "yardages": {
+        "blue": 150,
+        "white": 128
+      },
+      "teePositions": {
+        "blue": {
+          "lat": 47.02220,
+          "lon": -120.61830,
+          "elevation_ft": 1522,
+          "heading_deg": 250
+        },
+        "white": {
+          "lat": 47.02218,
+          "lon": -120.61845,
+          "elevation_ft": 1522,
+          "heading_deg": 250
+        }
+      },
+      "teeBox": {
+        "width_yds": 6,
+        "depth_yds": 8,
+        "surface": "Kentucky Bluegrass"
+      },
+      "fairway": {
+        "width_yds": 0,
+        "shape": "par3_no_fairway",
+        "landingZone": null
+      },
+      "green": {
+        "center": { "lat": 47.02195, "lon": -120.62020 },
+        "elevation_ft": 1520,
+        "width_yds": 25,
+        "depth_yds": 22,
+        "shape": "oval",
+        "slopeDirection": "left_to_right",
+        "slopePercent": 3.0,
+        "stimp": 9.5,
+        "surface": "Bentgrass"
+      },
+      "pinPositions": [
+        {
+          "id": "front_right",
+          "lat": 47.02190,
+          "lon": -120.62010,
+          "description": "Front-right, away from water, safe"
+        },
+        {
+          "id": "middle_left",
+          "lat": 47.02195,
+          "lon": -120.62032,
+          "description": "Middle-left, close to water, dangerous"
+        },
+        {
+          "id": "back_center",
+          "lat": 47.02202,
+          "lon": -120.62020,
+          "description": "Back-center"
+        },
+        {
+          "id": "back_left",
+          "lat": 47.02200,
+          "lon": -120.62035,
+          "description": "Back-left, sucker pin near pond"
+        }
+      ],
+      "hazards": [
+        {
+          "type": "water",
+          "side": "left",
+          "description": "Irrigation pond left of green",
+          "dataSource": "CONFIRMED",
+          "center": { "lat": 47.02195, "lon": -120.62055 },
+          "dimensions": { "width_yds": 25, "depth_yds": 20 }
+        }
+      ],
+      "trees": [
+        {
+          "type": "Cottonwood",
+          "side": "behind",
+          "description": "Cottonwood trees behind green",
+          "dataSource": "ESTIMATED"
+        }
+      ],
+      "elevationChange_ft": -2,
+      "notes": "Short par 3 with irrigation pond left. The green slopes toward the water, making left pins treacherous. Bail out right. Wind frequently helps (downwind) or cross-wind from the right."
+    },
+    {
+      "number": 7,
+      "par": 4,
+      "handicapIndex": 2,
+      "dataSource": "ESTIMATED",
+      "yardages": {
+        "blue": 400,
+        "white": 370
+      },
+      "teePositions": {
+        "blue": {
+          "lat": 47.02175,
+          "lon": -120.62050,
+          "elevation_ft": 1515,
+          "heading_deg": 310
+        },
+        "white": {
+          "lat": 47.02170,
+          "lon": -120.62065,
+          "elevation_ft": 1515,
+          "heading_deg": 310
+        }
+      },
+      "teeBox": {
+        "width_yds": 7,
+        "depth_yds": 10,
+        "surface": "Kentucky Bluegrass"
+      },
+      "fairway": {
+        "width_yds": 30,
+        "shape": "straight",
+        "landingZone": {
+          "center": { "lat": 47.02290, "lon": -120.62250 },
+          "distFromTee_yds": 250,
+          "width_yds": 32
+        }
+      },
+      "green": {
+        "center": { "lat": 47.02390, "lon": -120.62410 },
+        "elevation_ft": 1530,
+        "width_yds": 26,
+        "depth_yds": 28,
+        "shape": "oval",
+        "slopeDirection": "back_to_front",
+        "slopePercent": 3.5,
+        "stimp": 9.5,
+        "surface": "Bentgrass"
+      },
+      "pinPositions": [
+        {
+          "id": "front_center",
+          "lat": 47.02383,
+          "lon": -120.62410,
+          "description": "Front-center, below the crest, tricky"
+        },
+        {
+          "id": "front_right",
+          "lat": 47.02384,
+          "lon": -120.62398,
+          "description": "Front-right, near bunker"
+        },
+        {
+          "id": "back_left",
+          "lat": 47.02398,
+          "lon": -120.62422,
+          "description": "Back-left, blind from fairway, top of green"
+        },
+        {
+          "id": "back_center",
+          "lat": 47.02397,
+          "lon": -120.62410,
+          "description": "Back-center, on the upper tier"
+        }
+      ],
+      "hazards": [
+        {
+          "type": "bunker",
+          "side": "right",
+          "description": "Greenside bunker right, catches short approaches that miss the uphill",
+          "dataSource": "CONFIRMED",
+          "center": { "lat": 47.02385, "lon": -120.62395 },
+          "dimensions": { "width_yds": 8, "depth_yds": 5 }
+        },
+        {
+          "type": "bunker",
+          "side": "left",
+          "description": "Greenside bunker left",
+          "dataSource": "ESTIMATED",
+          "center": { "lat": 47.02388, "lon": -120.62425 },
+          "dimensions": { "width_yds": 6, "depth_yds": 4 }
+        }
+      ],
+      "trees": [
+        {
+          "type": "Ponderosa Pine",
+          "side": "right",
+          "description": "Pines along right side of fairway",
+          "dataSource": "ESTIMATED"
+        }
+      ],
+      "elevationChange_ft": 15,
+      "notes": "Signature hole. Significant uphill approach (12-15 ft rise) to a blind/semi-blind green. Club selection critical -- most players underclub. Greenside bunkers catch short shots that don't make the hill. Highest point on the course."
+    },
+    {
+      "number": 8,
+      "par": 4,
+      "handicapIndex": 6,
+      "dataSource": "ESTIMATED",
+      "yardages": {
+        "blue": 375,
+        "white": 342
+      },
+      "teePositions": {
+        "blue": {
+          "lat": 47.02410,
+          "lon": -120.62440,
+          "elevation_ft": 1530,
+          "heading_deg": 215
+        },
+        "white": {
+          "lat": 47.02400,
+          "lon": -120.62450,
+          "elevation_ft": 1530,
+          "heading_deg": 215
+        }
+      },
+      "teeBox": {
+        "width_yds": 7,
+        "depth_yds": 10,
+        "surface": "Kentucky Bluegrass"
+      },
+      "fairway": {
+        "width_yds": 30,
+        "shape": "slight_dogleg_left",
+        "landingZone": {
+          "center": { "lat": 47.02275, "lon": -120.62560 },
+          "distFromTee_yds": 240,
+          "width_yds": 32
+        }
+      },
+      "green": {
+        "center": { "lat": 47.02150, "lon": -120.62680 },
+        "elevation_ft": 1520,
+        "width_yds": 25,
+        "depth_yds": 27,
+        "shape": "pear",
+        "slopeDirection": "back_to_front",
+        "slopePercent": 2.5,
+        "stimp": 9.5,
+        "surface": "Bentgrass"
+      },
+      "pinPositions": [
+        {
+          "id": "front_center",
+          "lat": 47.02144,
+          "lon": -120.62680,
+          "description": "Front-center, narrow part of pear"
+        },
+        {
+          "id": "middle_right",
+          "lat": 47.02150,
+          "lon": -120.62668,
+          "description": "Middle-right"
+        },
+        {
+          "id": "back_left",
+          "lat": 47.02158,
+          "lon": -120.62692,
+          "description": "Back-left, widest part of green"
+        },
+        {
+          "id": "back_right",
+          "lat": 47.02157,
+          "lon": -120.62670,
+          "description": "Back-right"
+        }
+      ],
+      "hazards": [
+        {
+          "type": "trees",
+          "side": "both",
+          "description": "Mature trees line both sides, creating a corridor",
+          "dataSource": "CONFIRMED"
+        }
+      ],
+      "trees": [
+        {
+          "type": "Ponderosa Pine",
+          "side": "left",
+          "description": "Tall pines left, define the dogleg",
+          "dataSource": "ESTIMATED"
+        },
+        {
+          "type": "Ponderosa Pine/Cottonwood mix",
+          "side": "right",
+          "description": "Mixed trees right side",
+          "dataSource": "ESTIMATED"
+        }
+      ],
+      "elevationChange_ft": -10,
+      "notes": "Downhill from the high point of Hole 7. Slight dogleg left through a tree-lined corridor. Plays shorter than yardage due to elevation loss. Pear-shaped green rewards precise approach shots."
+    },
+    {
+      "number": 9,
+      "par": 4,
+      "handicapIndex": 4,
+      "dataSource": "ESTIMATED",
+      "yardages": {
+        "blue": 420,
+        "white": 360
+      },
+      "teePositions": {
+        "blue": {
+          "lat": 47.02125,
+          "lon": -120.62710,
+          "elevation_ft": 1520,
+          "heading_deg": 235
+        },
+        "white": {
+          "lat": 47.02118,
+          "lon": -120.62725,
+          "elevation_ft": 1520,
+          "heading_deg": 235
+        }
+      },
+      "teeBox": {
+        "width_yds": 8,
+        "depth_yds": 12,
+        "surface": "Kentucky Bluegrass"
+      },
+      "fairway": {
+        "width_yds": 32,
+        "shape": "straight",
+        "landingZone": {
+          "center": { "lat": 47.02010, "lon": -120.62890 },
+          "distFromTee_yds": 250,
+          "width_yds": 34
+        }
+      },
+      "green": {
+        "center": { "lat": 47.01885, "lon": -120.63070 },
+        "elevation_ft": 1518,
+        "width_yds": 28,
+        "depth_yds": 30,
+        "shape": "oval",
+        "slopeDirection": "right_to_left",
+        "slopePercent": 2.0,
+        "stimp": 9.5,
+        "surface": "Bentgrass"
+      },
+      "pinPositions": [
+        {
+          "id": "front_left",
+          "lat": 47.01879,
+          "lon": -120.63080,
+          "description": "Front-left, accessible"
+        },
+        {
+          "id": "front_right",
+          "lat": 47.01880,
+          "lon": -120.63060,
+          "description": "Front-right, OB side"
+        },
+        {
+          "id": "back_center",
+          "lat": 47.01892,
+          "lon": -120.63070,
+          "description": "Back-center, longest approach"
+        },
+        {
+          "id": "back_left",
+          "lat": 47.01891,
+          "lon": -120.63082,
+          "description": "Back-left"
+        }
+      ],
+      "hazards": [
+        {
+          "type": "OB",
+          "side": "right",
+          "description": "OB right, property line / road, runs full length",
+          "dataSource": "CONFIRMED",
+          "boundaryPoints": [
+            { "lat": 47.02125, "lon": -120.62690 },
+            { "lat": 47.02060, "lon": -120.62810 },
+            { "lat": 47.01980, "lon": -120.62940 },
+            { "lat": 47.01880, "lon": -120.63040 }
+          ]
+        }
+      ],
+      "trees": [
+        {
+          "type": "Ponderosa Pine",
+          "side": "left",
+          "description": "Sparse pines along left rough",
+          "dataSource": "ESTIMATED"
+        }
+      ],
+      "elevationChange_ft": -2,
+      "notes": "Long finishing par 4 back toward the clubhouse. OB right is the primary concern. Typically plays into the prevailing W-NW wind, making it play even longer. A strong drive down the left-center leaves a mid-iron approach."
+    }
+  ],
+  "scorecard": {
+    "holes": [
+      { "number": 1, "par": 4, "blue": 380, "white": 348, "handicap": 3 },
+      { "number": 2, "par": 4, "blue": 340, "white": 310, "handicap": 7 },
+      { "number": 3, "par": 3, "blue": 165, "white": 142, "handicap": 9 },
+      { "number": 4, "par": 5, "blue": 490, "white": 455, "handicap": 1 },
+      { "number": 5, "par": 4, "blue": 355, "white": 325, "handicap": 5 },
+      { "number": 6, "par": 3, "blue": 150, "white": 128, "handicap": 8 },
+      { "number": 7, "par": 4, "blue": 400, "white": 370, "handicap": 2 },
+      { "number": 8, "par": 4, "blue": 375, "white": 342, "handicap": 6 },
+      { "number": 9, "par": 4, "blue": 420, "white": 360, "handicap": 4 }
+    ],
+    "out": {
+      "par": 35,
+      "blue": 3075,
+      "white": 2780
+    }
+  },
+  "obLines": [
+    {
+      "holeNumber": 1,
+      "side": "left",
+      "type": "fence",
+      "dataSource": "CONFIRMED",
+      "points": [
+        { "lat": 47.01940, "lon": -120.63010 },
+        { "lat": 47.01980, "lon": -120.62995 },
+        { "lat": 47.02060, "lon": -120.62955 },
+        { "lat": 47.02140, "lon": -120.62880 },
+        { "lat": 47.02210, "lon": -120.62770 }
+      ]
+    },
+    {
+      "holeNumber": 4,
+      "side": "right",
+      "type": "river",
+      "dataSource": "CONFIRMED",
+      "points": [
+        { "lat": 47.02600, "lon": -120.61900 },
+        { "lat": 47.02570, "lon": -120.61830 },
+        { "lat": 47.02540, "lon": -120.61760 },
+        { "lat": 47.02520, "lon": -120.61720 }
+      ]
+    },
+    {
+      "holeNumber": 9,
+      "side": "right",
+      "type": "property_line",
+      "dataSource": "CONFIRMED",
+      "points": [
+        { "lat": 47.02125, "lon": -120.62690 },
+        { "lat": 47.02060, "lon": -120.62810 },
+        { "lat": 47.01980, "lon": -120.62940 },
+        { "lat": 47.01880, "lon": -120.63040 }
+      ]
+    }
+  ],
+  "practiceAreas": {
+    "drivingRange": false,
+    "puttingGreen": {
+      "available": true,
+      "location": {
+        "lat": 47.01920,
+        "lon": -120.63020
+      },
+      "dataSource": "ESTIMATED"
+    },
+    "chippingArea": {
+      "available": true,
+      "dataSource": "ESTIMATED"
+    }
+  },
+  "clubhouse": {
+    "lat": 47.01910,
+    "lon": -120.63050,
+    "elevation_ft": 1518,
+    "dataSource": "ESTIMATED"
+  }
+}

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <marker id="windArrow5" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#5577aa"/>
+    </marker>
+    <linearGradient id="fairwayGrad5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#82b888"/>
+      <stop offset="50%" style="stop-color:#90c695"/>
+      <stop offset="100%" style="stop-color:#82b888"/>
+    </linearGradient>
+    <radialGradient id="greenGrad5">
+      <stop offset="0%" style="stop-color:#3a9a4a"/>
+      <stop offset="100%" style="stop-color:#2d7a3a"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="#7aaa7a"/>
+
+  <!-- Hole info -->
+  <rect x="10" y="10" width="240" height="50" rx="5" fill="rgba(0,0,0,0.6)"/>
+  <text x="20" y="32" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="white">Hole 5 — Par 4</text>
+  <text x="20" y="50" font-family="Arial, sans-serif" font-size="13" fill="#ccc">355 Yards • Straight to Slight Right</text>
+
+  <!-- Wind arrow -->
+  <g transform="translate(540, 40)">
+    <circle cx="0" cy="0" r="22" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <line x1="8" y1="-10" x2="-8" y2="8" stroke="#5577aa" stroke-width="2" marker-end="url(#windArrow5)"/>
+    <text x="0" y="-26" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">WIND</text>
+    <text x="-14" y="14" font-family="Arial, sans-serif" font-size="7" fill="#aac">SW</text>
+  </g>
+
+  <!-- Fairway - narrow, straight to slight right, plays SW -->
+  <path d="M 500,65 Q 480,85 450,115 Q 420,145 385,180 Q 350,215 310,250 
+           Q 270,280 235,305 Q 200,325 170,340 Q 145,350 125,355
+           Q 120,345 140,338 Q 165,328 195,310 Q 230,288 265,262 
+           Q 300,235 340,200 Q 375,168 410,135 Q 440,108 470,82 
+           Q 492,66 498,60 Z" 
+        fill="url(#fairwayGrad5)" stroke="#6a9a6a" stroke-width="1.5"/>
+
+  <!-- Trees left (tight) -->
+  <circle cx="445" cy="125" r="8" fill="#1a5c1a" opacity="0.7"/>
+  <circle cx="405" cy="165" r="9" fill="#1f6a1f" opacity="0.6"/>
+  <circle cx="365" cy="205" r="8" fill="#1a5c1a" opacity="0.7"/>
+  <circle cx="320" cy="245" r="9" fill="#1f6a1f" opacity="0.6"/>
+  <circle cx="275" cy="280" r="8" fill="#1a5c1a" opacity="0.7"/>
+  <circle cx="235" cy="310" r="7" fill="#1f6a1f" opacity="0.6"/>
+
+  <!-- Trees right (tight) -->
+  <circle cx="490" cy="100" r="8" fill="#1a5c1a" opacity="0.7"/>
+  <circle cx="455" cy="140" r="7" fill="#1f6a1f" opacity="0.6"/>
+  <circle cx="420" cy="175" r="8" fill="#1a5c1a" opacity="0.7"/>
+  <circle cx="380" cy="210" r="7" fill="#1f6a1f" opacity="0.6"/>
+  <circle cx="340" cy="248" r="8" fill="#1a5c1a" opacity="0.7"/>
+  <circle cx="295" cy="282" r="7" fill="#1f6a1f" opacity="0.6"/>
+  <circle cx="250" cy="310" r="8" fill="#1a5c1a" opacity="0.7"/>
+
+  <!-- Narrow fairway label -->
+  <text x="420" y="200" font-family="Arial, sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" font-style="italic"
+        transform="rotate(-42, 420, 200)">Narrow corridor</text>
+
+  <!-- Yardage markers -->
+  <text x="380" y="225" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold" opacity="0.8">200</text>
+
+  <text x="310" y="275" font-family="Arial, sans-serif" font-size="10" fill="#ff0" font-weight="bold" opacity="0.8">150</text>
+
+  <!-- Green -->
+  <ellipse cx="118" cy="352" rx="25" ry="20" fill="url(#greenGrad5)" stroke="#1a5a2a" stroke-width="2"/>
+  <ellipse cx="116" cy="350" rx="16" ry="12" fill="none" stroke="#2a8a3a" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Pin -->
+  <circle cx="116" cy="350" r="3" fill="white" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="116" y1="350" x2="116" y2="333" stroke="white" stroke-width="1.5"/>
+  <polygon points="116,333 128,337 116,341" fill="#cc3333"/>
+
+  <!-- Tee boxes -->
+  <rect x="498" y="52" width="22" height="10" rx="2" fill="#3366aa" stroke="#2255aa" stroke-width="1"/>
+  <text x="509" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3366aa">BLUE</text>
+  <rect x="485" y="65" width="20" height="9" rx="2" fill="white" stroke="#aaa" stroke-width="1"/>
+  <text x="495" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#888">WHITE</text>
+</svg>
