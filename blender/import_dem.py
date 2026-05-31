@@ -33,6 +33,7 @@ import bmesh
 import os
 import json
 import math
+import re
 import sys
 from pathlib import Path
 
@@ -78,18 +79,45 @@ def load_metadata(heightmap_path):
     stem = heightmap_path.stem
     parent = heightmap_path.parent
 
+    # The heightmap PNG often carries a resolution suffix (e.g. "_4096")
+    # that the metadata file does not. Strip a trailing "_<digits>" so we
+    # can also match e.g. "..._heightmap_meta.json" from "..._heightmap_4096.png".
+    base = re.sub(r"_\d+$", "", stem)
+
     candidates = [
+        parent / f"{stem}_meta.json",
         parent / f"{stem}_metadata.json",
         parent / f"{stem}.json",
+        parent / f"{base}_meta.json",
+        parent / f"{base}_metadata.json",
+        parent / f"{base}.json",
         parent / "metadata.json",
         parent / "dem_metadata.json",
     ]
+
+    # Last-resort fallback: any *_meta.json / *_metadata.json in the directory.
+    candidates += sorted(parent.glob("*_meta.json"))
+    candidates += sorted(parent.glob("*_metadata.json"))
 
     for candidate in candidates:
         if candidate.exists():
             print(f"[import_dem] Found metadata: {candidate}")
             with open(candidate, 'r') as f:
                 data = json.load(f)
+            # Normalize key names from the LIDAR pipeline's JSON schema
+            # to the names this script expects internally. This MUST run
+            # before merging with DEFAULTS — otherwise DEFAULTS would
+            # already populate the target keys and the real values from
+            # the JSON would never override them.
+            KEY_MAP = {
+                "real_world_width_m":  "real_width_m",
+                "real_world_height_m": "real_height_m",
+                "elevation_min_m":     "elevation_min",
+                "elevation_max_m":     "elevation_max",
+            }
+            for old, new in KEY_MAP.items():
+                if old in data and new not in data:
+                    data[new] = data[old]
             # Merge with defaults so missing keys don't crash
             merged = {**DEFAULTS, **data}
             return merged
@@ -108,6 +136,10 @@ def calculate_subdivisions(image_width, image_height):
         return SUBDIVISION_OVERRIDE
 
     max_dim = max(image_width, image_height)
+
+    if max_dim <= 0:
+        print("[import_dem] WARNING: image size is 0x0 (lazy load) — defaulting to subdivision level 10")
+        return 10
 
     # Find the subdivision level that gives us close to the image resolution
     # but cap at 12 (4096 verts per side) to keep Blender responsive
